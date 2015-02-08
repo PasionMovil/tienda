@@ -271,7 +271,7 @@ function gp_slider($atts, $content = null) {
 								<?php $image = vt_resize(get_post_thumbnail_id(), $gp_settings['placeholder'], $width, $height, true); ?>
 								<?php if(get_post_meta($post->ID, $dirname.'_slide_link_type', true) == "Lightbox Image") { ?><span class="hover-image"></span><?php } elseif(get_post_meta($post->ID, $dirname.'_slide_link_type', true) == "Lightbox Video") { ?><span class="hover-video"></span><?php } ?>							
 								
-								<img src="<?php echo $image['url']; ?>" alt="<?php if(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)) { echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); } else { echo get_the_title(); } ?>" />
+                                <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[0]; ?>" width="<?php echo $width; ?>" heigth="<?php echo $height; ?>" alt="<?php if(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)) { echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); } else { echo get_the_title(); } ?>" />
 								
 							<?php if(get_post_meta($post->ID, $dirname.'_slide_url', true) OR  get_post_meta($post->ID, $dirname.'_slide_link_type', true) != "Page") { ?></a><?php } ?>	
 							
