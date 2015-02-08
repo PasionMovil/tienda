@@ -1,21 +1,21 @@
 <?php get_header(); global $gp_settings; ?>
 
 
+<!-- BEGIN BREADCRUMBS -->
+
+<?php if($gp_settings['breadcrumbs'] == "Show") { ?><div id="breadcrumb"><?php echo the_breadcrumb(); ?></div>	<?php } ?>
+
+<!-- END BREADCRUMBS -->
+
+
 <!-- BEGIN CONTENT -->
 
 <div id="content">
 
 
-	<!-- BEGIN BREADCRUMBS -->
-
-	<?php if($gp_settings['breadcrumbs'] == "Show") { ?><div id="breadcrumb"><?php echo the_breadcrumb(); ?></div><?php } ?>
-	
-	<!-- END BREADCRUMBS -->
-		
-		
 	<!-- BEGIN TITLE -->
 	
-	<h1 class="page-title"><?php _e('Page Not Found', 'gp_lang'); ?></h1>
+	<?php if($gp_settings['title'] == "Show") { ?><h1 class="page-title"><?php _e('Page Not Found', 'gp_lang'); ?></h1><?php } ?>
 
 	<!-- END TITLE -->
 	

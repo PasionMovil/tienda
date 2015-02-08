@@ -45,17 +45,7 @@ array(	"name" => __('General Settings', 'gp_lang'),
         "std" => "",
 		"style" => "",
         "type" => "upload"),
-
-		array(
-		"name" => __('Logo Width', 'gp_lang'),
-        "desc" => __('Enter the logo width (set to half the original logo width for retina displays).', 'gp_lang'),
-        "id" => $dirname."_logo_width",
-        "std" => "",
-		"style" => "",
-        "type" => "text",
-		"size" => "small",
-		"details" => "px"),
-					
+			
 		array(
 		"name" => __('Logo Top Margin', 'gp_lang'),
         "desc" => __('Enter the top margin of your logo.', 'gp_lang'),
@@ -110,29 +100,7 @@ array(	"name" => __('General Settings', 'gp_lang'),
         "type" => "select"),
 
    		array("type" => "divider"),
-
-		array(  
-		"name" => __('Responsive', 'gp_lang'),
-        "desc" => __('Choose whether the theme responds to the width of the browser window.', 'gp_lang'),
-        "id" => $dirname."_responsive",
-        "std" => "0",
-		"style" => "",
-		"options" => array(__('Enable', 'gp_lang'), __('Disable', 'gp_lang')),
-        "type" => "radio"),
-
-		array("type" => "divider"),
-		   				
-		array(  
-		"name" => __('Retina Images', 'gp_lang'),
-        "desc" => __('Choose whether to crop images at double the size on retina displays (iPhone 4/5, iPad 3/4, Macbook Pro).', 'gp_lang'),
-        "id" => $dirname."_retina",
-        "std" => "0",
-		"style" => "",
-		"options" => array(__('Enable', 'gp_lang'), __('Disable', 'gp_lang')),
-        "type" => "radio"),
-                		
-		array("type" => "divider"),
-		   				
+   				
 		array(  
 		"name" => __('RSS Feed Button', 'gp_lang'),
         "desc" => __('Display the RSS feed button with the default RSS feed or enter a custom feed below.', 'gp_lang'),
@@ -362,16 +330,7 @@ array(	"name" => __('Category Settings', 'gp_lang'),
 		"style" => "Disable",
 		"options" => array('Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')),
         "type" => "select"),
-
-		array(
-		"name" => __('Hard Crop', 'gp_lang'),
-        "desc" => __('Choose whether the image is hard cropped.', 'gp_lang'),
-        "id" => $dirname."_cat_hard_crop",
-        "std" => "Disable",
-		"style" => "",
-		"options" => array('Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')),
-        "type" => "select"),
-                
+        
   		array("type" => "divider"),
   		
    		array( 
@@ -685,16 +644,7 @@ array(	"name" => __('Post Settings', 'gp_lang'),
 		"style" => "",
 		"options" => array('Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')),
         "type" => "select"),
-
-		array(
-		"name" => __('Hard Crop', 'gp_lang'),
-        "desc" => __('Choose whether the image is hard cropped (can be overridden on individual posts).', 'gp_lang'),
-        "id" => $dirname."_post_hard_crop",
-        "std" => "Disable",
-		"style" => "",
-		"options" => array('Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')),
-        "type" => "select"),
-                
+        
   		array("type" => "divider"),
 
  		array( 
@@ -903,16 +853,7 @@ array(	"name" => __('Page Settings', 'gp_lang'),
 		"style" => "",
 		"options" => array('Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')),
         "type" => "select"),
-
-		array(
-		"name" => __('Hard Crop', 'gp_lang'),
-        "desc" => __('Choose whether the image is hard cropped (can be overridden on individual pages).', 'gp_lang'),
-        "id" => $dirname."_page_hard_crop",
-        "std" => "Disable",
-		"style" => "",
-		"options" => array('Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')),
-        "type" => "select"),
-                
+        
    		array("type" => "divider"),
 
  		array( 
@@ -1117,7 +1058,7 @@ array(	"name" => __('Style Settings', 'gp_lang'),
   			
  		array(
 		"name" => __('Body Font', 'gp_lang'),
-        "desc" => __('Enter the name of the font you want to use for the body text (e.g. Times New Roman, Arial, Oswald). To use <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a> get the "Standard" code provided by Google and add this to "Scripts" box in the "General Settings" tab.', 'gp_lang'),
+        "desc" => __('Enter the name of the font you want to use for the body text e.g. Times New Roman, Arial, Oswald.', 'gp_lang'),
         "id" => $dirname."_body_font",
         "std" => "",
 		"style" => "",
@@ -1163,7 +1104,7 @@ array(	"name" => __('Style Settings', 'gp_lang'),
 
  		array(
 		"name" => __('Heading Font', 'gp_lang'),
-        "desc" => __('Enter the name of the font you want to use for the headings (e.g. Times New Roman, Arial, Oswald). To use <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a> get the "Standard" code provided by Google and add this to "Scripts" box in the "General Settings" tab.', 'gp_lang'),
+        "desc" => __('Enter the name of the font you want to use for headings e.g. Times New Roman, Arial, Oswald.', 'gp_lang'),
         "id" => $dirname."_heading_font",
         "std" => "",
 		"style" => "",
@@ -1665,11 +1606,16 @@ case "colorpicker":
 	<?php if($value['name']) { ?><h3><?php echo $value['name']; ?></h3><?php } ?>
 	<div class="option"<?php if($value['style']) { ?> style="<?php echo $value['style']; ?>"<?php } ?>>
 		<script type="text/javascript">
-			jQuery(document).ready(function($){ 
+			jQuery(document).ready(function($){  
+			<?php global $wp_version; if(version_compare($wp_version, '3.5', '>=')) { ?>
 				$("#<?php echo $value['id']; ?>").wpColorPicker();
+			<?php } else { ?>
+				$("#<?php echo $value['id']; ?>_picker").farbtastic('#<?php echo $name; ?>');	
+			<?php } ?>
 			});
 		</script>
 		<input type="text" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if(get_option($value['id'])!= "") { echo get_option($value['id']); } else { echo $value['std']; } ?>" />
+		<div id="<?php echo $value['id']; ?>_picker"></div>
 		<?php if($value['desc']) { ?><div class="option-desc"><?php echo $value['desc']; ?></div><?php } ?>
 	</div>
 
@@ -1705,19 +1651,37 @@ break;
 
 if(function_exists('wp_enqueue_style')) {
 	if(is_admin() && $pagenow == "themes.php") {
-		function gp_admin_scripts() {
-			wp_enqueue_style('thickbox');
-			wp_enqueue_style('wp-color-picker');
-			wp_enqueue_media();
-			wp_enqueue_style('admin', get_template_directory_uri().'/lib/admin/css/admin.css');	
-			wp_enqueue_script('jquery-ui-core');
-			wp_enqueue_script('jquery-ui-sortable');
-			wp_enqueue_script('thickbox');
-			wp_enqueue_script('tabs', get_template_directory_uri().'/lib/admin/scripts/jquery.tabs.js', array('jquery'));
-			wp_enqueue_script('wp-color-picker');
-			wp_enqueue_script('uploader', get_template_directory_uri().'/lib/admin/scripts/uploader.js');
+		global $wp_version;
+		if(version_compare($wp_version, '3.5', '>=')) {	
+			function gp_admin_scripts() {
+				wp_enqueue_style('thickbox');
+				wp_enqueue_style('wp-color-picker');
+				wp_enqueue_media();
+				wp_enqueue_style('admin', get_template_directory_uri().'/lib/admin/css/admin.css');	
+				wp_enqueue_script('jquery-ui-core');
+				wp_enqueue_script('jquery-ui-sortable');	
+				//wp_enqueue_script('media-upload');
+				wp_enqueue_script('thickbox');
+				wp_enqueue_script('tabs', get_template_directory_uri().'/lib/admin/scripts/jquery.tabs.js', array('jquery'));
+				wp_enqueue_script('wp-color-picker');
+				wp_enqueue_script('uploader', get_template_directory_uri().'/lib/admin/scripts/uploader.js');
+			}
+			add_action('admin_print_scripts', 'gp_admin_scripts');				
+		} else {
+			function gp_admin_scripts() {
+				wp_enqueue_style('thickbox');
+				wp_enqueue_style('farbtastic');
+				wp_enqueue_style('admin', get_template_directory_uri().'/lib/admin/css/admin.css');	
+				wp_enqueue_script('jquery-ui-core');
+				wp_enqueue_script('jquery-ui-sortable');	
+				wp_enqueue_script('media-upload');
+				wp_enqueue_script('thickbox');
+				wp_enqueue_script('tabs', get_template_directory_uri().'/lib/admin/scripts/jquery.tabs.js', array('jquery'));
+				wp_enqueue_script('farbtastic');
+				wp_enqueue_script('custom', get_template_directory_uri().'/lib/admin/scripts/custom.js');
+			}
+			add_action('admin_print_scripts', 'gp_admin_scripts');
 		}
-		add_action('admin_print_scripts', 'gp_admin_scripts');				
 	}
 }
 
@@ -1784,9 +1748,7 @@ function the_theme_setup() {
 			/* General Settings */
 			$dirname.'_skin' => 'dark',
 			$dirname.'_header_height' => '75',	
-			$dirname.'_search_criteria' => 'Products',
-			$dirname.'_responsive' => '0',	
-			$dirname.'_retina' => '0',		
+			$dirname.'_search_criteria' => 'Products',			
 			$dirname.'_rss_button' => '0',
 			$dirname.'_preload' => '1',
 		
@@ -1794,7 +1756,6 @@ function the_theme_setup() {
 			$dirname.'_cat_thumbnail_width' => '670',
 			$dirname.'_cat_thumbnail_height' => '250',
 			$dirname.'_cat_image_wrap' => 'Disable',
-			$dirname.'_cat_hard_crop' => 'Disable',	
 			$dirname.'_cat_sidebar' => 'gp-default',
 			$dirname.'_cat_layout' => 'sb-right',
 			$dirname.'_cat_title' => 'Show',
@@ -1824,7 +1785,6 @@ function the_theme_setup() {
 			$dirname.'_post_image_width' => '670',
 			$dirname.'_post_image_height' => '250',
 			$dirname.'_post_image_wrap' => 'Disable',
-			$dirname.'_post_hard_crop' => 'Disable',	
 			$dirname.'_post_sidebar' => 'gp-default',
 			$dirname.'_post_layout' => 'sb-right',	
 			$dirname.'_post_title' => 'Show',
@@ -1846,7 +1806,6 @@ function the_theme_setup() {
 			$dirname.'_page_image_width' => '670',
 			$dirname.'_page_image_height' => '250',
 			$dirname.'_page_image_wrap' => 'Disable',
-			$dirname.'_page_hard_crop' => 'Disable',	
 			$dirname.'_page_sidebar' => 'gp-default',
 			$dirname.'_page_layout' => 'sb-right',		
 			$dirname.'_page_title' => 'Show',

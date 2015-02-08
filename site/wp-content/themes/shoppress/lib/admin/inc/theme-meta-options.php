@@ -6,10 +6,10 @@ add_action('admin_menu', 'gp_create_meta_box');
 add_action('save_post', 'gp_save_meta_data');
 
 function gp_create_meta_box() {
-	add_meta_box('gp-theme-options', __('Post Settings', 'gp_lang'), 'post_meta_boxes', 'post', 'normal', 'core');
-	add_meta_box('gp-theme-options', __('Page Settings', 'gp_lang'), 'page_meta_boxes', 'page', 'normal', 'core');
-	add_meta_box('gp-theme-options', __('Slide Settings', 'gp_lang'), 'slide_meta_boxes', 'slide', 'normal', 'core');
-	add_meta_box('gp-theme-options', __('Product Settings', 'gp_lang'), 'product_meta_boxes', 'product', 'normal', 'core');	
+	add_meta_box('gp-theme-options', __('Post Settings', 'gp_lang'), 'post_meta_boxes', 'post', 'normal', 'high');
+	add_meta_box('gp-theme-options', __('Page Settings', 'gp_lang'), 'page_meta_boxes', 'page', 'normal', 'high');
+	add_meta_box('gp-theme-options', __('Slide Settings', 'gp_lang'), 'slide_meta_boxes', 'slide', 'normal', 'high');
+	add_meta_box('gp-theme-options', __('Product Settings', 'gp_lang'), 'product_meta_boxes', 'product', 'normal', 'high');	
 }
 
 
@@ -40,10 +40,6 @@ function gp_post_meta_boxes() {
 		
 		$dirname.'_image_wrap' => array('name' => $dirname.'_image_wrap', 'title' => __('Image Wrap', 'gp_lang'), 'desc' => __('Choose whether the page content wraps around the featured image.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),	
 		
-		array('type' => 'divider', 'name' => ''),	
-		
-		$dirname.'_hard_crop' => array('name' => $dirname.'_hard_crop', 'title' => __('Hard Crop', 'gp_lang'), 'desc' => __('Choose whether the image is hard cropped.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),	
-				
 	array('type' => 'separator', 'name' => ''),		
 	array('type' => 'close', 'name' => ''),
 	
@@ -114,10 +110,6 @@ function gp_page_meta_boxes() {
 		
 		$dirname.'_image_wrap' => array('name' => $dirname.'_image_wrap', 'title' => __('Image Wrap', 'gp_lang'), 'desc' => __('Choose whether the page content wraps around the featured image.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),	
 		
-		array('type' => 'divider', 'name' => ''),	
-		
-		$dirname.'_hard_crop' => array('name' => $dirname.'_hard_crop', 'title' => __('Hard Crop', 'gp_lang'), 'desc' => __('Choose whether the image is hard cropped.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Enable' => __('Enable', 'gp_lang'), 'Disable' => __('Disable', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),	
-				
 	array('type' => 'separator', 'name' => ''),		
 	array('type' => 'close', 'name' => ''),
 	
@@ -160,9 +152,9 @@ function gp_slide_meta_boxes() {
 
 	'general_settings' => array('name' => 'general_settings', 'type' => 'open', 'desc' => __('General product slide settings.', 'gp_lang'), 'title' => __('Format Settings', 'gp_lang')),
 		
-		$dirname.'_custom_url' => array('name' => $dirname.'_custom_url', 'title' => __('Slide URL', 'gp_lang'), 'desc' => __('Enter the URL you want your slide to link to.', 'gp_lang'), 'details' => '', 'size' => '', 'type' => 'text'),
+		$dirname.'_slide_url' => array('name' => $dirname.'_slide_url', 'title' => __('Slide URL', 'gp_lang'), 'desc' => __('Enter the URL you want your slide to link to.', 'gp_lang'), 'details' => '', 'size' => '', 'type' => 'text'),
 
-		$dirname.'_link_type' => array('name' => $dirname.'_link_type', 'title' => __('Link Type', 'gp_lang'), 'desc' => __('Choose how your slide links to the URL you provided to the left.', 'gp_lang'), 'options' => array('Page' => __('Page', 'gp_lang'), 'Lightbox Image' => __('Lightbox Image', 'gp_lang'), 'Lightbox Video' => __('Lightbox Video', 'gp_lang'), 'None' => __('None', 'gp_lang')), 'std' => 'Page', 'type' => 'select'),
+		$dirname.'_slide_link_type' => array('name' => $dirname.'_slide_link_type', 'title' => __('Link Type', 'gp_lang'), 'desc' => __('Choose how your slide links to the URL you provided to the left.', 'gp_lang'), 'options' => array('Page' => __('Page', 'gp_lang'), 'Lightbox Image' => __('Lightbox Image', 'gp_lang'), 'Lightbox Video' => __('Lightbox Video', 'gp_lang'), 'None' => __('None', 'gp_lang')), 'std' => 'Page', 'type' => 'select'),
 		
 	array('type' => 'separator', 'name' => ''),		
 	array('type' => 'close', 'name' => ''),
@@ -226,12 +218,14 @@ function gp_product_meta_boxes() {
 		
 		$dirname.'_layout' => array('name' => $dirname.'_layout', 'title' => __('Layout', 'gp_lang'), 'desc' => __('Choose the layout for this page.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'sb-left' => __('Sidebar Left', 'gp_lang'), 'sb-right' => __('Sidebar Right', 'gp_lang'), 'fullwidth' => __('Fullwidth', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),
 		
+		$dirname.'_title' => array('name' => $dirname.'_title', 'title' => __('Title', 'gp_lang'), 'desc' => __('Choose whether to display the title on this page.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Show' => __('Show', 'gp_lang'), 'Hide' => __('Hide', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),
+		
 		$dirname.'_breadcrumbs' => array('name' => $dirname.'_breadcrumbs', 'title' => __('Breadcrumbs', 'gp_lang'), 'desc' => __('Choose whether to display breadcrumbs on this page.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Show' => __('Show', 'gp_lang'), 'Hide' => __('Hide', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),
+
+		array('type' => 'divider'),
 				
 		$dirname.'_search' => array('name' => $dirname.'_search', 'title' => __('Search Bar', 'gp_lang'), 'desc' => __('Choose whether to display the search bar.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Show' => __('Show', 'gp_lang'), 'Hide' => __('Hide', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),
 
-		array('type' => 'divider'),
-		
 		$dirname.'_bottom_widgets' => array('name' => $dirname.'_bottom_widgets', 'title' => __('Bottom Content Widgets', 'gp_lang'), 'desc' => __('Choose whether to display the bottom content widget area.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'Show' => __('Show', 'gp_lang'), 'Hide' => __('Hide', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),
 						
 		$dirname.'_skin' => array('name' => $dirname.'_skin', 'title' => __('Skin', 'gp_lang'), 'desc' => __('Choose the skin of this page.', 'gp_lang'), 'options' => array('Default' => __('Default', 'gp_lang'), 'dark' => __('Dark', 'gp_lang'), 'dark-wide' => __('Dark Wide', 'gp_lang'), 'light' => __('Light', 'gp_lang'), 'light-wide' => __('Light Wide', 'gp_lang')), 'std' => 'Default', 'type' => 'select'),
@@ -420,8 +414,8 @@ extract($args); ?>
 extract($args); global $post; ?>
 
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box<?php if($size == "small") { ?> text-small<?php } ?>">
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><br/><?php } ?>
-		<input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_html($value, 1); ?>" size="<?php if($size == "small") { ?>3<?php } else { ?>30<?php } ?>" /><?php if($details) { ?> <span><?php echo $details; ?></span><?php } ?>
+		<strong><?php echo $title; ?></strong>
+		<br/><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_html($value, 1); ?>" size="<?php if($size == "small") { ?>3<?php } else { ?>30<?php } ?>" /><?php if($details) { ?> <span><?php echo $details; ?></span><?php } ?>
 		<div class="meta-box-desc"><?php echo $desc; ?></div>
 		<input type="hidden" name="<?php echo $name; ?>_noncename" id="<?php echo $name; ?>_noncename" value="<?php echo wp_create_nonce(plugin_basename(__FILE__)); ?>" />
 	</div>
@@ -431,8 +425,8 @@ extract($args); global $post; ?>
 extract($args); global $post; ?>
 
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box uploader">
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><br/><?php } ?>
-		<input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" class="upload" value="<?php echo esc_html($value, 1); ?>" size="30" />
+		<strong><?php echo $title; ?></strong>
+		<br/><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" class="upload" value="<?php echo esc_html($value, 1); ?>" size="30" />
 		<input type="button" id="<?php echo $name; ?>_button" class="upload-image-button button" value="<?php _e('Upload', 'gp_lang'); ?>" />
 		<div class="meta-box-desc"><?php echo $desc; ?></div>
 		<input type="hidden" name="<?php echo $name; ?>_noncename" id="<?php echo $name; ?>_noncename" value="<?php echo wp_create_nonce(plugin_basename(__FILE__)); ?>" />
@@ -443,8 +437,8 @@ extract($args); global $post; ?>
 extract($args); ?>
 	
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box">
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><br/><?php } ?>
-		<select name="<?php echo $name; ?>" id="<?php echo $name; ?>">
+		<strong><?php echo $title; ?></strong>
+		<br/><select name="<?php echo $name; ?>" id="<?php echo $name; ?>">
 		<?php foreach($options as $key=>$option) : ?>
 			<?php if($value != "") { ?>
 				<option value="<?php echo $key; ?>" <?php if(htmlentities($value, ENT_QUOTES) == $key) echo ' selected="selected"'; ?>><?php echo $option; ?></option>
@@ -462,7 +456,7 @@ extract($args); ?>
 extract($args); global $post, $wp_registered_sidebars; ?>
 
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box">
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><br/><?php } ?>	
+		<strong><?php echo $title; ?></strong><br/>		
 		<select name="<?php echo $name; ?>" id="<?php echo $name; ?>">
 			<option value="Default" <?php if(htmlentities($value, ENT_QUOTES) == 'Default') echo ' selected="selected"'; ?>>Default</option>
 			<?php $sidebars = $wp_registered_sidebars;
@@ -481,8 +475,8 @@ extract($args); global $post, $wp_registered_sidebars; ?>
 extract($args); ?>
 
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box<?php if($size == "large") { ?> text-large<?php } ?>">	
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><br/><?php } ?>
-		<textarea name="<?php echo $name; ?>" id="<?php echo $name; ?>" cols="60" rows="4" tabindex="30"><?php echo esc_html($value, 1); ?></textarea>
+		<strong><?php echo $title; ?></strong>
+		<br/><textarea name="<?php echo $name; ?>" id="<?php echo $name; ?>" cols="60" rows="4" tabindex="30"><?php echo esc_html($value, 1); ?></textarea>
 		<div class="meta-box-desc"><?php echo $desc; ?></div>
 		<input type="hidden" name="<?php echo $name; ?>_noncename" id="<?php echo $name; ?>_noncename" value="<?php echo wp_create_nonce(plugin_basename(__FILE__)); ?>" />
 	</div>
@@ -492,7 +486,7 @@ extract($args); ?>
 extract($args); ?>
 
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box">
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><?php } ?>
+		<strong><?php echo $title; ?></strong>
 		<?php if(esc_html($value, 1)) { $checked = "checked=\"checked\""; } else { if($std === "true") { $checked = "checked=\"checked\""; } else { $checked = ""; } } ?>
 		<input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="false" <?php echo $checked; ?> />
 		<div class="meta-box-desc"><?php echo $desc; ?></div>
@@ -505,22 +499,26 @@ extract($args); global $post; ?>
 
 	<div id="meta-box-<?php echo $name; ?>" class="meta-box">
 	
-		<?php if($title) { ?><strong><?php echo $title; ?></strong><?php } ?>
+		<strong><?php echo $title; ?></strong>
 		<div class="clear"></div>
-					
-		<div id="wp-content-media-buttons" class="wp-media-buttons" style="margin-top: 5px;">
-			<a href="#" class="button insert-media add_media" data-editor="content" title="<?php _e('Add Media', 'gp_lang'); ?>"><span class="wp-media-buttons-icon"></span> <?php _e('Add Media', 'gp_lang'); ?></a>
-		</div>
+			
+		<?php global $wp_version; if(version_compare($wp_version, '3.5', '>=')) { ?>
+			<div id="wp-content-media-buttons" class="wp-media-buttons" style="margin-top: 5px;">
+				<a href="#" class="button insert-media add_media" data-editor="content" title="<?php _e('Add Media', 'gp_lang'); ?>"><span class="wp-media-buttons-icon"></span> <?php _e('Add Media', 'gp_lang'); ?></a>
+			</div>
+		<?php } else { ?>
+			<br/><a href="media-upload.php?post_id=<?php echo $post->ID; ?>&amp;type=image&amp;TB_iframe=true&amp;width=640&amp;height=790" id="add_image" class="thickbox button" title="<?php _e('Add Media', 'gp_lang'); ?>" onclick="return false;"><?php _e('Add Media', 'gp_lang'); ?></a> <a href="media-upload.php?post_id=<?php echo $post->ID; ?>&amp;type=image&amp;tab=gallery&amp;TB_iframe=true&amp;width=640&amp;height=790" id="add_image" class="thickbox button" title="<?php _e('View Media', 'gp_lang'); ?>" onclick="return false;"><?php _e('View Media', 'gp_lang'); ?></a>
+		<?php } ?>
 		
 		<div class="clear"></div>
 		
 		<div class="meta-box-desc"><?php echo $desc; ?></div>
-
+		
 		<?php $image_url = site_url().'/wp-includes/images/crystal/video.png';
 		$args = array('post_type' => 'attachment', 'post_parent' => $post->ID, 'numberposts' => -1, 'orderby' => 'date', 'order' => 'desc', 'post__not_in' => array(get_post_thumbnail_id())); $attachments = get_children($args); ?>		
 		<?php if($attachments) { foreach ($attachments as $attachment) { ?>
-			<?php if($attachment->post_mime_type == 'image/jpeg' OR $attachment->post_mime_type == 'image/jpg' OR $attachment->post_mime_type == 'image/png' OR $attachment->post_mime_type == 'image/gif') { $image = aq_resize(wp_get_attachment_url($attachment->ID), 50, 50, true, true); } else { $image = site_url().'/wp-includes/images/crystal/video.png'; } ?>
-			<img src="<?php echo $image; ?>" width="50" height="50" alt="" style="margin-top: 5px;" />
+			<?php if($attachment->post_mime_type == 'image/jpeg' OR $attachment->post_mime_type == 'image/jpg' OR $attachment->post_mime_type == 'image/png' OR $attachment->post_mime_type == 'image/gif') { $image = vt_resize($attachment->ID, '', 50, 50, true); } else { $image = vt_resize('', $image_url, 50, 50, true); } ?>
+			<img src="<?php echo $image['url']; ?>" width="50" height="50" alt="" style="margin-top: 5px;" />	
 		<?php }} ?>		
 		<input type="hidden" name="<?php echo $name; ?>_noncename" id="<?php echo $name; ?>_noncename" value="<?php echo wp_create_nonce( plugin_basename( __FILE__ ) ); ?>" />
 	
@@ -529,15 +527,27 @@ extract($args); global $post; ?>
 
 <?php }
 
-if(is_admin() && ($pagenow == "post.php" OR $pagenow == "post-new.php")) {	
-	function gp_admin_scripts() {	
-		wp_enqueue_style('admin', get_template_directory_uri().'/lib/admin/css/admin.css');
-		wp_enqueue_style('wp-color-picker');
-		wp_enqueue_script('wp-color-picker');
-		if(!has_action('admin_footer', 'wp_print_media_templates')) wp_enqueue_media();
-		wp_enqueue_script('uploader', get_template_directory_uri().'/lib/admin/scripts/uploader.js');
-	}	
-	add_action('admin_print_scripts', 'gp_admin_scripts');		
+if(function_exists('wp_enqueue_style')) {
+	if(is_admin() && ($pagenow == "post.php" OR $pagenow == "post-new.php")) {	
+		global $wp_version;
+		if(version_compare($wp_version, '3.5', '>=')) {	
+			function gp_admin_scripts() {	
+				wp_enqueue_style('admin', get_template_directory_uri().'/lib/admin/css/admin.css');
+				wp_enqueue_style('wp-color-picker');
+				wp_enqueue_script('wp-color-picker');
+				wp_enqueue_script('uploader', get_template_directory_uri().'/lib/admin/scripts/uploader.js', array('media-upload'));
+			}	
+			add_action('admin_print_scripts', 'gp_admin_scripts');		
+		} else {
+			function gp_admin_scripts() {	
+				wp_enqueue_style('admin', get_template_directory_uri().'/lib/admin/css/admin.css');
+				wp_enqueue_style('farbtastic');
+				wp_enqueue_script('farbtastic');
+				wp_enqueue_script('custom', get_template_directory_uri().'/lib/admin/scripts/custom.js', array('media-upload'));
+			}	
+			add_action('admin_print_scripts', 'gp_admin_scripts');
+		}
+	}
 }
 
 function gp_save_meta_data($post_id) {

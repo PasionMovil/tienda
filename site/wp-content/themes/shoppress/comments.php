@@ -21,7 +21,7 @@ $GLOBALS['comment'] = $comment; ?>
 	
 	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
 
-		<?php echo get_avatar($comment, '60', get_template_directory_uri().'/lib/images/gravatar.png'); ?>
+		<?php echo get_avatar('', '60', get_template_directory_uri().'/lib/images/gravatar.png'); ?>
 		
 		<div class="comment-text">
 			
@@ -63,7 +63,7 @@ $GLOBALS['comment'] = $comment; ?>
 
 		<?php if('open' == $post->comment_status) {} else { ?>
 		
-			<strong><?php _e('Comments are now closed on this post.', 'gp_lang'); ?></strong>
+			<h4><?php _e('Comments are now closed on this post.', 'gp_lang'); ?></h4>
 	
 		<?php } ?>
 		

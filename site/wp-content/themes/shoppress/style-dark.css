@@ -55,6 +55,11 @@ background: linear-gradient(to right, #333333 0%,#333333 50%,#3c3c3c 50.1%,#3c3c
 box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
+/* Logo */
+.default-logo {
+background-image: url(lib/images/logo-dark.png);
+}
+
 /* Header Right */
 #header-right {
 background: #3c3c3c;
@@ -246,16 +251,16 @@ background-color: #ffde45;
 
 /* Product Tabs */
 div.product .woocommerce_tabs ul.tabs,
-div.product .woocommerce-tabs ul.tabs {
+#content div.product .woocommerce_tabs ul.tabs {
 border-color: #ffde45;
 }
 div.product .woocommerce_tabs ul.tabs li.active a,
-div.product .woocommerce-tabs ul.tabs li.active a {
+#content div.product .woocommerce_tabs ul.tabs li.active a {
 color: #ffde45;
 }
 
 /* Related Products */
-div.product .products h2 {
+div.product .related.products h2 {
 border-color: #ffde45;
 }
 

@@ -4,6 +4,7 @@
 
 function gp_columns($atts, $content = null, $code) {
 	extract(shortcode_atts(array(
+		'name' => '',
 		'type' => 'blank',
 		'text_align' => 'text-left',
 		'height' => '',
@@ -12,15 +13,7 @@ function gp_columns($atts, $content = null, $code) {
         'background' => '',
         'border' => 'true'
 	), $atts));
-
-		
-	// Unique Name
 	
-	STATIC $i = 0;
-	$i++;
-	$name = 'columns'.$i;
-	
-		
 	if($code=="one") {
 	$class = "one first last";	
 	} elseif($code=="two") {

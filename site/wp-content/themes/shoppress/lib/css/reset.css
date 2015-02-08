@@ -46,8 +46,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* Modified */
-input[type="text"], input[type="password"], input[type="button"], input[type="submit"], input[type="reset"], textarea, button {
-	-webkit-appearance: none;
-}

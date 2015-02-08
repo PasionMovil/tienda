@@ -24,14 +24,10 @@ function gp_image($atts, $content = null) {
 		'caption_position' => 'caption-bottomleft',
 		'caption_size' => '',
 		'caption_link' => '',	
-		'caption_link_text' => 'View &raquo;'		
+		'caption_link_text' => 'View &raquo;'
 	),$atts));
 	
-	global $dirname;
-	
-	
 	// Position
-	
 	if($top != '' OR $bottom != '' OR $left != '' OR $right != '') {
 		$position = "position: absolute; ";
 	} else {
@@ -57,10 +53,8 @@ function gp_image($atts, $content = null) {
 	} else {
 		$left = '';
 	}
-	
 
 	// Margins
-	
 	if($margins != "") {
 		if(preg_match('/%/', $margins) OR preg_match('/em/', $margins) OR preg_match('/px/', $margins)) {
 			$margins = str_replace(",", " ", $margins);
@@ -74,9 +68,7 @@ function gp_image($atts, $content = null) {
 		$margins = "";
 	}
 	
-	
 	// Lightbox
-	
 	if($lightbox == "image") {
 		$lightbox_hover = '<span class="hover-image"></span>';
 		$rel = "prettyPhoto";
@@ -88,51 +80,42 @@ function gp_image($atts, $content = null) {
 		$rel = '';
 	}
 		
-		
 	// Image Link
-	
+	$link1 = ""; $link2 = "";
 	if($link != "") {
-		if($lightbox == "true") {
-			$link1 = '<a href="'.$link.'" title="'.$title.'" rel="'.$rel.'" target="'.$target.'">';
+		if($lightbox == "video") {
+			$link1 = '<a href="file='.$link.'&image='.$url.'" title="'.$title.'" rel="'.$rel.'" target="'.$target.'">';
 		} else {
-			$link1 = '<a href="'.$link.'" title="'.$title.'" target="'.$target.'">';
+			$link1 = '<a href="'.$link.'" title="'.$title.'" rel="'.$rel.'" target="'.$target.'">';
 		}
 		$link2 = '</a>';
+	}
+				
+	// Image Cropping
+	if($width != "" OR $height != "") {			
+		$image = vt_resize('', $url, $width, $height, true);
+		$url = $image['url'];
+		$cropping_class = "sc-crop";
 	} else {
-		$link1 = '';	
-		$link2 = '';
+		if(!preg_match("/http:/", $url)) { $url = site_url().'/'.$url; }
+		$cropping_class = "";
 	}
 
-
 	// Image Border
-	
  	if($border == "true") {
 		$border = "image-border";
 	} else {
 		$border = "";
 	}
 	
-	
-	// Image URL
-	
-	if($width OR $height) {
-		$url = aq_resize($url, $width, $height, true, true);
+	// Image Preloader
+ 	if($preload == "true") {
+		$preload = "preload";
 	} else {
-		if(!preg_match("/http:/", $url) && !preg_match("/https:/", $url)) { $url = site_url().'/'.$url; }
-	}	
-	
-	
-	// Retina
-	
-	if(get_option($dirname."_retina") == "0") { 
-		$retina = aq_resize($url, $width*2, $height*2, true, true);
-	} else {
-		$retina = "";
+		$preload = "";
 	}
 	
-
 	// Caption
-
 	if($caption_link_text) {
 		$caption_link_text = '<a href="'.$caption_link.'" title="'.$title.'" rel="'.$rel.'" target="'.$target.'" class="caption-link">'.$caption_link_text.'</a>';
 	} else {
@@ -143,16 +126,15 @@ function gp_image($atts, $content = null) {
 		$caption = '<div class="caption '.$caption_position.'" style="font-size: '.$caption_size.'px;"><div class="caption-title">'.$caption.'</div>'.$caption_link_text.'</div>';
 	} else {
 		$caption = '';
-	}
-		
-		
+	}	
+				
 	return '
 	
-	<div class="sc-image '.$align.' '.$border.'" style="'.$position.$top.$bottom.$left.$right.$margins.' width: '.$width.'px; height: '.$height.'px;">'.$link1.'
+	<div class="sc-image '.$align.' '.$border.' '.$preload.' '.$cropping_class.'" style="'.$position.$top.$bottom.$left.$right.$margins.' width: '.$image['width'].'px; height: '.$image['height'].'px;">'.$link1.'
 		
 		'.$lightbox_hover.$caption.'
 		
-		<img src="'.$url.'" data-rel="'.$retina.'" alt="'.$alt.'" style="width: '.$width.'px; height: '.$height.'px;" />'.$link2.'
+		<img src="'.$url.'" alt="'.$alt.'" style="width: '.$image['width'].'px; height: '.$image['height'].'px;" />'.$link2.'
 		
 	</div>
 	

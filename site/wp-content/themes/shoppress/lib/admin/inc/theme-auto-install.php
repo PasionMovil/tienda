@@ -43,21 +43,17 @@ if(is_admin() && isset($_GET['activated']) && $pagenow == "themes.php") {
 
 [slider width="662" height="450" margins="0,0,20,0"]
 
-[two][image url="'.wp_get_attachment_url($attachment_id1).'" width="324" height="215" caption="New Men T-Shirts" caption_link="#"][/two]
+[two][image url="'.get_template_directory_uri().'/lib/images/placeholder.png" width="324" height="215" caption="New Men T-Shirts" caption_link="#"][/two]
 
-[two_last][image url="'.wp_get_attachment_url($attachment_id1).'" width="324" height="215" caption="New Dresses" caption_link="#"][/two_last]
+[two_last][image url="'.get_template_directory_uri().'/lib/images/placeholder.png" width="324" height="215" caption="New Dresses" caption_link="#"][/two_last]
 
 [/threefourths]
 
 [onefourth_last]
 
-[image url="'.wp_get_attachment_url($attachment_id1).'" width="221" height="480" margins="0,0,20,0" caption="New Mens Jackets" caption_link="#"][/one]
+[one][image url="'.get_template_directory_uri().'/lib/images/placeholder.png" width="221" height="480" margins="0,0,20,0" caption="New Mens Jackets" caption_link="#"][/one]
 
-[small_clear]
-
-[image url="'.wp_get_attachment_url($attachment_id1).'" width="221" height="185" caption="Kids Clothing" caption_link="#"]
-
-[/one]
+[one][image url="'.get_template_directory_uri().'/lib/images/placeholder.png" width="221" height="185" caption="Kids Clothing" caption_link="#"][/one]
 
 [/onefourth_last]
 
@@ -327,7 +323,6 @@ Rapidiously initiate premier functionalities and functionalized catalysts for ch
 			update_option('woocommerce_single_image_crop', 1); 
 			update_option('woocommerce_catalog_image_crop', 1);
 			update_option('woocommerce_frontend_css', 1);
-			update_option('woocommerce_enable_lightbox', 1);
 		}		
 		
 			

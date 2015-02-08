@@ -4,6 +4,7 @@
 
 function gp_video($atts, $content = null) {
     extract(shortcode_atts(array(
+		'name' => '',
         'url' => '',
 		'html5_1' => '',
         'html5_2' => '',
@@ -21,102 +22,94 @@ function gp_video($atts, $content = null) {
         'player' => get_template_directory_uri().'/lib/scripts/mediaplayer/player.swf'        
     ), $atts));
 	
-	global $is_IE, $is_gecko, $gp_settings;
+	global $gp_settings;
 	
-	
-	// Unique Name
-	
-	STATIC $i = 0;
-	$i++;
-	$name = 'video'.$i;
-
+	// Remove spaces from video name
+	$name = preg_replace('/[^a-zA-Z0-9]/', '', $name);
 
 	// Video Type	
-	
 	$vimeo = strpos($url,"vimeo.com");
-
-
-	// Allow relative URLs
+	$yt1 = strpos($url,"youtube.com");
+	$yt2 = strpos($url,"youtu.be");
 	
-	if(!preg_match("/http:/", $url) && !preg_match("/https:/", $url)) { $url = site_url().'/'.$url; }
-	if($html5_1 && !preg_match("/http:/", $html5_1) && !preg_match("/https:/", $html5_1)) { $html5_1 = site_url().'/'.$html5_1; }
-	if($html5_2 && !preg_match("/http:/", $html5_2) && !preg_match("/https:/", $html5_2)) { $html5_2 = site_url().'/'.$html5_2; }
-
-
-	// Vimeo Autostart
-	
-	if($autostart == "false") {
-		$autostart = "0";
-	} elseif($autostart == "true") {
-		$autostart = "1";
-	}
-
-
-	// Vimeo Clip ID
-	
-	if(preg_match('/www.vimeo/',$url)) {							
-		$vimeoid = trim($url,'http://www.vimeo.com/');
-	} else {							
-		$vimeoid = trim($url,'http://vimeo.com/');
-	}		
-
-			
 	ob_start(); ?>
+
+	<div class="sc-video <?php echo $align; ?>">
 	
+		<div class="sc-video-inner">
+						
+			<?php if($vimeo) { ?>
+										
+				<?php if($autostart == "false") {
+					$autostart = "0";
+				} elseif($autostart == "true") {
+					$autostart = "1";
+				}
 		
-	<div class="sc-video <?php echo $align; ?> <?php echo $name; ?>" style="width: <?php echo $width; ?>px;">
-
-
-		<?php if($vimeo) { ?>
-			
-			
-			<iframe src="http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=<?php echo $autostart; ?>" width="<?php echo $width; ?>" height="<?php if($gp_settings['iphone']) { echo $height/2; } else { echo $height; } ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				// Vimeo Clip ID
+				if(preg_match('/www.vimeo/',$url)) {							
+					$vimeoid = trim($url,'http://www.vimeo.com/');
+				} else {							
+					$vimeoid = trim($url,'http://vimeo.com/');
+				}				
 		
-			
-		<?php } else { ?>
-
-
-			<?php if(wp_is_mobile()) { ?>
+				?>
 				
-				<video id="<?php echo $name; ?>" controls="controls">
-					<source src="<?php if($html5_1) { echo $html5_1; } else { echo $url; } ?>" type="video/mp4" />
-					<source src="<?php if($html5_2) { echo $html5_2; } else { echo $url; } ?>" type="video/webm" />
-				</video>
+				<iframe src="http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=<?php echo $autostart; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				
+			<?php } else {
 			
-			<?php } else { ?>	
+			// Allow relative URLs
+			if(!preg_match("/http:/", $url) && !preg_match("/https:/", $url)) { $url = site_url().'/'.$url; }
+			if(!preg_match("/http:/", $html5_1) && !preg_match("/https:/", $html5_1)) { $html5_1 = site_url().'/'.$html5_1; }
+			if(!preg_match("/http:/", $html5_2) && !preg_match("/https:/", $html5_2)) { $html5_2 = site_url().'/'.$html5_2; }
+			
+			 ?>
+			
+				<?php if(($gp_settings['iPhone'] OR $gp_settings['iPad']) && (!$yt1 && !$yt2)) { ?>
+				
+					<video id="video-<?php echo $name; ?>" controls="controls" width="<?php echo $width; ?>" height="<?php echo $height; ?>" poster="<?php $image = vt_resize('', $image, $width, $height, true); echo $image['url']; ?>">
+						<source src="<?php echo $url; ?>" type="video/mp4" />
+						<source src="<?php echo $url; ?>" type="video/webm" />
+						<source src="<?php echo $html5_1; ?>" type="video/mp4" />
+						<source src="<?php echo $html5_1; ?>" type="video/webm" />
+						<source src="<?php echo $html5_2; ?>" type="video/mp4" />
+					</video>
+				
+				<?php } else { ?>	
 							
-				<div id="<?php echo $name; ?>"></div>
+					<div id="video-<?php echo $name; ?>"></div>
+					
+				<?php } ?>
 				
-			<?php } ?>
-
-
-			<script>
-			jwplayer("<?php echo $name; ?>").setup({
-				<?php if($image) { $image = aq_resize($image, $width, $height, true, true); ?>image: "<?php echo $image; ?>",<?php } ?>
-				icons: "<?php echo $icons; ?>",
-				autostart: "false",
-				stretching: "<?php echo $stretching; ?>",
-				controlbar: "<?php echo $controlbar; ?>",
-				skin: "<?php echo $skin; ?>",
-				width: <?php echo $width; ?>,
-				height: <?php if($gp_settings['iphone']) { echo $height/2; } else { echo $height; } ?>,
-				screencolor: "000000",
-				modes:
-					[
-					<?php if($is_IE == "true" OR $priority == "flash") { ?>
-						{type: "flash", src: "<?php echo $player; ?>", config: {file: "<?php echo $url; ?>"}},					
-						{type: "html5", config: {file: "<?php if($is_gecko && $html5_2) { echo $html5_2; } elseif($html5_1) { echo $html5_1; } else { echo $url; } ?>"}}
-					<?php } else { ?>
-						{type: "html5", config: {file: "<?php if($is_gecko && $html5_2) { echo $html5_2; } elseif($html5_1) { echo $html5_1; } else { echo $url; } ?>"}},	
-						{type: "flash", src: "<?php echo $player; ?>", config: {file: "<?php echo $url; ?>"}}
-					<?php } ?>
-					],
-				plugins: {<?php echo $plugins; ?>}
-			});
-			</script>
+				<script>
+					jwplayer("video-<?php echo $name; ?>").setup({
+						<?php if($image) { $image = vt_resize('', $image, $width, $height, true); ?>image: "<?php echo $image['url']; ?>",<?php } ?>
+						icons: "<?php echo $icons; ?>",
+						autostart: "<?php echo $autostart; ?>",
+						stretching: "<?php echo $stretching; ?>",
+						controlbar: "<?php echo $controlbar; ?>",
+						skin: "<?php echo $skin; ?>",
+						width: <?php echo $width; ?>,
+						height: <?php echo $height; ?>,
+						screencolor: "000000",
+						modes:
+							[
+							<?php if($gp_settings['MSIE'] OR $priority == "flash") { ?>
+								{type: "flash", src: "<?php echo $player; ?>", config: {file: "<?php echo $url; ?>"}},					
+								{type: "html5", config: {file: "<?php echo $url; ?>"<?php if(($gp_settings['iPhone'] OR $gp_settings['iPad']) && ($yt1 OR $yt2)) {} else { ?>, file: "<?php echo $html5_1; ?>", file: "<?php echo $html5_2; ?>"<?php } ?>}}
+							<?php } else { ?>
+								{type: "html5", config: {file: "<?php echo $url; ?>"<?php if(($gp_settings['iPhone'] OR $gp_settings['iPad']) && ($yt1 OR $yt2)) {} else { ?>, file: "<?php echo $html5_1; ?>", file: "<?php echo $html5_2; ?>"<?php } ?>}},	
+								{type: "flash", src: "<?php echo $player; ?>", config: {file: "<?php echo $url; ?>"}}
+							<?php } ?>
+							],
+						plugins: {<?php echo $plugins; ?>}
+					});
+				</script>
 			
+			<?php } ?>
 		
-		<?php } ?>
+		</div>
 
 	</div>
 

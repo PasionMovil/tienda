@@ -1,9 +1,9 @@
-/************************************ iPad (Portrait) ************************************/
+/************************************ iPad ************************************/
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
 	
-	/********* Content Areas *********/
+	/************************************ Content Areas ************************************/
 
 	/* Page Outer */
 	.page-outer {
@@ -23,10 +23,6 @@
 	.skin-light-wide #content {
 	width: 466px !important;
 	}
-	.skin-dark-wide.fullwidth #content,
-	.skin-light-wide.fullwidth #content {
-	width: 100% !important;
-	}
 	
 	/* Sidebar */
 	#sidebar {
@@ -36,9 +32,18 @@
 	.skin-light-wide #sidebar {
 	width: 242px !important;
 	}
+	
 
+	/************************************ Navigation Menus ************************************/
 
-	/********* Shortcodes: Slider *********/
+	/* Drop Down Menus */
+	.nav .nav-section {
+	width: 120px;
+	font-size: 11px;
+	}
+	
+
+	/************************************ Shortcodes: Slider ************************************/
 	
 	/* Slide Caption */
 	.caption h2 {
@@ -48,21 +53,16 @@
 	font-size: 10px;
 	}
 	
-	/* Slider Buttons */
-	.flex-control-nav {
-	display: none;
-	}
-		
 	
 }
 
 
-/************************************ iPhone ************************************/
+/************************************ iPhone (Portrait) ************************************/
 
 @media only screen and (max-width: 767px) {
 
 	
-	/********* Content Areas *********/
+	/************************************ Content Areas ************************************/
 
 	/* Page Outer */
 	.page-outer {
@@ -91,7 +91,7 @@
 	}
 
 
-	/********* Header *********/
+	/************************************ Header ************************************/
 
 	/* Header */
 	#header {
@@ -186,7 +186,7 @@
 	}
 	
 
-	/********* Navigation Menus *********/
+	/************************************ Navigation Menus ************************************/
 	
 	/* Nav Wrapper */
 	.nav ul {
@@ -206,7 +206,7 @@
 	}
 	
 		
-	/********* Page/Post Styling *********/
+	/************************************ Page/Post Styling ************************************/
 	
 	/* Posts */
 	.post-loop {
@@ -237,7 +237,7 @@
 	}
 
 
-	/********* Lightbox *********/
+	/************************************ Lightbox ************************************/
 
 	.pp_pic_holder {
 	width: 95% !important; 
@@ -252,9 +252,7 @@
 	height: 100% !important;
 	padding-bottom: 40px;
 	}
-	#pp_full_res img,
-	#pp_full_res iframe,
-	#pp_full_res video {
+	#pp_full_res img {
 	width: 100% !important;
 	height: auto !important;
 	max-width: none !important;
@@ -262,13 +260,9 @@
 	.pp_details {
 	width: 100% !important;
 	}
-	.ppt {
-	width: 100% !important;
-	margin-left: 0 !important;
-	}
-		
+	
 			
-	/********* Shortcodes: Blockquotes *********/
+	/************************************ Shortcodes: Blockquotes ************************************/
 	
 	blockquote,
 	.blockquote-left,
@@ -279,7 +273,7 @@
 	}
 	
 	
-	/********* Shortcodes: Columns *********/
+	/************************************ Shortcodes: Columns ************************************/
 
 	/* General */
 	.columns {
@@ -303,7 +297,7 @@
 	}
 	
 
-	/********* Shortcodes: Images *********/
+	/************************************ Shortcodes: Images ************************************/
 	
 	/* Image */
 	.sc-image,
@@ -319,24 +313,19 @@
 	}
 
 
-	/********* Shortcodes: Slider *********/
+	/************************************ Shortcodes: Slider ************************************/
 	
 	/* Slide Caption */
 	.caption-title {
-	font-size: 12px !important;
-	line-height: 14px;
+	font-size: 14px !important;
+	line-height: 16px;
 	}
 	.caption-link {
 	font-size: 10px !important;
 	}
-
-	/* Slider Buttons */
-	.flex-control-nav {
-	display: none;
-	}	
 	
 
-	/********* Shortcodes: Tabs *********/
+	/************************************ Shortcodes: Tabs ************************************/
 	
 	.ui-tabs .ui-tabs-nav li { 
 	width: 100%;
@@ -347,16 +336,18 @@
 	}
 	
 	
-	/********* Shortcodes: Video *********/
+	/************************************ Shortcodes: Video ************************************/
 	
-	.ios-class .sc-video.non-youtube-video,
-	.ios-class .sc-video.non-youtube-video div,
-	.ios-class .sc-video.non-youtube-video video {
+	.ios-class .sc-video,
+	.ios-class .sc-video div,
+	.ios-class object,
+	.ios-class embed,
+	.ios-class video {
 	height: auto !important;
 	}
 
 
-	/********* Footer *********/
+	/************************************ Footer ************************************/
 	
 	/* Footer Container */
 	#footer {
@@ -368,7 +359,7 @@
 	}
 
 	
-	/********* Comments Section *********/
+	/************************************ Comments Section ************************************/
 	
 	/* Comment Box */
 	.comment-avatar {
@@ -384,7 +375,7 @@
 	}
 
 
-	/********* Woocommerce *********/
+	/************************************ Woocommerce ************************************/
 	
 	/* Product Categories */
 	.category-thumbnail {
@@ -395,8 +386,8 @@
 	line-height: 9px;
 	}
 	ul.products li.product {
-	width: 100% !important;
-	margin-right: 0 !important;
+	width: 48% !important;
+	margin-right: 4% !important;
 	clear: both;
 	}
 	ul.products li.product.first,
@@ -420,9 +411,11 @@
 	div.product .product_title,
 	#content div.product .product_title {
 	font-size: 20px;
+	margin-bottom: 10px;
 	}
 	div.product p.price,
 	#content div.product p.price {
+	position: relative;
 	font-size: 16px;
 	}
 	

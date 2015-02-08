@@ -1,17 +1,5 @@
 jQuery(document).ready(function(){
 	
-
-jQuery("a.show_review_form").prettyPhoto({
-		theme: 'light_square',
-		deeplinking: false,
-		social_tools: ''
-	});
-
-	// Open review form lightbox if accessed via anchor
-	if( window.location.hash == '#review_form' ) {
-		jQuery('a.show_review_form').trigger('click');
-	}
-		
 	/////////////////////////////////////// WooCommerce page elements ///////////////////////////////////////
 
 
@@ -64,7 +52,7 @@ jQuery("a.show_review_form").prettyPhoto({
 	
 	/////////////////////////////////////// Drop Down Filter ///////////////////////////////////////
 
-    jQuery(".woocommerce_ordering, .woocommerce-ordering").jqTransform();
+    jQuery(".woocommerce_ordering").jqTransform();
 
 	jQuery(".jqTransformSelectWrapper ul li a").click(function(){
 		window.location.href=window.location.href;

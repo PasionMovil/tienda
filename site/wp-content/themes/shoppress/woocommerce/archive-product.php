@@ -9,8 +9,6 @@
  * @todo replace loop-shop with a content template and include query/loop here instead.
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 get_header('shop'); global $gp_settings; ?>
 
 	<?php
@@ -113,6 +111,8 @@ get_header('shop'); global $gp_settings; ?>
 			
 		?>
 		</div>
+		
+		<?php echo gp_pagination(); ?>
 
 	<?php
 		/**

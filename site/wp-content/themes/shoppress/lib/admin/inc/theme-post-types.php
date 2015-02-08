@@ -80,12 +80,9 @@ function post_type_slide() {
 					echo get_the_term_list($post->ID, 'slide_categories', '', ', ', '');
 					break;
 				case "slide_image":
-					if(has_post_thumbnail()) {
-						$image = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)), 50, 50, true, true);
-						if(get_option($dirname."_retina") == "0") { $retina = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)), 100, 100, true, true); } else { $retina = ""; }
-						echo '<img src="'.$image.'" data-rel="'.$retina.'" width="50" height="50" alt="" />';
-					}
-					break;				
+					$image = vt_resize(get_post_thumbnail_id(), get_template_directory_uri().'/lib/images/placeholder.png', 50, 50, true);
+					echo '<img src="'.$image['url'].'" width="'.$image['width'].'" height="'.$image['height'].'" alt="" />';
+					break;					
 			}
 	}
 
@@ -119,10 +116,10 @@ function gp_sort_slides() {
 			
 				<li id="<?php the_ID(); ?>">
 					
-					<?php if(has_post_thumbnail()) {
-						$image = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)), 50, 50, true, true);
-						echo '<img src="'.$image.'" width="50" height="50" alt="" />';
-					} ?>
+					<?php 
+					$image = vt_resize(get_post_thumbnail_id(), get_template_directory_uri().'/lib/images/placeholder.png', 50, 50, true);
+					echo '<img src="'.$image['url'].'" width="'.$image['width'].'" height="'.$image['height'].'" alt="" />';
+					?>
 					
 					<span>
 						<h4 style="margin: 0 0 10px 0;"><?php the_title(); ?></h4>

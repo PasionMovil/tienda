@@ -4,12 +4,10 @@
 
 function gp_slider($atts, $content = null) {
     extract(shortcode_atts(array(
-		'content' => 'slide',
-		'cats' => '',
-		'ids' => '',
-        'width' => '720',
+		'name' => 'slider',
+        'width' => '661',
         'height' => '450',
-        'hard_crop' => 'false',
+        'cats' => '',
         'slides' => '-1',
         'effect' => 'fade',
         'timeout' => '6',
@@ -18,58 +16,25 @@ function gp_slider($atts, $content = null) {
         'arrows' => 'false',
         'buttons' => 'true',
         'shadow' => 'false',
-        'content_display' => 'excerpt',
-        'excerpt_length' => '0',
-        'title' => 'true',       
-        'title_length' => '40',        
 		'margins' => '',
         'align' => 'alignleft',
         'preload' => 'false'
     ), $atts));
 
-	require(gp_inc . 'options.php'); global $post, $is_IE, $is_gecko, $gp_settings, $dirname;
+	global $wp_query, $post, $gp_settings, $dirname;
+	require(gp_inc . 'options.php');
 	
-		
-	// Unique Name
-	
-	STATIC $i = 0;
-	$i++;
-	$name = 'slider'.$i;
-	
+	// Remove spaces from slider name
+	$name = preg_replace('/[^a-zA-Z0-9]/', '', $name);
 
-	// Categories
-	
-	if($cats) { 
-		if(function_exists('woocommerce_content')) { $product_cats = array('taxonomy' => 'product_cat', 'terms' => explode(',', $cats), 'field' => 'id'); } else { $product_cats = null; }
-		$slide_cats = array('taxonomy' => 'slide_categories', 'terms' => explode(',', $cats), 'field' => 'id');
-		$post_cats = array('taxonomy' => 'category', 'terms' => explode(',', $cats), 'field' => 'id');
-	} else {
-		$product_cats = null;
-		$slide_cats = null;
-		$post_cats = null;
-	}
-	
-
-	// IDs
-	
-	if($ids) { 
-		$ids = explode(',', $ids);
-	} else {
-		$ids = null;
-	}
-	
-	
 	// Shadow
-	
 	if($shadow == "true") {
 		$shadow = " shadow";
 	} else {
 		$shadow = "";
 	}
 	
-	
 	// Margins
-	
 	if($margins != "") {
 		if(preg_match('/%/', $margins) OR preg_match('/em/', $margins) OR preg_match('/px/', $margins)) {
 			$margins = str_replace(",", " ", $margins);
@@ -83,62 +48,49 @@ function gp_slider($atts, $content = null) {
 		$margins = "";
 	}
 	
-	
 	// Preload
-	
 	if($preload == "true") {
 		$preload = " preload";
 	} else {
 		$preload = "";
 	}
 	
-	
 	// Slider Query	
-	
-	$args=array(
-	'post_type' => explode(',', $content),
-	'posts_per_page' => $slides,
-	'post__in' => $ids,
-	'ignore_sticky_posts' => 0,
-	'orderby' => $orderby,
-	'order' => $order,
-	'tax_query' => array('relation' => 'OR', $product_cats, $slide_cats, $post_cats)
-	);
+	if($cats) {
+		$args=array(
+		'post_type' => 'slide',
+		//'slide_categories' => $cats,
+		'posts_per_page' => $slides,
+		'orderby' => $orderby,
+		'order' => $order,
+		'tax_query' => array('relation' => 'OR', array('taxonomy' => 'slide_categories', 'terms' => explode(',', $cats), 'field' => array('id', 'slug')))
+		);
+	} else {
+		$args=array(
+		'post_type' => 'slide',
+		'posts_per_page' => $slides,
+		'orderby' => $orderby,
+		'order' => $order
+		);	
+	}
 	
 	$featured_query = new wp_query($args);
 	
 	ob_start(); ?>
 	
-	
 	<?php if ($featured_query->have_posts()) : $slide_counter = ""; ?>
 	
-	
-	<!-- BEGIN SLIDER WRAPPER -->
-	
+	<!--Begin Slider Wrapper-->
 	<div id="<?php echo $name; ?>" class="flexslider <?php echo $align; ?><?php echo $shadow; ?><?php echo $preload; ?>" style="width: <?php echo $width; ?>px; <?php echo $margins; ?>">
 		
-		
-		<!-- BEGIN SLIDER -->
-		
+		<!--Begin Slider-->
 		<ul class="slides">
 
-
-			<?php while ($featured_query->have_posts()) : $featured_query->the_post(); $slide_counter++;
-			
-			
-			// Video Type
-			
-			$vimeo = strpos(get_post_meta($post->ID, $dirname.'_slide_video', true),"vimeo.com");
-			$yt1 = strpos(get_post_meta($post->ID, $dirname.'_slide_video', true),"youtube.com");
-			$yt2 = strpos(get_post_meta($post->ID, $dirname.'_slide_video', true),"youtu.be"); 
-												
-			?>
+			<?php while ($featured_query->have_posts()) : $featured_query->the_post(); $slide_counter++; ?>
 
 				<li class="slide<?php if($slide_counter != "1") {} elseif(get_post_meta($post->ID, $dirname.'_slide_autostart_video', true)) { ?> video-autostart<?php } ?>" id="<?php echo $name; ?>-slide-<?php the_ID(); ?>">
 					
-					
-					<!-- BEGIN CAPTION -->
-					
+					<!--Begin Caption-->
 					<?php if(!get_post_meta($post->ID, $dirname.'_slide_title', true) OR get_post_meta($post->ID, $dirname.'_slide_caption_link_text', true)) { 
 
 					$slide_caption_position = get_post_meta($post->ID, $dirname.'_slide_caption_position', true);
@@ -156,265 +108,192 @@ function gp_slider($atts, $content = null) {
 					?>
 						
 						<div class="caption<?php echo $caption_class; ?>">
-
-						
-							<!-- BEGIN SLIDE TITLE -->
-							
-							<?php if($title == "true") { ?><?php if(!get_post_meta($post->ID, $dirname.'_slide_title', true)) { ?><div class="caption-title"><?php echo the_title_limit($title_length); ?></div><?php } ?><?php } ?>
-											
-							<!-- END SLIDER TITLE -->
-				
-
-							<!-- BEGIN SLIDE LINK -->
-							
+							<?php if(!get_post_meta($post->ID, $dirname.'_slide_title', true)) { ?><div class="caption-title"><?php the_title(); ?></div><?php } ?>
 							<?php if(get_post_meta($post->ID, $dirname.'_slide_caption_link', true)) { ?><a href="<?php echo get_post_meta($post->ID, $dirname.'_slide_caption_link', true); ?>" class="caption-link"><?php echo get_post_meta($post->ID, $dirname.'_slide_caption_link_text', true); ?></a><?php } ?>
-							
-							<!-- END SLIDE LINK -->
-							
-														
-							<!-- BEGIN POST CONTENT -->
-							
-							<?php if($content_display == "full") { ?>	
-							
-								<?php global $more; $more = 0; the_content('&raquo;'); ?>
-								
-							<?php } else { ?>
-							
-								<?php if($excerpt_length != "0") { ?><p><?php echo excerpt($excerpt_length); ?></p><?php } ?>
-								
-							<?php } ?>
-							
-							<!-- END POST CONTENT -->
-
-
+							<?php do_shortcode(the_content()); ?>
 						</div>
 					
 					<?php } ?>
+					<!--End Caption-->
 					
-					<!-- END CAPTION -->
-									
-					
-					<!-- BEGIN CONTENT -->	
-					
+					<!--Begin Video-->
 					<?php if(get_post_meta($post->ID, $dirname.'_slide_video', true) OR get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true) OR get_post_meta($post->ID, $dirname.'_ogg_slide_video', true)) { ?>
 
+						<?php
+												
+						// Video Type	
+						$vimeo = strpos(get_post_meta($post->ID, $dirname.'_slide_video', true),"vimeo.com");
+						$yt1 = strpos(get_post_meta($post->ID, $dirname.'_slide_video', true),"youtube.com");
+						$yt2 = strpos(get_post_meta($post->ID, $dirname.'_slide_video', true),"youtu.be"); 
 						
-						<!-- VIDEO IMAGE-->
-
-						<?php $image = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)), $width, $height, true, true); ?>	
-						<?php if(get_option($dirname."_retina") == "0") { $retina = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)),  $width*2, $height*2, true, true); } else { $retina = ""; } ?>
-									
-						<?php if(wp_is_mobile()) { ?><a href="file=<?php if($is_gecko && get_post_meta($post->ID, $dirname.'_ogg_slide_video', true)) { echo get_post_meta($post->ID, $dirname.'_ogg_slide_video', true); } elseif(get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true)) { echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); } else { echo get_post_meta($post->ID, $dirname.'_slide_video', true); } ?>" rel="prettyPhoto"><?php } ?>
-								
-							<div class="video-image" id="<?php echo $name; ?>-slide-<?php the_ID(); ?>">
+						?>
 						
-								<div class="video-button"></div>
+						<div class="slide-video"<?php if(!$vimeo) { ?> style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;"<?php } ?>>
+						
+							<div class="play-video" id="<?php echo $name; ?>-play-video-<?php the_ID(); ?>"<?php if(!$vimeo) { ?> style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;"<?php } ?>>
 							
+								<div class="play-video-button"<?php if(!$vimeo) { ?> style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;"<?php } ?>></div>
+								
 								<?php if(has_post_thumbnail()) { ?>
-									<img src="<?php echo $image; ?>" data-rel="<?php echo $retina; ?>" style="width: <?php echo $width; ?>px;<?php if($hard_crop == "true") { ?> height: <?php echo $height; ?>px;<?php } ?>" alt="<?php if(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)) { echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); } else { echo get_the_title(); } ?>" />
-								<?php } ?>
+									<div class="<?php if(!$vimeo) { ?>slide-image<?php } ?>">
+										<div>
+											<?php $image = vt_resize(get_post_thumbnail_id(), $gp_settings['placeholder'], $width, $height, true); ?>
+                                            <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[0]; ?>" width="<?php echo $width; ?>" heigth="<?php echo $height; ?>" alt="<?php if(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)) { echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); } else { echo get_the_title(); } ?>" />	
+										</div>
+									</div>
+								<?php } ?>		
 								
 							</div>
 						
-						<?php if(wp_is_mobile()) { ?></a><?php } ?>
-						
-						<!-- END VIDEO IMAGE -->
-						
-						
-						<!-- BEGIN VIDEO -->
-
-						<?php if(!wp_is_mobile()) { ?>
-				
-							<?php if($vimeo) { ?>
-						
-						
-								<!-- BEGIN VIMEO VIDEO -->
+							<?php if($vimeo) { // Vimeo
 							
-								<?php if(preg_match('/www.vimeo/', get_post_meta($post->ID, $dirname.'_slide_video', true))) {							
-									$vimeoid = trim(get_post_meta($post->ID, $dirname.'_slide_video', true),'http://www.vimeo.com/');
-								} else {							
-									$vimeoid = trim(get_post_meta($post->ID, $dirname.'_slide_video', true),'http://vimeo.com/');
-								} ?>
+							// Vimeo Clip ID
+							if(preg_match('/www.vimeo/', get_post_meta($post->ID, $dirname.'_slide_video', true))) {							
+								$vimeoid = trim(get_post_meta($post->ID, $dirname.'_slide_video', true),'http://www.vimeo.com/');
+							} else {							
+								$vimeoid = trim(get_post_meta($post->ID, $dirname.'_slide_video', true),'http://vimeo.com/');
+							}
+							
+							?>
 
-								<div class="video-player">
-						
-									<iframe src="http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=<?php if($slide_counter != "1") { ?>0<?php } elseif(get_post_meta($post->ID, $dirname.'_slide_autostart_video', true)) { ?>1<?php } else { ?>0<?php } ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
+								<div class="video-player" style="padding-bottom: <?php echo($height / $width)*100; ?>%;">
+									<iframe src="http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=<?php if($slide_counter != "1") { ?>0<?php } elseif(get_post_meta($post->ID, $dirname.'_slide_autostart_video', true)) { ?>1<?php } else { ?>0<?php } ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 								</div>
-
-								<script>		
-								jQuery(window).load(function() {
-					
-									// Play Vimeo Player
-						
-									jQuery("#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-image").click(function(){
+								
+								<script>						
+								jQuery(window).load(function() { // Play Vimeo video
+									jQuery("#<?php echo $name; ?>-play-video-<?php the_ID(); ?>").click(function(){
 									  var thePage = jQuery("#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-player");
 									  thePage.html(thePage.html().replace('http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=0', 'http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=1'));
-									  jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-player').show();
 									});
-						
-									// Stop Vimeo Player
-						
-									jQuery("#<?php echo $name; ?> .flex-control-nav li a").click(function(){
+									jQuery("#<?php echo $name; ?> .prev, #<?php echo $name; ?> .next, #<?php echo $name; ?> .flex-control-nav li a").click(function(){ // Pause Vimeo video
 									  var thePage = jQuery("#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-player");
 									  thePage.html(thePage.html().replace('http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=1', 'http://player.vimeo.com/video/<?php echo $vimeoid; ?>?byline=0&amp;portrait=0&amp;autoplay=0'));
-									  jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-player').hide();
 									});
-						
 								});
-								</script>
-															
-								<!-- END VIMEO VIDEO -->
-														
-							
-							<?php } else { ?>								
-
+								</script>							
 								
-								<!-- BEGIN JWPLAYER VIDEO -->
-	
-								<div class="video-player">
-									<div id="<?php echo $name; ?>-player-<?php the_ID(); ?>" class="video-player"></div>															
-								</div>
+							<?php } else { // JW Player ?>								
+											
+								<?php if(($gp_settings['iPhone'] OR $gp_settings['iPad']) && (!$yt1 && !$yt2)) { ?>
+			
+									<video id="<?php echo $name; ?>-player-<?php the_ID(); ?>" class="video-player" controls="controls" poster="<?php $image = vt_resize(get_post_thumbnail_id(), $gp_settings['placeholder'], $width, $height, true); echo $image['url']; ?>" style="padding-bottom: <?php echo($height / $width)*100; ?>%; width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;">
+										<source src="<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>" type="video/mp4" />
+										<source src="<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>" type="video/webm" />
+										<source src="<?php echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); ?>" type="video/mp4" />
+										<source src="<?php echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); ?>" type="video/webm" />
+										<source src="<?php echo get_post_meta($post->ID, $dirname.'_ogg_slide_video', true); ?>" type="video/ogg" />
+									</video>
 								
-								<script>
-								//<![CDATA[
-
-								jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").setup({
-									image: "<?php echo get_template_directory_uri(); ?>/lib/images/black.gif",
-									icons: "true",
-									autostart: "<?php if($slide_counter != '1') { ?>false<?php } elseif(get_post_meta($post->ID, $dirname.'_slide_autostart_video', true)) { ?>true<?php } else { ?>false<?php } ?>",
-									stretching: "fill",
-									controlbar: "<?php if(get_post_meta($post->ID, $dirname.'_slide_video_controls', true) == 'Over') { ?>over<?php } elseif(get_post_meta($post->ID, $dirname.'_slide_video_controls', true) == 'Bottom') { ?>bottom<?php } else { ?>none<?php } ?>",
-									skin: "<?php echo get_template_directory_uri(); ?>/lib/scripts/mediaplayer/fs39/fs39.xml",
-									width: "100%",
-									height: "<?php echo $height; ?>",
-									screencolor: "000000",
-									modes:
-										[
-										<?php if($is_IE OR get_post_meta($post->ID, $dirname.'_slide_video_priority', true) == 'Flash') { ?>
-											{type: "flash", src: "<?php echo get_template_directory_uri(); ?>/lib/scripts/mediaplayer/player.swf", config: {file: "<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>"}},					
-											{type: "html5", config: {file: "<?php if($is_gecko && get_post_meta($post->ID, $dirname.'_ogg_slide_video', true)) { echo get_post_meta($post->ID, $dirname.'_ogg_slide_video', true); } elseif(get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true)) { echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); } else { echo get_post_meta($post->ID, $dirname.'_slide_video', true); } ?>"}}
-										<?php } else { ?>
-											{type: "html5", config: {file: "<?php if($is_gecko && get_post_meta($post->ID, $dirname.'_ogg_slide_video', true)) { echo get_post_meta($post->ID, $dirname.'_ogg_slide_video', true); } elseif(get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true)) { echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); } else { echo get_post_meta($post->ID, $dirname.'_slide_video', true); } ?>"}},
-											{type: "flash", src: "<?php echo get_template_directory_uri(); ?>/lib/scripts/mediaplayer/player.swf", config: {file: "<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>"}}
-										<?php } ?>
-										],
-									plugins: {}
-								});
-
-
-								// Play JW Player
+								<?php } else { ?>	
+								
+									<div class="video-player">
+										<div id="<?php echo $name; ?>-player-<?php the_ID(); ?>"></div>
+									</div>
 										
-								jQuery(document).ready(function(){
-									jQuery("#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-image").click(function() {
-										jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-player').show();
-										jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").play();
-									});	
-								});
-						
-						
-								// Stop JW Player
-						
-								jQuery(window).load(function() {	
-									jQuery("#<?php echo $name; ?> .flex-control-nav li a").click(function() {
-										if(jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").getState() === "PLAYING") {
-											jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-player').hide();
-											jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").stop();
-										}
+								<?php } ?>
+									
+								<script>
+								
+									//<![CDATA[
+	
+									jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").setup({
+										image: "<?php echo get_template_directory_uri(); ?>/lib/images/black.gif",
+										icons: "true",
+										autostart: "<?php if($slide_counter != '1') { ?>false<?php } elseif(get_post_meta($post->ID, $dirname.'_slide_autostart_video', true)) { ?>true<?php } else { ?>false<?php } ?>",
+										stretching: "fill",
+										controlbar: "<?php if(get_post_meta($post->ID, $dirname.'_slide_video_controls', true) == 'Over') { ?>over<?php } elseif(get_post_meta($post->ID, $dirname.'_slide_video_controls', true) == 'Bottom') { ?>bottom<?php } else { ?>none<?php } ?>",
+										skin: "<?php echo get_template_directory_uri(); ?>/lib/scripts/mediaplayer/fs39/fs39.xml",
+										height: <?php echo $height; ?>,
+										width: <?php echo $width; ?>,
+										screencolor: "000000",
+										modes:
+											[
+											<?php if($gp_settings['MSIE'] OR get_post_meta($post->ID, $dirname.'_slide_video_priority', true) == 'Flash') { ?>
+												{type: "flash", src: "<?php echo get_template_directory_uri(); ?>/lib/scripts/mediaplayer/player.swf", config: {file: "<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>"}},					
+												{type: "html5", config: {file: "<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>"<?php if(($gp_settings['iPhone'] OR $gp_settings['iPad']) && ($yt1 OR $yt2)) {} else { ?>, file: "<?php echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); ?>", file: "<?php echo get_post_meta($post->ID, $dirname.'_ogg_slide_video', true); ?>"<?php } ?>}}
+											<?php } else { ?>
+												{type: "html5", config: {file: "<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>"<?php if(($gp_settings['iPhone'] OR $gp_settings['iPad']) && ($yt1 OR $yt2)) {} else { ?>, file: "<?php echo get_post_meta($post->ID, $dirname.'_webm_mp4_slide_video', true); ?>", file: "<?php echo get_post_meta($post->ID, $dirname.'_ogg_slide_video', true); ?>"<?php } ?>}},	
+												{type: "flash", src: "<?php echo get_template_directory_uri(); ?>/lib/scripts/mediaplayer/player.swf", config: {file: "<?php echo get_post_meta($post->ID, $dirname.'_slide_video', true); ?>"}}
+											<?php } ?>
+											],
+										plugins: {}
 									});
+									
+									//]]>
+									
+									// Play JW Player						
+									jQuery(document).ready(function(){
+										jQuery("#<?php echo $name; ?>-play-video-<?php the_ID(); ?>").click(function() {
+											jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").play();	
+										});	
+									});
+									
+									// Stop JW Player
+									jQuery(window).load(function() {	
+										jQuery("#<?php echo $name; ?> .prev, #<?php echo $name; ?> .next, #<?php echo $name; ?> .flex-control-nav li a").click(function() {
+											if(jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").getState() === "PLAYING") {
+												jwplayer("<?php echo $name; ?>-player-<?php the_ID(); ?>").stop();
+											}
+										});
+									});	
+						
+								</script>
+								
+							<?php } ?>
+							
+							<script>
+							jQuery(document).ready(function(){
+		
+								// Hide Play Button
+								jQuery("#<?php echo $name; ?>-play-video-<?php the_ID(); ?>").click(function() {
+									jQuery('#<?php echo $name; ?>-play-video-<?php the_ID(); ?>').hide();
+									jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .caption').hide();
 								});
 								
-														
-								//]]>
-								</script>
-							
-								<!-- END JWPLAYER VIDEO -->
-						
-						
-							<?php } ?>
-
-						<?php } ?>
-
-						<!-- END VIDEO -->
-
-							
-						<?php if(!wp_is_mobile()) { ?>
-						
-							<script>
-						
-							jQuery(document).ready(function() {
-						
-								// Hide Video Image/Play Button
-
-								jQuery("#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-image").click(function() {
-									jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .video-image').hide();
-									jQuery('#<?php echo $name; ?>-slide-<?php the_ID(); ?> .caption').hide();
-								});	
-
 							});	
-							
 							</script>
-								
-						<?php } ?>	
-
-
+						
+						</div>
+						<!--End Video-->
+	
 					<?php } else { ?>
 					
-						
-						<!-- BEGIN FEATURED IMAGE -->
+						<!--Begin Image-->
+																														
+							<?php $image = vt_resize(get_post_thumbnail_id(), $gp_settings['placeholder'], 9999, 9999, true); ?>
 							
-						<?php if(has_post_thumbnail()) { ?>
-						
-							<?php if(get_post_meta($post->ID, $dirname.'_custom_url', true) OR get_post_meta($post->ID, $dirname.'_link_type', true) != "None") { ?>
-							<a href="<?php if(get_post_meta($post->ID, $dirname.'_link_type', true) == "Lightbox Video") { ?>file=<?php echo get_post_meta($post->ID, $dirname.'_custom_url', true); } elseif(get_post_meta($post->ID, $dirname.'_link_type', true) == "Lightbox Image") { if(get_post_meta($post->ID, $dirname.'_custom_url', true)) { echo get_post_meta($post->ID, $dirname.'_custom_url', true); } else { echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); }} else { if(get_post_meta($post->ID, $dirname.'_custom_url', true)) { echo get_post_meta($post->ID, $dirname.'_custom_url', true); } else { the_permalink(); }} ?>" title="<?php the_title(); ?>"<?php if(get_post_meta($post->ID, $dirname.'_link_type', true) == "Lightbox Image" OR get_post_meta($post->ID, $dirname.'_link_type', true) == "Lightbox Video") { ?> rel="prettyPhoto[<?php echo $name; the_ID(); ?>]"<?php } ?>>
+							<?php if(get_post_meta($post->ID, $dirname.'_slide_url', true) OR  get_post_meta($post->ID, $dirname.'_slide_link_type', true) != "Page") { ?>
+							<?php $image = vt_resize(get_post_thumbnail_id(), $gp_settings['placeholder'], 9999, 9999, true); ?>
+							<a href="<?php if(get_post_meta($post->ID, $dirname.'_slide_link_type', true) == "Lightbox Video") { ?>file=<?php echo get_post_meta($post->ID, $dirname.'_slide_url', true); } elseif(get_post_meta($post->ID, $dirname.'_slide_link_type', true) == "Lightbox Image") { if(get_post_meta($post->ID, $dirname.'_slide_url', true)) { echo get_post_meta($post->ID, $dirname.'_slide_url', true); } else { echo $image['url']; }} else { if(get_post_meta($post->ID, $dirname.'_slide_url', true)) { echo get_post_meta($post->ID, $dirname.'_slide_url', true); } else { the_permalink(); }} ?>" title="<?php the_title(); ?>"<?php if(get_post_meta($post->ID, $dirname.'_slide_link_type', true) != "Page") { ?> rel="prettyPhoto"<?php } ?>>
 							<?php } ?>
+																																															
+								<?php $image = vt_resize(get_post_thumbnail_id(), $gp_settings['placeholder'], $width, $height, true); ?>
+								<?php if(get_post_meta($post->ID, $dirname.'_slide_link_type', true) == "Lightbox Image") { ?><span class="hover-image"></span><?php } elseif(get_post_meta($post->ID, $dirname.'_slide_link_type', true) == "Lightbox Video") { ?><span class="hover-video"></span><?php } ?>							
 								
-								<?php if(get_post_meta($post->ID, $dirname.'_link_type', true) == "Lightbox Image" OR get_post_meta($post->ID, $dirname.'_link_type', true) == "Lightbox Video") { ?><span class="lightbox-hover icon-plus"></span><?php } ?>							
-																																																											
-								<?php $image = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)), $width, $height, true, true); ?>	
-								<?php if(get_option($dirname."_retina") == "0") { $retina = aq_resize(wp_get_attachment_url(get_post_thumbnail_id($post->ID)),  $width*2, $height*2, true, true); } else { $retina = ""; } ?>		
-									
-								<img src="<?php echo $image; ?>" data-rel="<?php echo $retina; ?>" style="width: <?php echo $width; ?>px;<?php if($hard_crop == "true") { ?> height: <?php echo $height; ?>px;<?php } ?>" alt="<?php if(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)) { echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); } else { echo get_the_title(); } ?>" />
+								<img src="<?php echo $image['url']; ?>" alt="<?php if(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)) { echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); } else { echo get_the_title(); } ?>" />
 								
-							<?php if(get_post_meta($post->ID, $dirname.'_custom_url', true) OR  get_post_meta($post->ID, $dirname.'_link_type', true) != "None") { ?></a><?php } ?>	
-					
-						<?php } ?>
-													
-						<!-- END FEATURED IMAGE -->
-						
-
-						<!-- BEGIN LIGHTBOX IMAGES -->
-				
-						<?php $args = array('post_type' => 'attachment', 'post_parent' => $post->ID, 'numberposts' => -1, 'orderby' => 'menu_order', 'order' => 'asc', 'post__not_in'	=> array(get_post_thumbnail_id())); $attachments = get_children($args); if($attachments) { foreach ($attachments as $attachment) { ?>
-				
-							<a href="<?php if(get_post_meta($attachment->ID, '_'.$dirname.'_lightbox_url', true)) { ?>file=<?php echo get_post_meta($attachment->ID, '_'.$dirname.'_lightbox_url', true); } else { echo wp_get_attachment_url($attachment->ID); } ?>" rel="prettyPhoto[<?php echo $name; the_ID(); ?>]" title="<?php echo $attachment->post_content; ?>" style="display: none;"><img src="" alt="<?php echo $attachment->post_title; ?>"></a>
-				
-						<?php }} ?>
-				
-						<!-- END LIGHTBOX IMAGES -->
-				
-					
+							<?php if(get_post_meta($post->ID, $dirname.'_slide_url', true) OR  get_post_meta($post->ID, $dirname.'_slide_link_type', true) != "Page") { ?></a><?php } ?>	
+							
+						<!--End Image-->	
+	
 					<?php } ?>
-					
-					<!-- END CONTENT -->
-					
 
 				</li>
 
 			<?php endwhile; ?>
 		
-		</ul>
+			</ul>
+			<!--End Slider-->
 		
-		<!-- END SLIDER -->
+		</div>
+		<!--End Slider Wrapper-->
+
+	<?php else : ?>
 		
-	
-	</div>
-	
-	<!-- END SLIDER WRAPPER -->
-		
+		<div class="columns one last separate"><div><?php _e('Oops, you haven\'t set your slider up correctly. Make sure you have created some slides from Slides -> Add New and if you are using slide categories get the category IDs from ID column from Slides -> Slide Categories.', 'gp_lang'); ?></div></div>
 		
 	<?php endif; wp_reset_query(); ?>
-		
 		
 	<script>
 	jQuery(document).ready(function(){
@@ -427,51 +306,31 @@ function gp_slider($atts, $content = null) {
 			controlNav: <?php if($buttons == "true") { ?>true<?php } else { ?>false<?php } ?>,				
 			pauseOnAction: true, 
 			pauseOnHover: false,
-			touch: true,
+			touch: false,
 			start: function(slider) {
 
 				// Pause Slider
-				jQuery("#<?php echo $name; ?> .flex-control-nav li a, #<?php echo $name; ?> .video-image").click(function() { 
+				jQuery("#<?php echo $name; ?> .flex-control-nav li a, #<?php echo $name; ?> .play-video").click(function() { 
 					slider.pause(); 
 				});
 											
 				// Resume Slider
-				jQuery("#<?php echo $name; ?> .flex-prev, #<?php echo $name; ?> .flex-next").click(function() {
+				jQuery("#<?php echo $name; ?> .prev, #<?php echo $name; ?> .next").click(function() {
 					slider.resume();
 				});
 		
 			}
 		});	
 
-		// Resize Video Player
-	
-		jQuery(window).load(function(){
-			resizePlayer();
-			jQuery(window).resize(function() {
-				resizePlayer();
-			});	
-		});
-
-		function resizePlayer() {
-			parentContainer = jQuery("#<?php echo $name; ?> .slides").parent().attr('id');
-			sliderWidth = jQuery('#'+parentContainer).width();
-			newVideoWidth = sliderWidth;
-			newVideoHeight = (sliderWidth * <?php echo $height; ?>) / <?php echo $width; ?>;
-			jQuery(".flexslider .slides > li, .flexslider .video-image, .flexslider iframe, .flexslider video, .flexslider object, .flexslider embed").width(newVideoWidth).height(newVideoHeight);						
-		}
-
-								
-		// Show All Video Images & Captions
-
-		jQuery("#<?php echo $name; ?> .flex-control-nav li a").click(function() {
-			jQuery('#<?php echo $name; ?> .video-image').show();
-			jQuery('#<?php echo $name; ?> .video-player').hide();
+		// Show Play Button
+		jQuery("#<?php echo $name; ?> .prev, #<?php echo $name; ?> .next, #<?php echo $name; ?> .flex-control-nav li a").click(function() {
+			jQuery('#<?php echo $name; ?> .play-video').show();
 			jQuery('#<?php echo $name; ?> .caption').show();
-		});	
+		});
 		
-	});			
-	</script>
+	});
 	
+	</script>
 	
 <?php
 

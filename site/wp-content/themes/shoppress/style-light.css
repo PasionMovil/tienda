@@ -55,6 +55,11 @@ background: linear-gradient(to right, #fff 0%,#fff 50%,#eee 50.1%,#eee 100%);
 box-shadow: none;
 }
 
+/* Logo */
+.default-logo {
+background-image: url(lib/images/logo-light.png);
+}
+
 /* Header Right */
 #header-right {
 background: #eee;
@@ -135,12 +140,12 @@ border-color: #31c8ff;
 
 /* Buttons */
 .sc-button {
-color: #fff;
+color: #000;
 background-color: #31c8ff;
 }
 .sc-button:hover {
-color: #fff;
-background-color: #2ebaed;
+color: #000;
+background-color: #ffd200;
 }
 
 
@@ -224,7 +229,8 @@ background-color: #31c8ff;
 }
 
 /* Single Product Page */
-div.product div.images img:hover {
+div.product div.images img:hover,
+#content div.product div.images img:hover {
 background-color: #31c8ff;
 }
 
@@ -236,26 +242,30 @@ color: #31c8ff;
 
 /* Stock Quantity */
 .quantity .plus,
-.quantity .minus {
+#content .quantity .plus,
+.quantity .minus,
+#content .quantity .minus {
 color: #31c8ff;
 }
-.quantity .plus:hover
-.quantity .minus:hover {
+.quantity .plus:hover,
+#content .quantity .plus:hover,
+.quantity .minus:hover,
+#content .quantity .minus:hover {
 background-color: #31c8ff;
 }
 
 /* Product Tabs */
 div.product .woocommerce_tabs ul.tabs,
-div.product .woocommerce-tabs ul.tabs {
+#content div.product .woocommerce_tabs ul.tabs {
 border-color: #31c8ff;
 }
 div.product .woocommerce_tabs ul.tabs li.active a,
-div.product .woocommerce-tabs ul.tabs li.active a {
+#content div.product .woocommerce_tabs ul.tabs li.active a {
 color: #31c8ff;
 }
 
 /* Related Products */
-div.product .products h2 {
+div.product .related.products h2 {
 border-color: #31c8ff;
 }
 

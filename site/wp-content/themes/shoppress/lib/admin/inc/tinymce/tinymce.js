@@ -98,7 +98,7 @@ function insertgpLink() {
 		
 		// Images
 		if (styleid != 0 && styleid == 'image') {
-			tagtext = '['+ styleid + ' url="" width="" height="" link="" target="_self" border="false" align="alignleft" margins="" alt="" title="" lightbox="none" preload="false" caption="" caption_position="caption-bottomleft" caption_size="" caption_link="" caption_link_text="View &raquo;"	]';	
+			tagtext = '['+ styleid + ' url="" width="" height="" link="" target="_self" border="false" align="alignleft" margins="" alt="" title="" lightbox="none" preload="false"]';	
 		}
 		
 		// Lists
@@ -118,7 +118,7 @@ function insertgpLink() {
 		
 		// Posts
 		if (styleid != 0 && styleid == 'posts') {
-			tagtext = '['+ styleid + ' cats="" images="true" image_width="670" image_height="250" image_wrap="false" hard_crop="false" cols="1" per_page="5" link="both" orderby="date" order="desc" offset="0" content_display="excerpt" excerpt_length="400" title="true" title_size="" title_font="" meta="true" read_more="true" pagination="true" preload="false" spacing="spacing-normal"]';	
+			tagtext = '['+ styleid + ' cats="" images="true" image_width="670" image_height="250" image_wrap="false" cols="1" per_page="5" link="both" orderby="date" order="desc" offset="0" content_display="excerpt" excerpt_length="400" title="true" title_size="" title_font="" meta="true" read_more="true" pagination="true" preload="false" spacing="spacing-normal"]';	
 		}
 
 		// Register Form
@@ -128,7 +128,7 @@ function insertgpLink() {
 
 		// Related Posts
 		if (styleid != 0 && styleid == 'related_posts') {
-			tagtext = '['+ styleid + ' id="" cats="" images="true" image_width="153" image_height="90" image_wrap="false" hard_crop="false" cols="3" per_page="3" link="both" orderby="random" order="desc" offset="0" content_display="excerpt" excerpt_length="0" title="true" title_size="12" title_font="" meta="false" read_more="false" preload="false" spacing="spacing-normal"]';	
+			tagtext = '['+ styleid + ' id="" cats="" images="true" image_width="153" image_height="90" image_wrap="false" cols="3" per_page="3" link="both" orderby="random" order="desc" offset="0" content_display="excerpt" excerpt_length="0" title="true" title_size="12" title_font="" meta="false" read_more="false" pagination="false" preload="false" spacing="spacing-normal"]';	
 		}
 		
 		// Sidebar
@@ -138,7 +138,7 @@ function insertgpLink() {
 
 		// Slider
 		if (styleid != 0 && styleid == 'slider') {
-			tagtext = '['+ styleid + ' content="slide" cats="" ids="" width="720" height="450" hard_crop="false" slides="-1" timeout="6" orderby="menu_order" order="asc" arrows="false" buttons="true" shadow="false" content_display="excerpt" excerpt_length="0" title="true" title_length="40" margins="" align="alignleft" preload="false"]';	
+			tagtext = '['+ styleid + ' name="slider" width="661" height="450" cats="" slides="-1" timeout="6" orderby="menu_order" order="asc" arrows="false" buttons="true" shadow="false" margins="" align="alignleft" preload="false"]';	
 		}
 		
 		// Tabs
@@ -159,7 +159,7 @@ function insertgpLink() {
 		
 		// Video
 		if (styleid != 0 && styleid == 'video') {
-			tagtext = '['+ styleid + ' url="" html5_1="" html5_2="" priority="flash" image="" width="560" height="315" align="alignnone" controlbar="bottom" autostart="false" stretching="fill" icons="true"]';	
+			tagtext = '['+ styleid + ' name="video" url="" html5_1="" html5_2="" priority="flash" image="" width="560" height="315" align="alignnone" controlbar="bottom" autostart="false" stretching="fill" icons="true"]';	
 		}
 		
 		// Columns

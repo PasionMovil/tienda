@@ -1,9 +1,10 @@
 <?php
 
+
 /////////////////////////////////////// Enqueue Styles ///////////////////////////////////////
 
 
-define('WOOCOMMERCE_USE_CSS', false);			
+define('WOOCOMMERCE_USE_CSS', false);
 
 function gp_woocommerce_styles() { 
 	if(!is_admin()) { 	
@@ -11,8 +12,8 @@ function gp_woocommerce_styles() {
 	}		
 }
 add_action('wp_print_styles', 'gp_woocommerce_styles');
-	
-			
+
+		
 /////////////////////////////////////// Enqueue Scripts ///////////////////////////////////////
 
 
@@ -21,20 +22,26 @@ function gp_woocommerce_scripts() {
 		wp_enqueue_script('gp-woocommerce-js', get_template_directory_uri().'/woocommerce/woocommerce.js', array('jquery'));
 	}
 }
-add_action('wp_enqueue_scripts', 'gp_woocommerce_scripts');
-	
-					
+add_action('wp_print_scripts', 'gp_woocommerce_scripts');
+
+				
 /////////////////////////////////////// Number of products per row ///////////////////////////////////////
 
 
 if(!is_admin()) { 
 
-	require(gp_inc . 'options.php'); global $gp_settings, $woocommerce_loop;
+	global $gp_settings, $woocommerce_loop;
+	require(gp_inc . 'options.php');
 
-	if($gp_settings['iphone']) {
+	if((stripos($_SERVER['HTTP_USER_AGENT'],'iPhone') !== false)) { // iPhone
 
-		$woocommerce_loop['columns'] = 1;
-		$gp_settings['product_columns_class'] = " shop-columns-1";	
+		if(get_option($dirname.'_product_cat_columns') == "1") { 
+			$woocommerce_loop['columns'] = 1;
+			$gp_settings['product_columns_class'] = " shop-columns-1";	
+		} else { 
+			$woocommerce_loop['columns'] = 2;
+			$gp_settings['product_columns_class'] = " shop-columns-2";
+		}
 	
 	} else { // Other Devices
 
@@ -57,14 +64,6 @@ if(!is_admin()) {
 			
 	}
 	
-}
-
-
-/////////////////////////////////////// Number of related products ///////////////////////////////////////
-
-
-function woocommerce_output_related_products() {
-	woocommerce_related_products(5,5); // Display 5 products in rows of 5
 }
 
 
@@ -97,7 +96,7 @@ function gp_dropdown_plugin_installed() {
     
 	if(function_exists('dropdowncart_scripts')) { ?>
 	
-		<div class="error"><p><?php _e('Woocommerce Dropdown Cart Widget is already built into this theme, please deactivate this plugin.', 'gp_lang'); ?></p></div>
+		<div class="error"><p><?php _e('Woocommerce Dropdown Cart Widget is already built into this theme, please deactivate this plugin.', 'gp-lang'); ?></p></div>
 		
 	<?php }
 }
@@ -410,7 +409,7 @@ function gp_wc_head() {
 				<script type="text/javascript">
 				
 				jQuery(document).ready(function($){
-					$('a.czoom').unbind('click.fb');
+					$('a.zoom').unbind('click.fb');
 					$thumbnailsContainer = $('.product .thumbnails');
 					$thumbnails = $('a', $thumbnailsContainer);
 					$productImages = $('.product .images>a');

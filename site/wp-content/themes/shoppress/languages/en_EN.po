@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ShopPress\n"
+"Project-Id-Version: Bounce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 14:17-0000\n"
-"PO-Revision-Date: 2013-04-03 14:17-0000\n"
+"POT-Creation-Date: 2013-01-02 22:00-0000\n"
+"PO-Revision-Date: 2013-01-02 22:00-0000\n"
 "Last-Translator: GhostPool\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,237 +11,237 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ./\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:18 ../functions.php:369
+#: ../404.php:5 ../functions.php:495
 msgid "Page Not Found"
 msgstr ""
 
-#: ../404.php:25
+#: ../404.php:7
 msgid ""
 "Oops, it looks like this page does not exist. If you are lost try using the "
 "search box."
 msgstr ""
 
-#: ../404.php:29 ../post-loop.php:164
+#: ../404.php:11 ../post-loop.php:101
 msgid "Search The Site"
 msgstr ""
 
-#: ../comments.php:30
+#: ../comments.php:32
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../comments.php:30
+#: ../comments.php:32
 msgid "Reply"
 msgstr ""
 
-#: ../comments.php:38
+#: ../comments.php:40
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../comments.php:54
+#: ../comments.php:56
 msgid "No Comments"
 msgstr ""
 
-#: ../comments.php:54
+#: ../comments.php:56
 msgid "1 Comment"
 msgstr ""
 
-#: ../comments.php:54
+#: ../comments.php:56
 msgid "% Comments"
 msgstr ""
 
-#: ../comments.php:66
+#: ../comments.php:68
 msgid "Comments are now closed on this post."
 msgstr ""
 
-#: ../footer.php:106
+#: ../footer.php:98
 msgid "Copyright &copy;"
 msgstr ""
 
-#: ../footer.php:106
-msgid "GhostPool.com"
-msgstr ""
-
-#: ../footer.php:106
+#: ../footer.php:98
 msgid "All rights reserved."
 msgstr ""
 
-#: ../functions.php:192
+#: ../functions.php:334
 msgid "Header Navigation"
 msgstr ""
 
-#: ../functions.php:193
+#: ../functions.php:335
 msgid "Body Navigation"
 msgstr ""
 
-#: ../functions.php:334
+#: ../functions.php:460
 msgid "Home"
 msgstr ""
 
-#: ../functions.php:350 ../searchform.php:5
+#: ../functions.php:476 ../searchform.php:8
 msgid "Search"
 msgstr ""
 
-#: ../functions.php:365 ../lib/admin/inc/theme-options.php:109
+#: ../functions.php:491 ../lib/admin/inc/theme-options.php:99
 msgid "Posts"
 msgstr ""
 
-#: ../functions.php:408 ../lib/admin/inc/theme-meta-options.php:52
-#: ../lib/admin/inc/theme-meta-options.php:165
+#: ../functions.php:534 ../lib/admin/inc/theme-meta-options.php:48
+#: ../lib/admin/inc/theme-meta-options.php:157
 msgid "Page"
 msgstr ""
 
-#: ../functions.php:408
+#: ../functions.php:534
 msgid "of"
 msgstr ""
 
-#: ../header.php:105
+#: ../functions.php:583
+msgid "Audio/Video URL"
+msgstr ""
+
+#: ../functions.php:586 ../lib/admin/inc/theme-meta-options.php:164
+msgid "The URL of your video or audio file (YouTube/Vimeo/FLV/MP4/M4V/MP3)."
+msgstr ""
+
+#: ../header.php:74
 msgid "RSS Feed"
 msgstr ""
 
-#: ../header.php:107
+#: ../header.php:76
 msgid "Twitter"
 msgstr ""
 
-#: ../header.php:109
+#: ../header.php:78
 msgid "Facebook"
 msgstr ""
 
-#: ../header.php:111
+#: ../header.php:80
 msgid "Digg"
 msgstr ""
 
-#: ../header.php:113
+#: ../header.php:82
 msgid "Delicious"
 msgstr ""
 
-#: ../header.php:115
+#: ../header.php:84
 msgid "Dribbble"
 msgstr ""
 
-#: ../header.php:117
+#: ../header.php:86
 msgid "YouTube"
 msgstr ""
 
-#: ../header.php:119
+#: ../header.php:88
 msgid "Vimeo"
 msgstr ""
 
-#: ../header.php:121
+#: ../header.php:90
 msgid "LinkedIn"
 msgstr ""
 
-#: ../header.php:123
+#: ../header.php:92
 msgid "Google+"
 msgstr ""
 
-#: ../header.php:125
+#: ../header.php:94
 msgid "MySpace"
 msgstr ""
 
-#: ../header.php:127
+#: ../header.php:96
 msgid "Flickr"
 msgstr ""
 
-#: ../header.php:129
+#: ../header.php:98
 msgid "Pinterest"
 msgstr ""
 
-#: ../index.php:8
+#: ../index.php:5
 msgid "Why Am I Seeing This Page?"
 msgstr ""
 
-#: ../index.php:12
+#: ../index.php:9
 msgid "Go to"
 msgstr ""
 
-#: ../index.php:12
+#: ../index.php:9
 msgid "<em>Settings -> Reading</em>"
 msgstr ""
 
-#: ../index.php:12
+#: ../index.php:9
 msgid ""
 ", select \"A static page\" option and from the \"Front page\" drop down menu "
 "select the desired page (leave the Posts page drop down menu empty)."
 msgstr ""
 
-#: ../index.php:16
+#: ../index.php:13
 msgid "For more info on setting up the theme please read the"
 msgstr ""
 
-#: ../index.php:16
+#: ../index.php:13
 msgid "help file"
 msgstr ""
 
-#: ../page-list.php:42 ../page.php:38 ../post-loop.php:108 ../register.php:39
-#: ../single.php:38 ../lib/admin/inc/shortcodes/posts.php:224
-#: ../lib/admin/inc/shortcodes/related-posts.php:220
+#: ../page-list.php:24 ../page.php:24 ../post-loop.php:73 ../single.php:20
+#: ../lib/admin/inc/shortcodes/posts.php:181
+#: ../lib/admin/inc/shortcodes/related-posts.php:177
 msgid "0"
 msgstr ""
 
-#: ../page-list.php:42 ../page.php:38 ../post-loop.php:108 ../register.php:39
-#: ../single.php:38 ../lib/admin/inc/theme-options.php:609
-#: ../lib/admin/inc/shortcodes/posts.php:224
-#: ../lib/admin/inc/shortcodes/related-posts.php:220
+#: ../page-list.php:24 ../page.php:24 ../post-loop.php:73 ../single.php:20
+#: ../lib/admin/inc/theme-options.php:568
+#: ../lib/admin/inc/shortcodes/posts.php:181
+#: ../lib/admin/inc/shortcodes/related-posts.php:177
 msgid "1"
 msgstr ""
 
-#: ../page-list.php:42 ../page.php:38 ../post-loop.php:108 ../register.php:39
-#: ../single.php:38 ../lib/admin/inc/shortcodes/posts.php:224
-#: ../lib/admin/inc/shortcodes/related-posts.php:220
+#: ../page-list.php:24 ../page.php:24 ../post-loop.php:73 ../single.php:20
+#: ../lib/admin/inc/shortcodes/posts.php:181
+#: ../lib/admin/inc/shortcodes/related-posts.php:177
 msgid "%"
 msgstr ""
 
-#: ../post-loop.php:21
+#: ../post-loop.php:8
 msgid "search results for"
 msgstr ""
 
-#: ../post-loop.php:27
-msgid "'s Posts"
-msgstr ""
-
-#: ../post-loop.php:29
+#: ../post-loop.php:16
 msgid "Archives"
 msgstr ""
 
-#: ../post-loop.php:160
+#: ../post-loop.php:97
 msgid "Try searching again using the search form below."
 msgstr ""
 
-#: ../register.php:75
+#: ../register.php:33
 msgid "You are already registered."
 msgstr ""
 
-#: ../register.php:85 ../lib/admin/inc/shortcodes/login-form.php:7
+#: ../register.php:38 ../lib/admin/inc/shortcodes/login-form.php:7
 #: ../lib/admin/inc/shortcodes/register-form.php:7
 msgid "Username"
 msgstr ""
 
-#: ../register.php:88 ../lib/admin/inc/shortcodes/contact-form.php:50
+#: ../register.php:41 ../lib/admin/inc/shortcodes/contact-form.php:50
 #: ../lib/admin/inc/shortcodes/register-form.php:8
 msgid "Email"
 msgstr ""
 
-#: ../register.php:92
+#: ../register.php:45
 msgid "Your password will be emailed to you."
 msgstr ""
 
-#: ../register.php:93 ../lib/admin/inc/shortcodes/register-form.php:27
+#: ../register.php:46 ../lib/admin/inc/shortcodes/register-form.php:27
 msgid "Register"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:9
-#: ../lib/admin/inc/theme-options.php:636
-#: ../lib/admin/inc/theme-options.php:643
+#: ../lib/admin/inc/theme-options.php:595
+#: ../lib/admin/inc/theme-options.php:602
 msgid "Post Settings"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:10
-#: ../lib/admin/inc/theme-options.php:854
-#: ../lib/admin/inc/theme-options.php:861
+#: ../lib/admin/inc/theme-options.php:804
+#: ../lib/admin/inc/theme-options.php:811
 msgid "Page Settings"
 msgstr ""
 
@@ -254,730 +254,706 @@ msgid "Product Settings"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:24
-#: ../lib/admin/inc/theme-meta-options.php:98
+#: ../lib/admin/inc/theme-meta-options.php:94
 msgid ""
 "Controls the thumbnails used on category, archive, tag and search result "
 "pages."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:24
-#: ../lib/admin/inc/theme-meta-options.php:98
+#: ../lib/admin/inc/theme-meta-options.php:94
 msgid "Thumbnail Settings"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:26
-#: ../lib/admin/inc/theme-meta-options.php:100
-#: ../lib/admin/inc/theme-options.php:338
+#: ../lib/admin/inc/theme-meta-options.php:96
+#: ../lib/admin/inc/theme-options.php:306
 msgid "Thumbnail Width"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:26
-#: ../lib/admin/inc/theme-meta-options.php:100
+#: ../lib/admin/inc/theme-meta-options.php:96
 msgid ""
 "The width to crop the thumbnail to (set to 0 to have a proportionate width)."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:28
-#: ../lib/admin/inc/theme-meta-options.php:102
-#: ../lib/admin/inc/theme-options.php:348
+#: ../lib/admin/inc/theme-meta-options.php:98
+#: ../lib/admin/inc/theme-options.php:316
 msgid "Thumbnail Height"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:28
-#: ../lib/admin/inc/theme-meta-options.php:102
+#: ../lib/admin/inc/theme-meta-options.php:98
 msgid ""
 "The height to crop the thumbnail to (set to 0 to have a proportionate "
 "height)."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:33
-#: ../lib/admin/inc/theme-meta-options.php:107
-#: ../lib/admin/inc/theme-meta-options.php:216
+#: ../lib/admin/inc/theme-meta-options.php:103
+#: ../lib/admin/inc/theme-meta-options.php:208
 msgid "Controls the featured image displayed within this page."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:33
-#: ../lib/admin/inc/theme-meta-options.php:107
-#: ../lib/admin/inc/theme-meta-options.php:216
+#: ../lib/admin/inc/theme-meta-options.php:103
+#: ../lib/admin/inc/theme-meta-options.php:208
 msgid "Image Settings"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:35
-#: ../lib/admin/inc/theme-meta-options.php:109
-#: ../lib/admin/inc/theme-options.php:652
-#: ../lib/admin/inc/theme-options.php:870
+#: ../lib/admin/inc/theme-meta-options.php:105
+#: ../lib/admin/inc/theme-options.php:611
+#: ../lib/admin/inc/theme-options.php:820
 msgid "Featured Image"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:35
-#: ../lib/admin/inc/theme-meta-options.php:109
+#: ../lib/admin/inc/theme-meta-options.php:105
 msgid "Choose whether to display the featured image within your page."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:35
 #: ../lib/admin/inc/theme-meta-options.php:41
-#: ../lib/admin/inc/theme-meta-options.php:45
+#: ../lib/admin/inc/theme-meta-options.php:61
+#: ../lib/admin/inc/theme-meta-options.php:63
 #: ../lib/admin/inc/theme-meta-options.php:65
-#: ../lib/admin/inc/theme-meta-options.php:67
 #: ../lib/admin/inc/theme-meta-options.php:69
+#: ../lib/admin/inc/theme-meta-options.php:71
 #: ../lib/admin/inc/theme-meta-options.php:73
-#: ../lib/admin/inc/theme-meta-options.php:75
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:109
-#: ../lib/admin/inc/theme-meta-options.php:115
-#: ../lib/admin/inc/theme-meta-options.php:119
+#: ../lib/admin/inc/theme-meta-options.php:105
+#: ../lib/admin/inc/theme-meta-options.php:111
+#: ../lib/admin/inc/theme-meta-options.php:120
+#: ../lib/admin/inc/theme-meta-options.php:122
+#: ../lib/admin/inc/theme-meta-options.php:124
 #: ../lib/admin/inc/theme-meta-options.php:128
 #: ../lib/admin/inc/theme-meta-options.php:130
 #: ../lib/admin/inc/theme-meta-options.php:132
-#: ../lib/admin/inc/theme-meta-options.php:136
-#: ../lib/admin/inc/theme-meta-options.php:138
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:218
+#: ../lib/admin/inc/theme-meta-options.php:210
+#: ../lib/admin/inc/theme-meta-options.php:219
+#: ../lib/admin/inc/theme-meta-options.php:221
+#: ../lib/admin/inc/theme-meta-options.php:223
 #: ../lib/admin/inc/theme-meta-options.php:227
 #: ../lib/admin/inc/theme-meta-options.php:229
 #: ../lib/admin/inc/theme-meta-options.php:231
-#: ../lib/admin/inc/theme-meta-options.php:235
-#: ../lib/admin/inc/theme-meta-options.php:237
 msgid "Default"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:35
-#: ../lib/admin/inc/theme-meta-options.php:67
+#: ../lib/admin/inc/theme-meta-options.php:63
+#: ../lib/admin/inc/theme-meta-options.php:65
 #: ../lib/admin/inc/theme-meta-options.php:69
-#: ../lib/admin/inc/theme-meta-options.php:73
-#: ../lib/admin/inc/theme-meta-options.php:75
-#: ../lib/admin/inc/theme-meta-options.php:109
+#: ../lib/admin/inc/theme-meta-options.php:71
+#: ../lib/admin/inc/theme-meta-options.php:105
+#: ../lib/admin/inc/theme-meta-options.php:122
+#: ../lib/admin/inc/theme-meta-options.php:124
+#: ../lib/admin/inc/theme-meta-options.php:128
 #: ../lib/admin/inc/theme-meta-options.php:130
-#: ../lib/admin/inc/theme-meta-options.php:132
-#: ../lib/admin/inc/theme-meta-options.php:136
-#: ../lib/admin/inc/theme-meta-options.php:138
+#: ../lib/admin/inc/theme-meta-options.php:221
+#: ../lib/admin/inc/theme-meta-options.php:223
+#: ../lib/admin/inc/theme-meta-options.php:227
 #: ../lib/admin/inc/theme-meta-options.php:229
-#: ../lib/admin/inc/theme-meta-options.php:231
-#: ../lib/admin/inc/theme-meta-options.php:235
-#: ../lib/admin/inc/theme-options.php:404
-#: ../lib/admin/inc/theme-options.php:415
-#: ../lib/admin/inc/theme-options.php:426
-#: ../lib/admin/inc/theme-options.php:437
-#: ../lib/admin/inc/theme-options.php:565
-#: ../lib/admin/inc/theme-options.php:576
-#: ../lib/admin/inc/theme-options.php:587
-#: ../lib/admin/inc/theme-options.php:598
-#: ../lib/admin/inc/theme-options.php:620
-#: ../lib/admin/inc/theme-options.php:631
-#: ../lib/admin/inc/theme-options.php:657
-#: ../lib/admin/inc/theme-options.php:727
-#: ../lib/admin/inc/theme-options.php:738
-#: ../lib/admin/inc/theme-options.php:749
-#: ../lib/admin/inc/theme-options.php:760
-#: ../lib/admin/inc/theme-options.php:875
-#: ../lib/admin/inc/theme-options.php:945
-#: ../lib/admin/inc/theme-options.php:956
-#: ../lib/admin/inc/theme-options.php:967
-#: ../lib/admin/inc/theme-options.php:978
-#: ../lib/admin/inc/theme-options.php:1076
-#: ../lib/admin/inc/theme-options.php:1087
-#: ../lib/admin/inc/theme-options.php:1098
+#: ../lib/admin/inc/theme-options.php:363
+#: ../lib/admin/inc/theme-options.php:374
+#: ../lib/admin/inc/theme-options.php:385
+#: ../lib/admin/inc/theme-options.php:396
+#: ../lib/admin/inc/theme-options.php:524
+#: ../lib/admin/inc/theme-options.php:535
+#: ../lib/admin/inc/theme-options.php:546
+#: ../lib/admin/inc/theme-options.php:557
+#: ../lib/admin/inc/theme-options.php:579
+#: ../lib/admin/inc/theme-options.php:590
+#: ../lib/admin/inc/theme-options.php:616
+#: ../lib/admin/inc/theme-options.php:677
+#: ../lib/admin/inc/theme-options.php:688
+#: ../lib/admin/inc/theme-options.php:699
+#: ../lib/admin/inc/theme-options.php:710
+#: ../lib/admin/inc/theme-options.php:825
+#: ../lib/admin/inc/theme-options.php:886
+#: ../lib/admin/inc/theme-options.php:897
+#: ../lib/admin/inc/theme-options.php:908
+#: ../lib/admin/inc/theme-options.php:919
+#: ../lib/admin/inc/theme-options.php:1017
+#: ../lib/admin/inc/theme-options.php:1028
+#: ../lib/admin/inc/theme-options.php:1039
 msgid "Show"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:35
-#: ../lib/admin/inc/theme-meta-options.php:67
+#: ../lib/admin/inc/theme-meta-options.php:63
+#: ../lib/admin/inc/theme-meta-options.php:65
 #: ../lib/admin/inc/theme-meta-options.php:69
-#: ../lib/admin/inc/theme-meta-options.php:73
-#: ../lib/admin/inc/theme-meta-options.php:75
-#: ../lib/admin/inc/theme-meta-options.php:109
+#: ../lib/admin/inc/theme-meta-options.php:71
+#: ../lib/admin/inc/theme-meta-options.php:105
+#: ../lib/admin/inc/theme-meta-options.php:122
+#: ../lib/admin/inc/theme-meta-options.php:124
+#: ../lib/admin/inc/theme-meta-options.php:128
 #: ../lib/admin/inc/theme-meta-options.php:130
-#: ../lib/admin/inc/theme-meta-options.php:132
-#: ../lib/admin/inc/theme-meta-options.php:136
-#: ../lib/admin/inc/theme-meta-options.php:138
+#: ../lib/admin/inc/theme-meta-options.php:221
+#: ../lib/admin/inc/theme-meta-options.php:223
+#: ../lib/admin/inc/theme-meta-options.php:227
 #: ../lib/admin/inc/theme-meta-options.php:229
-#: ../lib/admin/inc/theme-meta-options.php:231
-#: ../lib/admin/inc/theme-meta-options.php:235
-#: ../lib/admin/inc/theme-options.php:404
-#: ../lib/admin/inc/theme-options.php:415
-#: ../lib/admin/inc/theme-options.php:426
-#: ../lib/admin/inc/theme-options.php:437
-#: ../lib/admin/inc/theme-options.php:565
-#: ../lib/admin/inc/theme-options.php:576
-#: ../lib/admin/inc/theme-options.php:587
-#: ../lib/admin/inc/theme-options.php:598
-#: ../lib/admin/inc/theme-options.php:620
-#: ../lib/admin/inc/theme-options.php:631
-#: ../lib/admin/inc/theme-options.php:657
-#: ../lib/admin/inc/theme-options.php:727
-#: ../lib/admin/inc/theme-options.php:738
-#: ../lib/admin/inc/theme-options.php:749
-#: ../lib/admin/inc/theme-options.php:760
-#: ../lib/admin/inc/theme-options.php:875
-#: ../lib/admin/inc/theme-options.php:945
-#: ../lib/admin/inc/theme-options.php:956
-#: ../lib/admin/inc/theme-options.php:967
-#: ../lib/admin/inc/theme-options.php:978
-#: ../lib/admin/inc/theme-options.php:1076
-#: ../lib/admin/inc/theme-options.php:1087
-#: ../lib/admin/inc/theme-options.php:1098
+#: ../lib/admin/inc/theme-options.php:363
+#: ../lib/admin/inc/theme-options.php:374
+#: ../lib/admin/inc/theme-options.php:385
+#: ../lib/admin/inc/theme-options.php:396
+#: ../lib/admin/inc/theme-options.php:524
+#: ../lib/admin/inc/theme-options.php:535
+#: ../lib/admin/inc/theme-options.php:546
+#: ../lib/admin/inc/theme-options.php:557
+#: ../lib/admin/inc/theme-options.php:579
+#: ../lib/admin/inc/theme-options.php:590
+#: ../lib/admin/inc/theme-options.php:616
+#: ../lib/admin/inc/theme-options.php:677
+#: ../lib/admin/inc/theme-options.php:688
+#: ../lib/admin/inc/theme-options.php:699
+#: ../lib/admin/inc/theme-options.php:710
+#: ../lib/admin/inc/theme-options.php:825
+#: ../lib/admin/inc/theme-options.php:886
+#: ../lib/admin/inc/theme-options.php:897
+#: ../lib/admin/inc/theme-options.php:908
+#: ../lib/admin/inc/theme-options.php:919
+#: ../lib/admin/inc/theme-options.php:1017
+#: ../lib/admin/inc/theme-options.php:1028
+#: ../lib/admin/inc/theme-options.php:1039
 msgid "Hide"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:37
-#: ../lib/admin/inc/theme-meta-options.php:111
-#: ../lib/admin/inc/theme-options.php:661
-#: ../lib/admin/inc/theme-options.php:833
-#: ../lib/admin/inc/theme-options.php:879
+#: ../lib/admin/inc/theme-meta-options.php:107
+#: ../lib/admin/inc/theme-options.php:620
+#: ../lib/admin/inc/theme-options.php:783
+#: ../lib/admin/inc/theme-options.php:829
 msgid "Image Width"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:37
-#: ../lib/admin/inc/theme-meta-options.php:111
-#: ../lib/admin/inc/theme-options.php:834
+#: ../lib/admin/inc/theme-meta-options.php:107
+#: ../lib/admin/inc/theme-options.php:784
 msgid ""
 "The width to crop the image to (set to 0 to have a proportionate width)."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:39
-#: ../lib/admin/inc/theme-meta-options.php:113
-#: ../lib/admin/inc/theme-options.php:671
-#: ../lib/admin/inc/theme-options.php:843
-#: ../lib/admin/inc/theme-options.php:889
+#: ../lib/admin/inc/theme-meta-options.php:109
+#: ../lib/admin/inc/theme-options.php:630
+#: ../lib/admin/inc/theme-options.php:793
+#: ../lib/admin/inc/theme-options.php:839
 msgid "Image Height"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:39
-#: ../lib/admin/inc/theme-meta-options.php:113
-#: ../lib/admin/inc/theme-options.php:844
+#: ../lib/admin/inc/theme-meta-options.php:109
+#: ../lib/admin/inc/theme-options.php:794
 msgid ""
 "The height to crop the image to (set to 0 to have a proportionate height)."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:41
-#: ../lib/admin/inc/theme-meta-options.php:115
-#: ../lib/admin/inc/theme-options.php:358
-#: ../lib/admin/inc/theme-options.php:681
-#: ../lib/admin/inc/theme-options.php:899
+#: ../lib/admin/inc/theme-meta-options.php:111
+#: ../lib/admin/inc/theme-options.php:326
+#: ../lib/admin/inc/theme-options.php:640
+#: ../lib/admin/inc/theme-options.php:849
 msgid "Image Wrap"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:41
-#: ../lib/admin/inc/theme-meta-options.php:115
-#: ../lib/admin/inc/theme-options.php:359
+#: ../lib/admin/inc/theme-meta-options.php:111
+#: ../lib/admin/inc/theme-options.php:327
 msgid "Choose whether the page content wraps around the featured image."
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:41
-#: ../lib/admin/inc/theme-meta-options.php:45
-#: ../lib/admin/inc/theme-meta-options.php:115
-#: ../lib/admin/inc/theme-meta-options.php:119
-#: ../lib/admin/inc/theme-options.php:120
-#: ../lib/admin/inc/theme-options.php:131
-#: ../lib/admin/inc/theme-options.php:142
-#: ../lib/admin/inc/theme-options.php:317
-#: ../lib/admin/inc/theme-options.php:363
-#: ../lib/admin/inc/theme-options.php:372
-#: ../lib/admin/inc/theme-options.php:471
-#: ../lib/admin/inc/theme-options.php:482
-#: ../lib/admin/inc/theme-options.php:491
-#: ../lib/admin/inc/theme-options.php:500
-#: ../lib/admin/inc/theme-options.php:509
-#: ../lib/admin/inc/theme-options.php:518
-#: ../lib/admin/inc/theme-options.php:686
-#: ../lib/admin/inc/theme-options.php:695
-#: ../lib/admin/inc/theme-options.php:771
-#: ../lib/admin/inc/theme-options.php:780
-#: ../lib/admin/inc/theme-options.php:789
-#: ../lib/admin/inc/theme-options.php:798
-#: ../lib/admin/inc/theme-options.php:807
-#: ../lib/admin/inc/theme-options.php:818
-#: ../lib/admin/inc/theme-options.php:829
-#: ../lib/admin/inc/theme-options.php:904
-#: ../lib/admin/inc/theme-options.php:913
-#: ../lib/admin/inc/theme-options.php:989
-#: ../lib/admin/inc/theme-options.php:998
-#: ../lib/admin/inc/theme-options.php:1007
-#: ../lib/admin/inc/theme-options.php:1018
+#: ../lib/admin/inc/theme-meta-options.php:111
+#: ../lib/admin/inc/theme-options.php:110
+#: ../lib/admin/inc/theme-options.php:285
+#: ../lib/admin/inc/theme-options.php:331
+#: ../lib/admin/inc/theme-options.php:430
+#: ../lib/admin/inc/theme-options.php:441
+#: ../lib/admin/inc/theme-options.php:450
+#: ../lib/admin/inc/theme-options.php:459
+#: ../lib/admin/inc/theme-options.php:468
+#: ../lib/admin/inc/theme-options.php:477
+#: ../lib/admin/inc/theme-options.php:645
+#: ../lib/admin/inc/theme-options.php:721
+#: ../lib/admin/inc/theme-options.php:730
+#: ../lib/admin/inc/theme-options.php:739
+#: ../lib/admin/inc/theme-options.php:748
+#: ../lib/admin/inc/theme-options.php:757
+#: ../lib/admin/inc/theme-options.php:768
+#: ../lib/admin/inc/theme-options.php:779
+#: ../lib/admin/inc/theme-options.php:854
+#: ../lib/admin/inc/theme-options.php:930
+#: ../lib/admin/inc/theme-options.php:939
+#: ../lib/admin/inc/theme-options.php:948
+#: ../lib/admin/inc/theme-options.php:959
 msgid "Enable"
 msgstr ""
 
 #: ../lib/admin/inc/theme-meta-options.php:41
-#: ../lib/admin/inc/theme-meta-options.php:45
-#: ../lib/admin/inc/theme-meta-options.php:115
-#: ../lib/admin/inc/theme-meta-options.php:119
-#: ../lib/admin/inc/theme-options.php:120
-#: ../lib/admin/inc/theme-options.php:131
-#: ../lib/admin/inc/theme-options.php:142
-#: ../lib/admin/inc/theme-options.php:317
-#: ../lib/admin/inc/theme-options.php:363
-#: ../lib/admin/inc/theme-options.php:372
-#: ../lib/admin/inc/theme-options.php:471
-#: ../lib/admin/inc/theme-options.php:482
-#: ../lib/admin/inc/theme-options.php:491
-#: ../lib/admin/inc/theme-options.php:500
-#: ../lib/admin/inc/theme-options.php:509
-#: ../lib/admin/inc/theme-options.php:518
-#: ../lib/admin/inc/theme-options.php:686
-#: ../lib/admin/inc/theme-options.php:695
-#: ../lib/admin/inc/theme-options.php:771
-#: ../lib/admin/inc/theme-options.php:780
-#: ../lib/admin/inc/theme-options.php:789
-#: ../lib/admin/inc/theme-options.php:798
-#: ../lib/admin/inc/theme-options.php:807
-#: ../lib/admin/inc/theme-options.php:818
-#: ../lib/admin/inc/theme-options.php:829
-#: ../lib/admin/inc/theme-options.php:904
-#: ../lib/admin/inc/theme-options.php:913
-#: ../lib/admin/inc/theme-options.php:989
-#: ../lib/admin/inc/theme-options.php:998
-#: ../lib/admin/inc/theme-options.php:1007
-#: ../lib/admin/inc/theme-options.php:1018
+#: ../lib/admin/inc/theme-meta-options.php:111
+#: ../lib/admin/inc/theme-options.php:110
+#: ../lib/admin/inc/theme-options.php:285
+#: ../lib/admin/inc/theme-options.php:331
+#: ../lib/admin/inc/theme-options.php:430
+#: ../lib/admin/inc/theme-options.php:441
+#: ../lib/admin/inc/theme-options.php:450
+#: ../lib/admin/inc/theme-options.php:459
+#: ../lib/admin/inc/theme-options.php:468
+#: ../lib/admin/inc/theme-options.php:477
+#: ../lib/admin/inc/theme-options.php:645
+#: ../lib/admin/inc/theme-options.php:721
+#: ../lib/admin/inc/theme-options.php:730
+#: ../lib/admin/inc/theme-options.php:739
+#: ../lib/admin/inc/theme-options.php:748
+#: ../lib/admin/inc/theme-options.php:757
+#: ../lib/admin/inc/theme-options.php:768
+#: ../lib/admin/inc/theme-options.php:779
+#: ../lib/admin/inc/theme-options.php:854
+#: ../lib/admin/inc/theme-options.php:930
+#: ../lib/admin/inc/theme-options.php:939
+#: ../lib/admin/inc/theme-options.php:948
+#: ../lib/admin/inc/theme-options.php:959
 msgid "Disable"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:45
-#: ../lib/admin/inc/theme-meta-options.php:119
-#: ../lib/admin/inc/theme-options.php:367
-#: ../lib/admin/inc/theme-options.php:690
-#: ../lib/admin/inc/theme-options.php:908
-msgid "Hard Crop"
-msgstr ""
-
-#: ../lib/admin/inc/theme-meta-options.php:45
-#: ../lib/admin/inc/theme-meta-options.php:119
-#: ../lib/admin/inc/theme-options.php:368
-msgid "Choose whether the image is hard cropped."
-msgstr ""
-
-#: ../lib/admin/inc/theme-meta-options.php:50
+#: ../lib/admin/inc/theme-meta-options.php:46
 msgid ""
 "Can be used when your posts are displayed in <code>[posts]</code> shortcodes."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:50
+#: ../lib/admin/inc/theme-meta-options.php:46
 msgid "Portfolio Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:52
-#: ../lib/admin/inc/theme-meta-options.php:165
+#: ../lib/admin/inc/theme-meta-options.php:48
+#: ../lib/admin/inc/theme-meta-options.php:157
 msgid "Link Type"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:52
+#: ../lib/admin/inc/theme-meta-options.php:48
 msgid "Choose how your portfolio link opens."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:52
-#: ../lib/admin/inc/theme-meta-options.php:165
+#: ../lib/admin/inc/theme-meta-options.php:48
+#: ../lib/admin/inc/theme-meta-options.php:157
 msgid "Lightbox Image"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:52
-#: ../lib/admin/inc/theme-meta-options.php:165
+#: ../lib/admin/inc/theme-meta-options.php:48
+#: ../lib/admin/inc/theme-meta-options.php:157
 msgid "Lightbox Video"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:52
-#: ../lib/admin/inc/theme-meta-options.php:165
-#: ../lib/admin/inc/theme-meta-options.php:184
-#: ../lib/admin/inc/theme-meta-options.php:218
-#: ../lib/admin/inc/theme-options.php:1044
-#: ../lib/admin/inc/theme-options.php:1589
+#: ../lib/admin/inc/theme-meta-options.php:48
+#: ../lib/admin/inc/theme-meta-options.php:157
+#: ../lib/admin/inc/theme-meta-options.php:176
+#: ../lib/admin/inc/theme-meta-options.php:210
+#: ../lib/admin/inc/theme-options.php:985
+#: ../lib/admin/inc/theme-options.php:1530
 msgid "None"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:54
+#: ../lib/admin/inc/theme-meta-options.php:50
 msgid "Custom URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:54
+#: ../lib/admin/inc/theme-meta-options.php:50
 msgid ""
 "A custom URL which your image links to (overrides the default post URL)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:56
+#: ../lib/admin/inc/theme-meta-options.php:52
 msgid "Lightbox Content"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:56
+#: ../lib/admin/inc/theme-meta-options.php:52
 msgid "Upload images/audio/videos that will be opened in the lightbox."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:61
-#: ../lib/admin/inc/theme-meta-options.php:124
-#: ../lib/admin/inc/theme-meta-options.php:223
+#: ../lib/admin/inc/theme-meta-options.php:57
+#: ../lib/admin/inc/theme-meta-options.php:116
+#: ../lib/admin/inc/theme-meta-options.php:215
 msgid "General formatting settings."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:61
-#: ../lib/admin/inc/theme-meta-options.php:124
-#: ../lib/admin/inc/theme-meta-options.php:161
-#: ../lib/admin/inc/theme-meta-options.php:223
+#: ../lib/admin/inc/theme-meta-options.php:57
+#: ../lib/admin/inc/theme-meta-options.php:116
+#: ../lib/admin/inc/theme-meta-options.php:153
+#: ../lib/admin/inc/theme-meta-options.php:215
 msgid "Format Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:63
-#: ../lib/admin/inc/theme-meta-options.php:126
-#: ../lib/admin/inc/theme-meta-options.php:225
-#: ../lib/admin/inc/theme-options.php:378
-#: ../lib/admin/inc/theme-options.php:539
-#: ../lib/admin/inc/theme-options.php:701
-#: ../lib/admin/inc/theme-options.php:919
-#: ../lib/admin/inc/theme-options.php:1050
+#: ../lib/admin/inc/theme-meta-options.php:59
+#: ../lib/admin/inc/theme-meta-options.php:118
+#: ../lib/admin/inc/theme-meta-options.php:217
+#: ../lib/admin/inc/theme-options.php:337
+#: ../lib/admin/inc/theme-options.php:498
+#: ../lib/admin/inc/theme-options.php:651
+#: ../lib/admin/inc/theme-options.php:860
+#: ../lib/admin/inc/theme-options.php:991
 msgid "Sidebar"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:63
-#: ../lib/admin/inc/theme-meta-options.php:126
-#: ../lib/admin/inc/theme-meta-options.php:225
+#: ../lib/admin/inc/theme-meta-options.php:59
+#: ../lib/admin/inc/theme-meta-options.php:118
+#: ../lib/admin/inc/theme-meta-options.php:217
 msgid "Choose which sidebar area to display on this page."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:65
-#: ../lib/admin/inc/theme-meta-options.php:128
-#: ../lib/admin/inc/theme-meta-options.php:227
-#: ../lib/admin/inc/theme-options.php:388
-#: ../lib/admin/inc/theme-options.php:549
-#: ../lib/admin/inc/theme-options.php:711
-#: ../lib/admin/inc/theme-options.php:929
-#: ../lib/admin/inc/theme-options.php:1060
+#: ../lib/admin/inc/theme-meta-options.php:61
+#: ../lib/admin/inc/theme-meta-options.php:120
+#: ../lib/admin/inc/theme-meta-options.php:219
+#: ../lib/admin/inc/theme-options.php:347
+#: ../lib/admin/inc/theme-options.php:508
+#: ../lib/admin/inc/theme-options.php:661
+#: ../lib/admin/inc/theme-options.php:870
+#: ../lib/admin/inc/theme-options.php:1001
 msgid "Layout"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:65
-#: ../lib/admin/inc/theme-meta-options.php:128
-#: ../lib/admin/inc/theme-meta-options.php:227
+#: ../lib/admin/inc/theme-meta-options.php:61
+#: ../lib/admin/inc/theme-meta-options.php:120
+#: ../lib/admin/inc/theme-meta-options.php:219
 msgid "Choose the layout for this page."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:65
-#: ../lib/admin/inc/theme-meta-options.php:128
-#: ../lib/admin/inc/theme-meta-options.php:227
-#: ../lib/admin/inc/theme-options.php:393
-#: ../lib/admin/inc/theme-options.php:554
-#: ../lib/admin/inc/theme-options.php:716
-#: ../lib/admin/inc/theme-options.php:934
-#: ../lib/admin/inc/theme-options.php:1065
+#: ../lib/admin/inc/theme-meta-options.php:61
+#: ../lib/admin/inc/theme-meta-options.php:120
+#: ../lib/admin/inc/theme-meta-options.php:219
+#: ../lib/admin/inc/theme-options.php:352
+#: ../lib/admin/inc/theme-options.php:513
+#: ../lib/admin/inc/theme-options.php:666
+#: ../lib/admin/inc/theme-options.php:875
+#: ../lib/admin/inc/theme-options.php:1006
 msgid "Sidebar Left"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:65
-#: ../lib/admin/inc/theme-meta-options.php:128
-#: ../lib/admin/inc/theme-meta-options.php:227
-#: ../lib/admin/inc/theme-options.php:393
-#: ../lib/admin/inc/theme-options.php:554
-#: ../lib/admin/inc/theme-options.php:716
-#: ../lib/admin/inc/theme-options.php:934
-#: ../lib/admin/inc/theme-options.php:1065
+#: ../lib/admin/inc/theme-meta-options.php:61
+#: ../lib/admin/inc/theme-meta-options.php:120
+#: ../lib/admin/inc/theme-meta-options.php:219
+#: ../lib/admin/inc/theme-options.php:352
+#: ../lib/admin/inc/theme-options.php:513
+#: ../lib/admin/inc/theme-options.php:666
+#: ../lib/admin/inc/theme-options.php:875
+#: ../lib/admin/inc/theme-options.php:1006
 msgid "Sidebar Right"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:65
-#: ../lib/admin/inc/theme-meta-options.php:128
-#: ../lib/admin/inc/theme-meta-options.php:227
-#: ../lib/admin/inc/theme-options.php:393
-#: ../lib/admin/inc/theme-options.php:554
-#: ../lib/admin/inc/theme-options.php:716
-#: ../lib/admin/inc/theme-options.php:934
-#: ../lib/admin/inc/theme-options.php:1065
+#: ../lib/admin/inc/theme-meta-options.php:61
+#: ../lib/admin/inc/theme-meta-options.php:120
+#: ../lib/admin/inc/theme-meta-options.php:219
+#: ../lib/admin/inc/theme-options.php:352
+#: ../lib/admin/inc/theme-options.php:513
+#: ../lib/admin/inc/theme-options.php:666
+#: ../lib/admin/inc/theme-options.php:875
+#: ../lib/admin/inc/theme-options.php:1006
 msgid "Fullwidth"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:67
-#: ../lib/admin/inc/theme-meta-options.php:130
-#: ../lib/admin/inc/theme-options.php:399
-#: ../lib/admin/inc/theme-options.php:560
-#: ../lib/admin/inc/theme-options.php:722
-#: ../lib/admin/inc/theme-options.php:940
+#: ../lib/admin/inc/theme-meta-options.php:63
+#: ../lib/admin/inc/theme-meta-options.php:122
+#: ../lib/admin/inc/theme-meta-options.php:221
+#: ../lib/admin/inc/theme-options.php:358
+#: ../lib/admin/inc/theme-options.php:519
+#: ../lib/admin/inc/theme-options.php:672
+#: ../lib/admin/inc/theme-options.php:881
 #: ../lib/admin/inc/theme-post-types.php:62
 msgid "Title"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:67
-#: ../lib/admin/inc/theme-meta-options.php:130
+#: ../lib/admin/inc/theme-meta-options.php:63
+#: ../lib/admin/inc/theme-meta-options.php:122
+#: ../lib/admin/inc/theme-meta-options.php:221
 msgid "Choose whether to display the title on this page."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:69
-#: ../lib/admin/inc/theme-meta-options.php:132
-#: ../lib/admin/inc/theme-meta-options.php:229
-#: ../lib/admin/inc/theme-options.php:410
-#: ../lib/admin/inc/theme-options.php:571
-#: ../lib/admin/inc/theme-options.php:733
-#: ../lib/admin/inc/theme-options.php:951
-#: ../lib/admin/inc/theme-options.php:1071
+#: ../lib/admin/inc/theme-meta-options.php:65
+#: ../lib/admin/inc/theme-meta-options.php:124
+#: ../lib/admin/inc/theme-meta-options.php:223
+#: ../lib/admin/inc/theme-options.php:369
+#: ../lib/admin/inc/theme-options.php:530
+#: ../lib/admin/inc/theme-options.php:683
+#: ../lib/admin/inc/theme-options.php:892
+#: ../lib/admin/inc/theme-options.php:1012
 msgid "Breadcrumbs"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:69
-#: ../lib/admin/inc/theme-meta-options.php:132
-#: ../lib/admin/inc/theme-meta-options.php:229
+#: ../lib/admin/inc/theme-meta-options.php:65
+#: ../lib/admin/inc/theme-meta-options.php:124
+#: ../lib/admin/inc/theme-meta-options.php:223
 msgid "Choose whether to display breadcrumbs on this page."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:73
-#: ../lib/admin/inc/theme-meta-options.php:136
-#: ../lib/admin/inc/theme-meta-options.php:231
-#: ../lib/admin/inc/theme-options.php:421
-#: ../lib/admin/inc/theme-options.php:582
-#: ../lib/admin/inc/theme-options.php:744
-#: ../lib/admin/inc/theme-options.php:962
-#: ../lib/admin/inc/theme-options.php:1082
+#: ../lib/admin/inc/theme-meta-options.php:69
+#: ../lib/admin/inc/theme-meta-options.php:128
+#: ../lib/admin/inc/theme-meta-options.php:227
+#: ../lib/admin/inc/theme-options.php:380
+#: ../lib/admin/inc/theme-options.php:541
+#: ../lib/admin/inc/theme-options.php:694
+#: ../lib/admin/inc/theme-options.php:903
+#: ../lib/admin/inc/theme-options.php:1023
 msgid "Search Bar"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:73
-#: ../lib/admin/inc/theme-meta-options.php:136
-#: ../lib/admin/inc/theme-meta-options.php:231
-#: ../lib/admin/inc/theme-options.php:422
-#: ../lib/admin/inc/theme-options.php:583
+#: ../lib/admin/inc/theme-meta-options.php:69
+#: ../lib/admin/inc/theme-meta-options.php:128
+#: ../lib/admin/inc/theme-meta-options.php:227
+#: ../lib/admin/inc/theme-options.php:381
+#: ../lib/admin/inc/theme-options.php:542
 msgid "Choose whether to display the search bar."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:75
-#: ../lib/admin/inc/theme-meta-options.php:138
-#: ../lib/admin/inc/theme-meta-options.php:235
-#: ../lib/admin/inc/theme-options.php:432
-#: ../lib/admin/inc/theme-options.php:593
-#: ../lib/admin/inc/theme-options.php:755
-#: ../lib/admin/inc/theme-options.php:973
-#: ../lib/admin/inc/theme-options.php:1093
+#: ../lib/admin/inc/theme-meta-options.php:71
+#: ../lib/admin/inc/theme-meta-options.php:130
+#: ../lib/admin/inc/theme-meta-options.php:229
+#: ../lib/admin/inc/theme-options.php:391
+#: ../lib/admin/inc/theme-options.php:552
+#: ../lib/admin/inc/theme-options.php:705
+#: ../lib/admin/inc/theme-options.php:914
+#: ../lib/admin/inc/theme-options.php:1034
 msgid "Bottom Content Widgets"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:75
-#: ../lib/admin/inc/theme-meta-options.php:138
-#: ../lib/admin/inc/theme-meta-options.php:235
+#: ../lib/admin/inc/theme-meta-options.php:71
+#: ../lib/admin/inc/theme-meta-options.php:130
+#: ../lib/admin/inc/theme-meta-options.php:229
 msgid "Choose whether to display the bottom content widget area."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:237
+#: ../lib/admin/inc/theme-meta-options.php:73
+#: ../lib/admin/inc/theme-meta-options.php:132
+#: ../lib/admin/inc/theme-meta-options.php:231
 msgid "Skin"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:237
+#: ../lib/admin/inc/theme-meta-options.php:73
+#: ../lib/admin/inc/theme-meta-options.php:132
+#: ../lib/admin/inc/theme-meta-options.php:231
 msgid "Choose the skin of this page."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:237
+#: ../lib/admin/inc/theme-meta-options.php:73
+#: ../lib/admin/inc/theme-meta-options.php:132
+#: ../lib/admin/inc/theme-meta-options.php:231
 #: ../lib/admin/inc/theme-options.php:27
 msgid "Dark"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:237
+#: ../lib/admin/inc/theme-meta-options.php:73
+#: ../lib/admin/inc/theme-meta-options.php:132
+#: ../lib/admin/inc/theme-meta-options.php:231
 #: ../lib/admin/inc/theme-options.php:27
 msgid "Dark Wide"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:237
+#: ../lib/admin/inc/theme-meta-options.php:73
+#: ../lib/admin/inc/theme-meta-options.php:132
+#: ../lib/admin/inc/theme-meta-options.php:231
 #: ../lib/admin/inc/theme-options.php:27
 msgid "Light"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:77
-#: ../lib/admin/inc/theme-meta-options.php:140
-#: ../lib/admin/inc/theme-meta-options.php:237
+#: ../lib/admin/inc/theme-meta-options.php:73
+#: ../lib/admin/inc/theme-meta-options.php:132
+#: ../lib/admin/inc/theme-meta-options.php:231
 #: ../lib/admin/inc/theme-options.php:27
 msgid "Light Wide"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:79
-#: ../lib/admin/inc/theme-meta-options.php:142
-#: ../lib/admin/inc/theme-meta-options.php:239
+#: ../lib/admin/inc/theme-meta-options.php:75
+#: ../lib/admin/inc/theme-meta-options.php:134
+#: ../lib/admin/inc/theme-meta-options.php:233
 msgid "Custom Stylesheet URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:79
-#: ../lib/admin/inc/theme-meta-options.php:142
-#: ../lib/admin/inc/theme-meta-options.php:239
+#: ../lib/admin/inc/theme-meta-options.php:75
+#: ../lib/admin/inc/theme-meta-options.php:134
+#: ../lib/admin/inc/theme-meta-options.php:233
 msgid ""
 "Enter the relative URL to your custom stylesheet e.g. <code>lib/css/custom-"
 "style.css</code>."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:161
+#: ../lib/admin/inc/theme-meta-options.php:153
 msgid "General product slide settings."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:163
+#: ../lib/admin/inc/theme-meta-options.php:155
 msgid "Slide URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:163
+#: ../lib/admin/inc/theme-meta-options.php:155
 msgid "Enter the URL you want your slide to link to."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:165
+#: ../lib/admin/inc/theme-meta-options.php:157
 msgid "Choose how your slide links to the URL you provided to the left."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:170
+#: ../lib/admin/inc/theme-meta-options.php:162
 msgid "The settings for a video used in this slide."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:170
+#: ../lib/admin/inc/theme-meta-options.php:162
 msgid "Video Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:172
+#: ../lib/admin/inc/theme-meta-options.php:164
 msgid "Video URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:172
-msgid "The URL of your video or audio file (YouTube/Vimeo/FLV/MP4/M4V/MP3)."
-msgstr ""
-
-#: ../lib/admin/inc/theme-meta-options.php:174
+#: ../lib/admin/inc/theme-meta-options.php:166
 msgid "HTML5 Video URL (Safari/Chrome)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:174
+#: ../lib/admin/inc/theme-meta-options.php:166
 msgid "Enter your HTML5 video URL for Safari/Chrome (WEBM/MP4)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:176
+#: ../lib/admin/inc/theme-meta-options.php:168
 msgid "HTML5 Video URL (FireFox/Opera)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:176
+#: ../lib/admin/inc/theme-meta-options.php:168
 msgid "Enter your HTML5 video URL for FireFox/Opera (OGG/OGV)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:178
+#: ../lib/admin/inc/theme-meta-options.php:170
 msgid "Autostart Video"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:178
+#: ../lib/admin/inc/theme-meta-options.php:170
 msgid ""
 "Plays the video automatically when the slide comes into view (works in the "
 "first slide only)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:182
+#: ../lib/admin/inc/theme-meta-options.php:174
 msgid "Video Priority"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:182
+#: ../lib/admin/inc/theme-meta-options.php:174
 msgid ""
 "If you have provided both flash and HTML5 videos, select which one will take "
 "priority if the browser can play both."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:182
+#: ../lib/admin/inc/theme-meta-options.php:174
 msgid "Flash"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:182
+#: ../lib/admin/inc/theme-meta-options.php:174
 msgid "HTML5"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:184
+#: ../lib/admin/inc/theme-meta-options.php:176
 msgid "Video Controls"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:184
+#: ../lib/admin/inc/theme-meta-options.php:176
 msgid ""
 "Choose how to display the video controls (does not apply to Vimeo videos)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:184
+#: ../lib/admin/inc/theme-meta-options.php:176
 msgid "Bottom"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:184
+#: ../lib/admin/inc/theme-meta-options.php:176
 msgid "Over"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:189
+#: ../lib/admin/inc/theme-meta-options.php:181
 msgid "The settings for a caption in this slide."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:189
+#: ../lib/admin/inc/theme-meta-options.php:181
 msgid "Caption Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:191
+#: ../lib/admin/inc/theme-meta-options.php:183
 msgid "Hide Slide Caption Title"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:191
+#: ../lib/admin/inc/theme-meta-options.php:183
 msgid "Hide the slide caption title."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:193
+#: ../lib/admin/inc/theme-meta-options.php:185
 msgid "Caption Link Text"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:193
+#: ../lib/admin/inc/theme-meta-options.php:185
 msgid "Enter the your caption link text."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:195
+#: ../lib/admin/inc/theme-meta-options.php:187
 msgid "Caption Link"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:195
+#: ../lib/admin/inc/theme-meta-options.php:187
 msgid "Enter the URL you want your caption link text to link to."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:197
+#: ../lib/admin/inc/theme-meta-options.php:189
 msgid "Caption Position"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:197
+#: ../lib/admin/inc/theme-meta-options.php:189
 msgid "Choose the caption position."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:197
+#: ../lib/admin/inc/theme-meta-options.php:189
 msgid "Top Left Overlay"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:197
+#: ../lib/admin/inc/theme-meta-options.php:189
 msgid "Top Right Overlay"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:197
+#: ../lib/admin/inc/theme-meta-options.php:189
 msgid "Bottom Left Overlay"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:197
+#: ../lib/admin/inc/theme-meta-options.php:189
 msgid "Bottom Right Overlay"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:218
-#: ../lib/admin/inc/theme-options.php:1039
+#: ../lib/admin/inc/theme-meta-options.php:210
+#: ../lib/admin/inc/theme-options.php:980
 msgid "Image Effect"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:218
-#: ../lib/admin/inc/theme-options.php:1040
+#: ../lib/admin/inc/theme-meta-options.php:210
+#: ../lib/admin/inc/theme-options.php:981
 msgid "Choose what image effect is used on your product page images."
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:218
-#: ../lib/admin/inc/theme-options.php:1044
+#: ../lib/admin/inc/theme-meta-options.php:210
+#: ../lib/admin/inc/theme-options.php:985
 msgid "Zoom"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:218
-#: ../lib/admin/inc/theme-options.php:1044
+#: ../lib/admin/inc/theme-meta-options.php:210
+#: ../lib/admin/inc/theme-options.php:985
 msgid "Lightbox"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:436
-#: ../lib/admin/inc/theme-options.php:1450
-#: ../lib/admin/inc/theme-options.php:1543
+#: ../lib/admin/inc/theme-meta-options.php:430
+#: ../lib/admin/inc/theme-options.php:1391
+#: ../lib/admin/inc/theme-options.php:1484
 msgid "Upload"
 msgstr ""
 
-#: ../lib/admin/inc/theme-meta-options.php:512
+#: ../lib/admin/inc/theme-meta-options.php:507
+#: ../lib/admin/inc/theme-meta-options.php:510
 msgid "Add Media"
+msgstr ""
+
+#: ../lib/admin/inc/theme-meta-options.php:510
+msgid "View Media"
 msgstr ""
 
 #: ../lib/admin/inc/theme-options.php:6 ../lib/admin/inc/theme-options.php:13
@@ -1015,954 +991,816 @@ msgid "Upload your own logo."
 msgstr ""
 
 #: ../lib/admin/inc/theme-options.php:50
-msgid "Logo Width"
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:51
-msgid ""
-"Enter the logo width (set to half the original logo width for retina "
-"displays)."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:60
 msgid "Logo Top Margin"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:61
+#: ../lib/admin/inc/theme-options.php:51
 msgid "Enter the top margin of your logo."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:70
+#: ../lib/admin/inc/theme-options.php:60
 msgid "Logo Left Margin"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:71
+#: ../lib/admin/inc/theme-options.php:61
 msgid "Enter the left margin of your logo."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:80
+#: ../lib/admin/inc/theme-options.php:70
 msgid "Logo Bottom Margin"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:81
+#: ../lib/admin/inc/theme-options.php:71
 msgid "Enter the bottom margin of your logo."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:92
+#: ../lib/admin/inc/theme-options.php:82
 msgid "Header Height"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:93
+#: ../lib/admin/inc/theme-options.php:83
 msgid "Enter the height of the header."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:104
+#: ../lib/admin/inc/theme-options.php:94
 msgid "Search Criteria"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:105
+#: ../lib/admin/inc/theme-options.php:95
 msgid "Choose what posts and pages show up in search results."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:109
+#: ../lib/admin/inc/theme-options.php:99
 msgid "Products"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:109
+#: ../lib/admin/inc/theme-options.php:99
 msgid "Posts and pages"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:109
+#: ../lib/admin/inc/theme-options.php:99
 msgid "Posts, pages and products"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:115
-msgid "Responsive"
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:116
-msgid "Choose whether the theme responds to the width of the browser window."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:126
-msgid "Retina Images"
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:127
-msgid ""
-"Choose whether to crop images at double the size on retina displays (iPhone "
-"4/5, iPad 3/4, Macbook Pro)."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:137
+#: ../lib/admin/inc/theme-options.php:105
 msgid "RSS Feed Button"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:138
+#: ../lib/admin/inc/theme-options.php:106
 msgid ""
 "Display the RSS feed button with the default RSS feed or enter a custom feed "
 "below."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:146
+#: ../lib/admin/inc/theme-options.php:114
 msgid "RSS URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:155
+#: ../lib/admin/inc/theme-options.php:123
 msgid "Twitter URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:164
+#: ../lib/admin/inc/theme-options.php:132
 msgid "Facebook URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:173
+#: ../lib/admin/inc/theme-options.php:141
 msgid "Dribbble URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:182
+#: ../lib/admin/inc/theme-options.php:150
 msgid "Digg URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:191
+#: ../lib/admin/inc/theme-options.php:159
 msgid "YouTube URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:200
+#: ../lib/admin/inc/theme-options.php:168
 msgid "Vimeo URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:209
+#: ../lib/admin/inc/theme-options.php:177
 msgid "Google+ URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:218
+#: ../lib/admin/inc/theme-options.php:186
 msgid "LinkedIn URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:227
+#: ../lib/admin/inc/theme-options.php:195
 msgid "MySpace URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:236
+#: ../lib/admin/inc/theme-options.php:204
 msgid "Flickr URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:245
+#: ../lib/admin/inc/theme-options.php:213
 msgid "Pinterest URL"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:254
+#: ../lib/admin/inc/theme-options.php:222
 msgid "Additional Social Icons"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:255
+#: ../lib/admin/inc/theme-options.php:223
 msgid ""
 "Add additional social icons by entering the link and image HTML code e.g. "
 "<code>&lt;a href=&quot;http://social-link.com&quot; target=&quot;_blank&quot;"
 "&gt;&lt;img src=&quot;"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:264
+#: ../lib/admin/inc/theme-options.php:232
 msgid "Favicon URL (.ico)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:265
+#: ../lib/admin/inc/theme-options.php:233
 msgid "Type the URL of your favicon image (.ico, 16x16 or 32x32)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:272
+#: ../lib/admin/inc/theme-options.php:240
 msgid "Favicon URL (.png)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:273
+#: ../lib/admin/inc/theme-options.php:241
 msgid "Type the URL of your favicon image (.png, 16x16 or 32x32)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:280
+#: ../lib/admin/inc/theme-options.php:248
 msgid "Apple Icon URL (.png)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:281
+#: ../lib/admin/inc/theme-options.php:249
 msgid ""
 "Type the URL of your apple icon image (.png, 57x57), used for display on the "
 "Apple iPhone"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:290
+#: ../lib/admin/inc/theme-options.php:258
 msgid "Footer Content"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:291
+#: ../lib/admin/inc/theme-options.php:259
 msgid ""
 "Enter the content you want to display in your footer (e.g. copyright text)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:301
+#: ../lib/admin/inc/theme-options.php:269
 msgid "Scripts"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:302
+#: ../lib/admin/inc/theme-options.php:270
 msgid ""
 "Enter any scripts that need to be embedded into your theme (e.g. Google "
 "Analytics)"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:312
+#: ../lib/admin/inc/theme-options.php:280
 msgid "Preload Effect"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:313
+#: ../lib/admin/inc/theme-options.php:281
 msgid ""
 "Choose whether to use the preload effect on content in category, archive, "
 "tag pages etc (this can be specified individually from shortcodes using "
 "<code>preload=\"true\"</code>)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:322
-#: ../lib/admin/inc/theme-options.php:329
+#: ../lib/admin/inc/theme-options.php:290
+#: ../lib/admin/inc/theme-options.php:297
 msgid "Category Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:332
+#: ../lib/admin/inc/theme-options.php:300
 msgid ""
 "This section controls the global settings for all category, archive, tag and "
 "search result pages."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:339
+#: ../lib/admin/inc/theme-options.php:307
 msgid ""
 "The width to crop the thumbnail to (can be overridden on individual posts, "
 "set to 0 to have a proportionate width)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:349
+#: ../lib/admin/inc/theme-options.php:317
 msgid ""
 "The height to crop the thumbnail to (can be overridden on individual posts, "
 "set to 0 to have a proportionate height)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:379
-#: ../lib/admin/inc/theme-options.php:540
+#: ../lib/admin/inc/theme-options.php:338
+#: ../lib/admin/inc/theme-options.php:499
 msgid "Choose which sidebar area to display."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:389
-#: ../lib/admin/inc/theme-options.php:550
+#: ../lib/admin/inc/theme-options.php:348
+#: ../lib/admin/inc/theme-options.php:509
 msgid "Choose the page layout."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:400
-#: ../lib/admin/inc/theme-options.php:561
+#: ../lib/admin/inc/theme-options.php:359
+#: ../lib/admin/inc/theme-options.php:520
 msgid "Choose whether to display the page title."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:411
-#: ../lib/admin/inc/theme-options.php:572
+#: ../lib/admin/inc/theme-options.php:370
+#: ../lib/admin/inc/theme-options.php:531
 msgid "Choose whether to display breadcrumbs."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:433
-#: ../lib/admin/inc/theme-options.php:594
+#: ../lib/admin/inc/theme-options.php:392
+#: ../lib/admin/inc/theme-options.php:553
 msgid "Choose whether to display the bottom content widgets."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:443
+#: ../lib/admin/inc/theme-options.php:402
 msgid "Content Display"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:444
+#: ../lib/admin/inc/theme-options.php:403
 msgid "Choose whether to display the full post content or an excerpt."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:448
+#: ../lib/admin/inc/theme-options.php:407
 msgid "Excerpt"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:448
+#: ../lib/admin/inc/theme-options.php:407
 msgid "Full Content"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:454
+#: ../lib/admin/inc/theme-options.php:413
 msgid "Excerpt Length"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:455
+#: ../lib/admin/inc/theme-options.php:414
 msgid "The number of characters in excerpts."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:466
+#: ../lib/admin/inc/theme-options.php:425
 msgid "Read More Link"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:467
+#: ../lib/admin/inc/theme-options.php:426
 msgid "Choose whether to display the read more links."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:477
-#: ../lib/admin/inc/theme-options.php:775
+#: ../lib/admin/inc/theme-options.php:436
+#: ../lib/admin/inc/theme-options.php:725
 msgid "Post Date"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:478
-#: ../lib/admin/inc/theme-options.php:776
+#: ../lib/admin/inc/theme-options.php:437
+#: ../lib/admin/inc/theme-options.php:726
 msgid "Choose whether to display the post date."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:486
-#: ../lib/admin/inc/theme-options.php:766
+#: ../lib/admin/inc/theme-options.php:445
+#: ../lib/admin/inc/theme-options.php:716
 msgid "Post Author"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:487
-#: ../lib/admin/inc/theme-options.php:767
+#: ../lib/admin/inc/theme-options.php:446
+#: ../lib/admin/inc/theme-options.php:717
 msgid "Choose whether to display the post author."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:495
-#: ../lib/admin/inc/theme-options.php:784
+#: ../lib/admin/inc/theme-options.php:454
+#: ../lib/admin/inc/theme-options.php:734
 msgid "Post Categories"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:496
-#: ../lib/admin/inc/theme-options.php:785
+#: ../lib/admin/inc/theme-options.php:455
+#: ../lib/admin/inc/theme-options.php:735
 msgid "Choose whether to display the post categories."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:504
+#: ../lib/admin/inc/theme-options.php:463
 msgid "Post Comments"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:505
+#: ../lib/admin/inc/theme-options.php:464
 msgid "Choose whether to display the post comments."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:513
-#: ../lib/admin/inc/theme-options.php:802
+#: ../lib/admin/inc/theme-options.php:472
+#: ../lib/admin/inc/theme-options.php:752
 msgid "Post Tags"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:514
-#: ../lib/admin/inc/theme-options.php:803
+#: ../lib/admin/inc/theme-options.php:473
+#: ../lib/admin/inc/theme-options.php:753
 msgid "Choose whether to display the post tags."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:523
-#: ../lib/admin/inc/theme-options.php:530
+#: ../lib/admin/inc/theme-options.php:482
+#: ../lib/admin/inc/theme-options.php:489
 msgid "Product Category Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:533
+#: ../lib/admin/inc/theme-options.php:492
 msgid "This section controls the global settings for all product category."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:604
+#: ../lib/admin/inc/theme-options.php:563
 msgid "Products Per Row"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:605
+#: ../lib/admin/inc/theme-options.php:564
 msgid "Enter the number of products you want to display per row."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:609
+#: ../lib/admin/inc/theme-options.php:568
 msgid "2"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:609
+#: ../lib/admin/inc/theme-options.php:568
 msgid "3"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:609
+#: ../lib/admin/inc/theme-options.php:568
 msgid "4"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:609
+#: ../lib/admin/inc/theme-options.php:568
 msgid "5"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:615
+#: ../lib/admin/inc/theme-options.php:574
 msgid "Add To Cart Button"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:616
+#: ../lib/admin/inc/theme-options.php:575
 msgid "Choose whether to display the add to cart button."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:626
+#: ../lib/admin/inc/theme-options.php:585
 msgid "View Product Button"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:627
+#: ../lib/admin/inc/theme-options.php:586
 msgid "Choose whether to display the view product button."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:646
+#: ../lib/admin/inc/theme-options.php:605
 msgid ""
 "This section controls the global settings for all posts, but most settings "
 "can be overridden on individual posts."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:653
-#: ../lib/admin/inc/theme-options.php:871
+#: ../lib/admin/inc/theme-options.php:612
+#: ../lib/admin/inc/theme-options.php:821
 msgid ""
 "Choose whether to display the featured image (can be overridden on "
 "individual posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:662
+#: ../lib/admin/inc/theme-options.php:621
 msgid ""
 "The width to crop the image to (can be overridden on individual posts, set "
 "to 0 to have a proportionate width)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:672
+#: ../lib/admin/inc/theme-options.php:631
 msgid ""
 "The height to crop the image to (can be overridden on individual posts, set "
 "to 0 to have a proportionate height)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:682
+#: ../lib/admin/inc/theme-options.php:641
 msgid ""
 "Choose whether the page content wraps around the featured image (can be "
 "overridden on individual posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:691
-msgid ""
-"Choose whether the image is hard cropped (can be overridden on individual "
-"posts)."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:702
+#: ../lib/admin/inc/theme-options.php:652
 msgid ""
 "Choose which sidebar area to display (can be overridden on individual posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:712
+#: ../lib/admin/inc/theme-options.php:662
 msgid "Choose the page layout (can be overridden on individual posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:723
+#: ../lib/admin/inc/theme-options.php:673
 msgid ""
 "Choose whether to display the page title (can be overridden on individual "
 "posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:734
+#: ../lib/admin/inc/theme-options.php:684
 msgid ""
 "Choose whether to display breadcrumbs (can be overridden on individual "
 "posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:745
+#: ../lib/admin/inc/theme-options.php:695
 msgid ""
 "Choose whether to display the search bar (can be overridden on individual "
 "posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:756
+#: ../lib/admin/inc/theme-options.php:706
 msgid ""
 "Choose whether to display the bottom content widgets (can be overridden on "
 "individual posts)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:793
+#: ../lib/admin/inc/theme-options.php:743
 msgid "Post Comment Number"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:794
+#: ../lib/admin/inc/theme-options.php:744
 msgid "Choose whether to display the number of post comments."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:813
-#: ../lib/admin/inc/theme-options.php:1013
+#: ../lib/admin/inc/theme-options.php:763
+#: ../lib/admin/inc/theme-options.php:954
 msgid "Author Info Panel"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:814
+#: ../lib/admin/inc/theme-options.php:764
 msgid ""
 "Choose whether to display the author info panel (can also be inserted in "
 "individual posts using the <code>[author]</code> shortcode)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:824
+#: ../lib/admin/inc/theme-options.php:774
 msgid "Related Items"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:825
+#: ../lib/admin/inc/theme-options.php:775
 msgid ""
 "Choose whether to display a related items section (can also be inserted in "
 "individual posts using the <code>[related_posts]</code> shortcode)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:864
+#: ../lib/admin/inc/theme-options.php:814
 msgid ""
 "This section controls the global settings for all pages, but most settings "
 "can be overridden on individual pages."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:880
+#: ../lib/admin/inc/theme-options.php:830
 msgid ""
 "The width to crop the image to (can be overridden on individual pages, set "
 "to 0 to have a proportionate width)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:890
+#: ../lib/admin/inc/theme-options.php:840
 msgid ""
 "The height to crop the image to (can be overridden on individual pages, set "
 "to 0 to have a proportionate height)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:900
+#: ../lib/admin/inc/theme-options.php:850
 msgid ""
 "Choose whether the page content wraps around the featured image (can be "
 "overridden on individual pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:909
-msgid ""
-"Choose whether the image is hard cropped (can be overridden on individual "
-"pages)."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:920
+#: ../lib/admin/inc/theme-options.php:861
 msgid ""
 "Choose which sidebar area to display (can be overridden on individual pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:930
+#: ../lib/admin/inc/theme-options.php:871
 msgid "Choose the page layout (can be overridden on individual pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:941
+#: ../lib/admin/inc/theme-options.php:882
 msgid ""
 "Choose whether to display the page title (can be overridden on individual "
 "pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:952
+#: ../lib/admin/inc/theme-options.php:893
 msgid ""
 "Choose whether to display breadcrumbs (can be overridden on individual "
 "pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:963
+#: ../lib/admin/inc/theme-options.php:904
 msgid ""
 "Choose whether to display the search bar (can be overridden on individual "
 "pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:974
+#: ../lib/admin/inc/theme-options.php:915
 msgid ""
 "Choose whether to display the bottom content widgets (can be overridden on "
 "individual pages)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:984
+#: ../lib/admin/inc/theme-options.php:925
 msgid "Page Author"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:985
+#: ../lib/admin/inc/theme-options.php:926
 msgid "Choose whether to display the page author."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:993
+#: ../lib/admin/inc/theme-options.php:934
 msgid "Page Date"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:994
+#: ../lib/admin/inc/theme-options.php:935
 msgid "Choose whether to display the page date."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1002
+#: ../lib/admin/inc/theme-options.php:943
 msgid "Page Comment Number"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1003
+#: ../lib/admin/inc/theme-options.php:944
 msgid "Choose whether to display the number of page comments."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1014
+#: ../lib/admin/inc/theme-options.php:955
 msgid "Choose whether to display an author info panel."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1023
-#: ../lib/admin/inc/theme-options.php:1030
+#: ../lib/admin/inc/theme-options.php:964
+#: ../lib/admin/inc/theme-options.php:971
 msgid "Product Page Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1033
+#: ../lib/admin/inc/theme-options.php:974
 msgid ""
 "This section controls the global settings for all product pages, but most "
 "settings can be overridden on individual product pages."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1051
+#: ../lib/admin/inc/theme-options.php:992
 msgid ""
 "Choose which sidebar area to display (can be overridden on individual "
 "products)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1061
+#: ../lib/admin/inc/theme-options.php:1002
 msgid "Choose the page layout (can be overridden on individual products)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1072
+#: ../lib/admin/inc/theme-options.php:1013
 msgid ""
 "Choose whether to display breadcrumbs (can be overridden on individual "
 "products)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1083
+#: ../lib/admin/inc/theme-options.php:1024
 msgid ""
 "Choose whether to display the search bar (can be overridden on individual "
 "products)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1094
+#: ../lib/admin/inc/theme-options.php:1035
 msgid ""
 "Choose whether to display the bottom content widgets (can be overridden on "
 "individual products)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1103
-#: ../lib/admin/inc/theme-options.php:1110
+#: ../lib/admin/inc/theme-options.php:1044
+#: ../lib/admin/inc/theme-options.php:1051
 msgid "Style Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1113
+#: ../lib/admin/inc/theme-options.php:1054
 msgid ""
 "This section provides you with some basic settings to change the look of the "
 "theme. If you want to customize the design of the theme further you can add "
 "your own CSS styling in \"CSS Settings\" tab."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1119
+#: ../lib/admin/inc/theme-options.php:1060
 msgid "Body Font"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1120
+#: ../lib/admin/inc/theme-options.php:1061
 msgid ""
-"Enter the name of the font you want to use for the body text (e.g. Times New "
-"Roman, Arial, Oswald). To use <a href=\"http://www.google.com/webfonts\" "
-"target=\"_blank\">Google Web Fonts</a> get the \"Standard\" code provided by "
-"Google and add this to \"Scripts\" box in the \"General Settings\" tab."
+"Enter the name of the font you want to use for the body text e.g. Times New "
+"Roman, Arial, Oswald."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1129
+#: ../lib/admin/inc/theme-options.php:1070
 msgid "Body Text Size"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1130
-msgid "The text size used in body text."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1139
+#: ../lib/admin/inc/theme-options.php:1080
 msgid "Body Text Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1140
-msgid "The text color used in body text."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1147
+#: ../lib/admin/inc/theme-options.php:1088
 msgid "Body Link Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1148
-msgid "The link color used in body text."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1155
+#: ../lib/admin/inc/theme-options.php:1096
 msgid "Body Link Hover Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1156
-msgid "The link hover color used in body text."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1165
+#: ../lib/admin/inc/theme-options.php:1106
 msgid "Heading Font"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1166
+#: ../lib/admin/inc/theme-options.php:1107
 msgid ""
-"Enter the name of the font you want to use for the headings (e.g. Times New "
-"Roman, Arial, Oswald). To use <a href=\"http://www.google.com/webfonts\" "
-"target=\"_blank\">Google Web Fonts</a> get the \"Standard\" code provided by "
-"Google and add this to \"Scripts\" box in the \"General Settings\" tab."
+"Enter the name of the font you want to use for headings e.g. Times New "
+"Roman, Arial, Oswald."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1175
+#: ../lib/admin/inc/theme-options.php:1116
 msgid "Heading 1 Text Size"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1176
-msgid "The text size used in &lt;h1&gt; headings."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1185
+#: ../lib/admin/inc/theme-options.php:1126
 msgid "Heading 2 Text Size"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1186
-msgid "The text size used in &lt;h2&gt; headings."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1195
+#: ../lib/admin/inc/theme-options.php:1136
 msgid "Heading 3 Text Size"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1196
-msgid "The text size used in &lt;h3&gt; headings."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1205
+#: ../lib/admin/inc/theme-options.php:1146
 msgid "Heading Text Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1206
-msgid "The text colour used in headings."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1213
+#: ../lib/admin/inc/theme-options.php:1154
 msgid "Heading Link Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1214
-msgid "The link colour used in headings."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1221
+#: ../lib/admin/inc/theme-options.php:1162
 msgid "Heading Link Hover Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1222
-msgid "The link hover colour used in headings."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1231
+#: ../lib/admin/inc/theme-options.php:1172
 msgid "Left Header Background Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1232
+#: ../lib/admin/inc/theme-options.php:1173
 msgid "The background colour of the header to the left of your logo."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1239
+#: ../lib/admin/inc/theme-options.php:1180
 msgid "Right Header Background Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1240
+#: ../lib/admin/inc/theme-options.php:1181
 msgid "The background colour of the header to the right of your logo."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1247
+#: ../lib/admin/inc/theme-options.php:1188
 msgid "Header Text Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1248
-msgid "The text colour used in the header."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1255
+#: ../lib/admin/inc/theme-options.php:1196
 msgid "Header Link Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1256
-msgid "The link colour used in the header."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1263
+#: ../lib/admin/inc/theme-options.php:1204
 msgid "Header Link Hover Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1264
-msgid "The link hover colour used in the header."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1273
+#: ../lib/admin/inc/theme-options.php:1214
 msgid "Outer Body Text Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1274
-msgid "The text colour used outside the main content area."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1281
+#: ../lib/admin/inc/theme-options.php:1222
 msgid "Outer Body Link Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1282
-msgid "The link colour used outside the main content area."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1289
+#: ../lib/admin/inc/theme-options.php:1230
 msgid "Outer Body Link Hover Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1290
-msgid "The link hover colour used outside the main content area."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1299
+#: ../lib/admin/inc/theme-options.php:1240
 msgid "Content Background Color 1"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1300
+#: ../lib/admin/inc/theme-options.php:1241
 msgid "The background colour of the main elements that contain content."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1307
+#: ../lib/admin/inc/theme-options.php:1248
 msgid "Content Background Color 2"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1308
+#: ../lib/admin/inc/theme-options.php:1249
 msgid "The background colour of secondary elements that contain content."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1315
+#: ../lib/admin/inc/theme-options.php:1256
 msgid "Content Border Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1316
-msgid "The border colour of the main elements."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1325
+#: ../lib/admin/inc/theme-options.php:1266
 msgid "Button Text Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1326
-msgid "The text color of buttons."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1333
+#: ../lib/admin/inc/theme-options.php:1274
 msgid "Button Text Hover Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1334
-msgid "The link color of buttons."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1341
+#: ../lib/admin/inc/theme-options.php:1282
 msgid "Button Background Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1342
-msgid "The background color of buttons."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1349
+#: ../lib/admin/inc/theme-options.php:1290
 msgid "Button Background Hover Color"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1350
-msgid "The background hover color of buttons."
-msgstr ""
-
-#: ../lib/admin/inc/theme-options.php:1358
-#: ../lib/admin/inc/theme-options.php:1365
+#: ../lib/admin/inc/theme-options.php:1299
+#: ../lib/admin/inc/theme-options.php:1306
 msgid "CSS Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1368
+#: ../lib/admin/inc/theme-options.php:1309
 msgid ""
 "You can add your own CSS below to style the theme. This CSS will not be lost "
 "if you update the theme. For more information on how to find the names of "
 "the elements you want to style  click"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1368
+#: ../lib/admin/inc/theme-options.php:1309
 msgid "here"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1374
+#: ../lib/admin/inc/theme-options.php:1315
 msgid "Custom CSS"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1422
-#: ../lib/admin/inc/theme-options.php:1439
+#: ../lib/admin/inc/theme-options.php:1363
+#: ../lib/admin/inc/theme-options.php:1380
 msgid "Theme Options"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1430
+#: ../lib/admin/inc/theme-options.php:1371
 msgid "Options Saved"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1431
+#: ../lib/admin/inc/theme-options.php:1372
 msgid "Options Reset"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1441
-#: ../lib/admin/inc/theme-options.php:1766
+#: ../lib/admin/inc/theme-options.php:1382
+#: ../lib/admin/inc/theme-options.php:1730
 msgid "Help File"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1441
-#: ../lib/admin/inc/theme-options.php:1766
+#: ../lib/admin/inc/theme-options.php:1382
+#: ../lib/admin/inc/theme-options.php:1730
 msgid "Changelog"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1441
-#: ../lib/admin/inc/theme-options.php:1766
+#: ../lib/admin/inc/theme-options.php:1382
+#: ../lib/admin/inc/theme-options.php:1730
 msgid "Setup Help & Bug Fixes"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1441
-#: ../lib/admin/inc/theme-options.php:1766
+#: ../lib/admin/inc/theme-options.php:1382
+#: ../lib/admin/inc/theme-options.php:1730
 msgid "Tweaks & Customizations"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1445
+#: ../lib/admin/inc/theme-options.php:1386
 msgid "Import Theme Options"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1446
+#: ../lib/admin/inc/theme-options.php:1387
 msgid "If you have a back up of your theme options you can import them below."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1456
+#: ../lib/admin/inc/theme-options.php:1397
 msgid "Export Theme Options"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1457
+#: ../lib/admin/inc/theme-options.php:1398
 msgid ""
 "If you want to create a back up of all your theme options click the Export "
 "button below (will only back up your theme options and not your post/page/"
 "images data)."
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1460
+#: ../lib/admin/inc/theme-options.php:1401
 msgid "Export Theme Settings"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1471
+#: ../lib/admin/inc/theme-options.php:1412
 msgid "Import/Export Theme Options"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1473
-#: ../lib/admin/inc/theme-options.php:1686
+#: ../lib/admin/inc/theme-options.php:1414
+#: ../lib/admin/inc/theme-options.php:1632
 #: ../lib/admin/inc/custom-sidebars/views/edit.php:49
 msgid "Save Changes"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1691
+#: ../lib/admin/inc/theme-options.php:1637
 msgid "Are you sure you want to reset all the theme options&#63;"
 msgstr ""
 
-#: ../lib/admin/inc/theme-options.php:1692
+#: ../lib/admin/inc/theme-options.php:1638
 msgid "Reset"
-msgstr ""
-
-#: ../lib/admin/inc/theme-other-options.php:14
-msgid "Lightbox URL"
-msgstr ""
-
-#: ../lib/admin/inc/theme-other-options.php:17
-msgid ""
-"The URL of an image, video or audio file (YouTube/Vimeo/FLV/MP4/M4V/MP3) "
-"that loads in the lightbox."
 msgstr ""
 
 #: ../lib/admin/inc/theme-post-types.php:9
@@ -2050,12 +1888,12 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: ../lib/admin/inc/theme-post-types.php:100
-#: ../lib/admin/inc/theme-post-types.php:111
+#: ../lib/admin/inc/theme-post-types.php:97
+#: ../lib/admin/inc/theme-post-types.php:108
 msgid "Order Slides"
 msgstr ""
 
-#: ../lib/admin/inc/theme-post-types.php:129
+#: ../lib/admin/inc/theme-post-types.php:126
 #: ../lib/admin/inc/custom-sidebars/views/settings.php:72
 msgid "Edit"
 msgstr ""
@@ -2102,6 +1940,42 @@ msgstr ""
 
 #: ../lib/admin/inc/theme-sidebars.php:103
 msgid "Footer 4"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:71
+msgid "Theme Updates"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:72
+msgid "There is a new version of the"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:72
+msgid "theme available."
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:72
+msgid "You have version"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:72
+msgid "installed. Update to version"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:80
+msgid "To update to the latest version of"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:80
+msgid "see the"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:80
+msgid "Updating The Theme"
+msgstr ""
+
+#: ../lib/admin/inc/theme-update-notification.php:80
+msgid "section of the help file."
 msgstr ""
 
 #: ../lib/admin/inc/custom-sidebars/custom-sidebars.php:114
@@ -2203,7 +2077,6 @@ msgid "Configure Widgets"
 msgstr ""
 
 #: ../lib/admin/inc/custom-sidebars/views/settings.php:73
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:320
 msgid "Delete"
 msgstr ""
 
@@ -2226,249 +2099,6 @@ msgstr ""
 
 #: ../lib/admin/inc/custom-sidebars/views/settings.php:101
 msgid "Are you sure to reset the sidebars?"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:57
-msgid "Envato WordPress Toolkit"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:153
-msgid "Envato Toolkit"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:196
-msgid "You do not have sufficient permissions to access this page."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:219
-msgid "User Settings Updated."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:220
-msgid "Theme Activated."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:221
-msgid "Theme Deleted."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:242
-msgid "Save Settings"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:300
-#, php-format
-msgid ""
-"You're about to delete the '%s' theme. 'Cancel' to stop, 'OK' to update."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:303
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to "
-"stop, 'OK' to update."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:318
-#, php-format
-msgid "Activate &#8220;%s&#8221;"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:318
-msgid "Activate"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:319
-#, php-format
-msgid "Preview &#8220;%s&#8221;"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:319
-msgid "Preview"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:320
-#, php-format
-msgid "Delete &#8220;%s&#8221;"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:321
-#, php-format
-msgid "View version %1$s details"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:323
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:356
-msgid "Download Backup"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:359
-msgid "Options:"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:365
-#, php-format
-msgid ""
-"The template files are located in <code>%2$s</code>. The stylesheet files "
-"are located in <code>%3$s</code>. <strong>%4$s</strong> uses templates from "
-"<strong>%5$s</strong>. Changes made to the templates will affect both themes."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:367
-#, php-format
-msgid "All of this theme&#8217;s files are located in <code>%2$s</code>."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:373
-msgid "Tags: "
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:379
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox "
-"thickbox-preview\" title=\"%1$s\">View version %3$s details</a>."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:381
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox "
-"thickbox-preview\" title=\"%1$s\">View version %3$s details</a> or <a href="
-"\"%4$s\" %5$s>update automatically</a>."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:385
-#, php-format
-msgid ""
-"%1$s has not been installed. <a href=\"%2$s\" class=\"thickbox thickbox-"
-"preview\" title=\"%1$s\">View version %3$s details</a>."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:387
-#, php-format
-msgid ""
-"%1$s has not been installed. <a href=\"%2$s\" class=\"thickbox thickbox-"
-"preview\" title=\"%1$s\">View version %3$s details</a> or <a href=\"%4$s"
-"\">install automatically</a>."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:425
-msgid "<h3>Current Theme</h3>"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:432
-msgid "<h3>Available Themes</h3>"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:496
-msgid "User Account Information"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:497
-msgid "Marketplace Username"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:498
-msgid "Secret API Key"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:499
-msgid "Backup Information"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:500
-msgid "Skip Theme Backup"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:512
-msgid ""
-"To obtain your API Key, visit your \"My Settings\" page on any of the Envato "
-"Marketplaces. Once a valid connection has been made any changes to the API "
-"key below for this username will not effect the results for 5 minutes "
-"because they're cached in the database. If you have already made an API "
-"connection and just purchase a theme and it's not showing up, wait five "
-"minutes and refresh the page. If the theme is still not showing up, it's "
-"possible the author has not made it available for auto install yet."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:550
-msgid ""
-"This plugin will automatically save your theme as a ZIP archive before it "
-"does an upgrade. The directory those backups get saved to is <code>wp-"
-"content/envato-backups</code>. However, if you're experiencing problems "
-"while attempting to upgrade, it's likely to be a permissions issue and you "
-"may want to manually backup your theme before upgrading. Alternatively, if "
-"you don't want to backup your theme you can check the box below."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:581
-#, php-format
-msgid "Return to %s"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:606
-msgid "You do not have sufficient permissions to install themes for this site."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:618
-#, php-format
-msgid "Installing Theme: %s"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:647
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:674
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:707
-msgid "You do not have sufficient permissions to update themes for this site."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:676
-msgid "Update Theme"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:710
-msgid "You do not have sufficient permissions to delete themes for this site."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/index.php:782
-msgid ""
-"This .htaccess file ensures that other people cannot download your backup "
-"files."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-envato-api.php:67
-msgid "Please enter your Envato Marketplace Username."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-envato-api.php:71
-msgid "Please enter your Envato Marketplace API Key."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-envato-api.php:96
-msgid "The API \"set\" is a required parameter."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-envato-api.php:167
-msgid "The Envato Marketplace \"item ID\" is a required parameter."
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-envato-backup.php:392
-msgid "The backup file was not created"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-envato-backup.php:465
-msgid "The following files are unreadable and could not be backed up: "
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-wp-upgrader.php:22
-msgid "Downloading upgrade package from the Envato API&#8230;"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-wp-upgrader.php:26
-msgid "Backing up & removing the old version of the theme&#8230;"
-msgstr ""
-
-#: ../lib/admin/inc/envato-wordpress-toolkit-master/includes/class-wp-upgrader.php:32
-msgid "Downloading install package from the Envato API&#8230;"
 msgstr ""
 
 #: ../lib/admin/inc/shortcodes/author-info.php:18
@@ -2507,16 +2137,23 @@ msgstr ""
 msgid "A password will be emailed to you"
 msgstr ""
 
-#: ../lib/admin/inc/shortcodes/related-posts.php:125
+#: ../lib/admin/inc/shortcodes/related-posts.php:103
 msgid "Related Posts"
 msgstr ""
 
-#: ../lib/admin/inc/shortcodes/related-posts.php:233
+#: ../lib/admin/inc/shortcodes/related-posts.php:182
 msgid "Read More &raquo;"
 msgstr ""
 
-#: ../lib/admin/inc/shortcodes/related-posts.php:237
+#: ../lib/admin/inc/shortcodes/related-posts.php:184
 msgid "Read More"
+msgstr ""
+
+#: ../lib/admin/inc/shortcodes/slider.php:294
+msgid ""
+"Oops, you haven't set your slider up correctly. Make sure you have created "
+"some slides from Slides -> Add New and if you are using slide categories get "
+"the category IDs from ID column from Slides -> Slide Categories."
 msgstr ""
 
 #: ../lib/admin/inc/tinymce/window_options.php:8
@@ -2547,6 +2184,49 @@ msgstr ""
 msgid "Insert"
 msgstr ""
 
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:51
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:129
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:201
+msgid "Import Widgets"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:53
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:63
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:116
+msgid "Export Widgets"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:65
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:131
+msgid "Please select a widget to continue."
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:70
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:137
+msgid "Select All Active Widgets"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:71
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:138
+msgid "Un-Select All Active Widgets"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:207
+msgid "Select the file that contains widget settings"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:208
+msgid "No file chosen"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:209
+msgid "Choose file"
+msgstr ""
+
+#: ../lib/admin/inc/widget-settings-importexport/widget_data.php:213
+msgid "Upload file and import"
+msgstr ""
+
 #: ../lib/inc/contact.php:49
 msgid "You have received a message from "
 msgstr ""
@@ -2571,64 +2251,56 @@ msgstr ""
 msgid "Reply-To: "
 msgstr ""
 
-#: ../lib/inc/style-settings.php:149
-msgid "Navigation"
-msgstr ""
-
-#: ../lib/inc/style-settings.php:150
-msgid "Please enter something in the search box!"
-msgstr ""
-
-#: ../lib/inc/style-settings.php:151
+#: ../lib/inc/page-styling.php:11
 msgid "View Product"
 msgstr ""
 
-#: ../woocommerce/archive-product.php:45
+#: ../woocommerce/archive-product.php:43
 #, php-format
 msgid "Search Results: &ldquo;%s&rdquo;"
 msgstr ""
 
-#: ../woocommerce/archive-product.php:47
+#: ../woocommerce/archive-product.php:45
 #, php-format
 msgid "&nbsp;&ndash; Page %s"
 msgstr ""
 
-#: ../woocommerce/archive-product.php:96
+#: ../woocommerce/archive-product.php:94
 msgid "No products found which match your selection."
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:115
+#: ../woocommerce/functions-woocommerce.php:99
 msgid ""
 "Woocommerce Dropdown Cart Widget is already built into this theme, please "
 "deactivate this plugin."
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:128
-#: ../woocommerce/functions-woocommerce.php:223
+#: ../woocommerce/functions-woocommerce.php:112
+#: ../woocommerce/functions-woocommerce.php:207
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:180
-#: ../woocommerce/functions-woocommerce.php:293
+#: ../woocommerce/functions-woocommerce.php:164
+#: ../woocommerce/functions-woocommerce.php:277
 msgid "No products in the cart."
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:190
-#: ../woocommerce/functions-woocommerce.php:303
+#: ../woocommerce/functions-woocommerce.php:174
+#: ../woocommerce/functions-woocommerce.php:287
 msgid "Total"
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:192
-#: ../woocommerce/functions-woocommerce.php:305
+#: ../woocommerce/functions-woocommerce.php:176
+#: ../woocommerce/functions-woocommerce.php:289
 msgid "Subtotal"
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:202
-#: ../woocommerce/functions-woocommerce.php:315
+#: ../woocommerce/functions-woocommerce.php:186
+#: ../woocommerce/functions-woocommerce.php:299
 msgid "View Cart &rarr;"
 msgstr ""
 
-#: ../woocommerce/functions-woocommerce.php:203
-#: ../woocommerce/functions-woocommerce.php:316
+#: ../woocommerce/functions-woocommerce.php:187
+#: ../woocommerce/functions-woocommerce.php:300
 msgid "Checkout &rarr;"
 msgstr ""

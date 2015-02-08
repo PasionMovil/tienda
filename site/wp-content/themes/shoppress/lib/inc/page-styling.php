@@ -1,32 +1,44 @@
-<?php require(gp_inc . 'options.php'); global $gp_settings, $dirname; 
+<?php 
 
+require(gp_inc . 'options.php');
+global $gp_settings, $dirname;
 
-// iOS Conditionals
+?>
 
-$gp_settings['iphone'] = (stripos($_SERVER['HTTP_USER_AGENT'],"iPhone") !== false);
-$gp_settings['ipad'] = (stripos($_SERVER['HTTP_USER_AGENT'],"iPad") !== false);
+<script>
+/* File Directory */
+var rootFolder = '<?php echo get_template_directory_uri(); ?>';
+var viewproduct = "<?php _e('View Product', 'gp_lang'); ?>";
 
+<?php if(get_option($dirname.'_add_to_cart_button') == "Hide") { ?>jQuery(document).ready(function(){ jQuery('ul.products li.product .add_to_cart_button').remove(); });<?php } ?>
+<?php if(get_option($dirname.'_view_product_button') == "Hide") { ?>jQuery(document).ready(function(){ jQuery('ul.products li.product .view_product_button').remove(); });<?php } ?>
+</script>
+
+<?php 
+
+// Detect Browsers
+$gp_settings['MSIE'] = (stripos($_SERVER['HTTP_USER_AGENT'],'MSIE') !== false);
+$gp_settings['iPhone'] = (stripos($_SERVER['HTTP_USER_AGENT'],'iPhone') !== false);
+$gp_settings['iPad'] = (stripos($_SERVER['HTTP_USER_AGENT'],'iPad') !== false);
 
 // Browser Class
-
-if(wp_is_mobile()) {
+if($gp_settings['iPhone'] OR $gp_settings['iPad']) {
 	$gp_settings['browser'] = 'ios-class';
 } else {
 	$gp_settings['browser'] = '';
 }
 
-
 // Preload Effect
-
 if(get_option($dirname.'_preload') == '0') {
 	$gp_settings['preload'] = 'preload';
 } else {
 	$gp_settings['preload'] = '';
 }
 
+// Placeholder Image URL
+$gp_settings['placeholder'] = get_template_directory_uri().'/lib/images/placeholder.png';
 
 // Skins
-
 if(isset($_GET['skin']) && $_GET['skin'] != 'default') {
 	$gp_settings['skin'] = 'skin-'.$_GET['skin'];
 } elseif(isset($_COOKIE['SkinCookie']) && $_COOKIE['SkinCookie'] != 'default') {
@@ -80,10 +92,7 @@ if(is_home()) {
 	} else {
 		$gp_settings['layout'] = get_option($dirname.'_product_layout');
 	}
-
-	// Title
-	$gp_settings['title'] = "Show"; 
-	 
+ 
 	// Breadcrumbs
 	if(get_post_meta($post->ID, $dirname.'_breadcrumbs', true) && get_post_meta($post->ID, $dirname.'_breadcrumbs', true) != 'Default') {
 		$gp_settings['breadcrumbs'] = get_post_meta($post->ID, $dirname.'_breadcrumbs', true);
@@ -119,13 +128,12 @@ if(is_home()) {
 /////////////////////////////////////// Categories, Archives etc. ///////////////////////////////////////
 
 
-} elseif((is_archive() OR is_search()) && (function_exists('woocommerce_breadcrumb') && !is_shop())) {
+} elseif(is_archive() OR is_search()) {
 
 	$gp_settings['sidebar'] = get_option($dirname.'_cat_sidebar');
 	$gp_settings['thumbnail_width'] = get_option($dirname.'_cat_thumbnail_width');
 	$gp_settings['thumbnail_height'] = get_option($dirname.'_cat_thumbnail_height');
 	$gp_settings['image_wrap'] = get_option($dirname.'_cat_image_wrap');
-	$gp_settings['hard_crop'] = get_option($dirname.'_cat_hard_crop');
 	$gp_settings['layout'] = get_option($dirname.'_cat_layout');
 	$gp_settings['title'] = get_option($dirname.'_cat_title');		
 	$gp_settings['breadcrumbs'] = get_option($dirname.'_cat_breadcrumbs');
@@ -144,7 +152,7 @@ if(is_home()) {
 /////////////////////////////////////// Posts ///////////////////////////////////////
 
 
-} elseif(is_singular('post')) {
+} elseif(is_single()) {
 
 	// Show Image
 	if(get_post_meta($post->ID, $dirname.'_show_image', true) && get_post_meta($post->ID, $dirname.'_show_image', true) != 'Default') {
@@ -159,7 +167,7 @@ if(is_home()) {
 	} else {
 		$gp_settings['image_width'] = get_option($dirname.'_post_image_width');
 	}
-	if(get_post_meta($post->ID, $dirname.'_image_height', true) != "") {
+	if(get_post_meta($post->ID, $dirname.'_image_height', true) && get_post_meta($post->ID, $dirname.'_image_height', true) != "") {
 		$gp_settings['image_height'] = get_post_meta($post->ID, $dirname.'_image_height', true);
 	} else {
 		$gp_settings['image_height'] = get_option($dirname.'_post_image_height');
@@ -172,13 +180,6 @@ if(is_home()) {
 		$gp_settings['image_wrap'] = get_option($dirname.'_post_image_wrap');
 	}
 
-	// Hard Crop
-	if(get_post_meta($post->ID, $dirname.'_hard_crop', true) && get_post_meta($post->ID, $dirname.'_hard_crop', true) != 'Default') {
-		$gp_settings['hard_crop'] = get_post_meta($post->ID, $dirname.'_hard_crop', true);
-	} else {
-		$gp_settings['hard_crop'] = get_option($dirname.'_post_hard_crop');
-	}
-	
 	// Sidebar
 	if(get_post_meta($post->ID, $dirname.'_sidebar', true) && get_post_meta($post->ID, $dirname.'_sidebar', true) != 'Default') {
 		$gp_settings['sidebar'] = get_post_meta($post->ID, $dirname.'_sidebar', true);
@@ -246,83 +247,70 @@ if(is_home()) {
 
 } else {
 
-	if(function_exists('woocommerce_breadcrumb') && is_shop()) {
-		$post_id = get_option('woocommerce_shop_page_id'); 
-	} else {
-		$post_id = $post->ID; 
-	}
-	
 	// Show Image
-	if(get_post_meta($post_id, $dirname.'_show_image', true) && get_post_meta($post_id, $dirname.'_show_image', true) != 'Default') {
-		$gp_settings['show_image'] = get_post_meta($post_id, $dirname.'_show_image', true);
+	if(get_post_meta($post->ID, $dirname.'_show_image', true) && get_post_meta($post->ID, $dirname.'_show_image', true) != 'Default') {
+		$gp_settings['show_image'] = get_post_meta($post->ID, $dirname.'_show_image', true);
 	} else {
 		$gp_settings['show_image'] = get_option($dirname.'_show_page_image');
 	}
 	
 	// Image Dimensions
-	if(get_post_meta($post_id, $dirname.'_image_width', true) && get_post_meta($post_id, $dirname.'_image_width', true) != "") {
-		$gp_settings['image_width'] = get_post_meta($post_id, $dirname.'_image_width', true);
+	if(get_post_meta($post->ID, $dirname.'_image_width', true) && get_post_meta($post->ID, $dirname.'_image_width', true) != "") {
+		$gp_settings['image_width'] = get_post_meta($post->ID, $dirname.'_image_width', true);
 	} else {
 		$gp_settings['image_width'] = get_option($dirname.'_page_image_width');
 	}
-	if(get_post_meta($post_id, $dirname.'_image_height', true) != "") {
-		$gp_settings['image_height'] = get_post_meta($post_id, $dirname.'_image_height', true);
+	if(get_post_meta($post->ID, $dirname.'_image_height', true) && get_post_meta($post->ID, $dirname.'_image_height', true) != "") {
+		$gp_settings['image_height'] = get_post_meta($post->ID, $dirname.'_image_height', true);
 	} else {
 		$gp_settings['image_height'] = get_option($dirname.'_page_image_height');
 	}
 	
 	// Image Wrap
-	if(get_post_meta($post_id, $dirname.'_image_wrap', true) && get_post_meta($post_id, $dirname.'_image_wrap', true) != 'Default') {
-		$gp_settings['image_wrap'] = get_post_meta($post_id, $dirname.'_image_wrap', true);
+	if(get_post_meta($post->ID, $dirname.'_image_wrap', true) && get_post_meta($post->ID, $dirname.'_image_wrap', true) != 'Default') {
+		$gp_settings['image_wrap'] = get_post_meta($post->ID, $dirname.'_image_wrap', true);
 	} else {
 		$gp_settings['image_wrap'] = get_option($dirname.'_page_image_wrap');
 	}
 
-	// Hard Crop
-	if(get_post_meta($post->ID, $dirname.'_hard_crop', true) && get_post_meta($post->ID, $dirname.'_hard_crop', true) != 'Default') {
-		$gp_settings['hard_crop'] = get_post_meta($post->ID, $dirname.'_hard_crop', true);
-	} else {
-		$gp_settings['hard_crop'] = get_option($dirname.'_page_hard_crop');
-	}
-	
 	// Sidebar
-	if(get_post_meta($post_id, $dirname.'_sidebar', true) && get_post_meta($post_id, $dirname.'_sidebar', true) != 'Default') {
-		$gp_settings['sidebar'] = get_post_meta($post_id, $dirname.'_sidebar', true);
+	if(get_post_meta($post->ID, $dirname.'_sidebar', true) && get_post_meta($post->ID, $dirname.'_sidebar', true) != 'Default') {
+		$gp_settings['sidebar'] = get_post_meta($post->ID, $dirname.'_sidebar', true);
 	} else {
 		$gp_settings['sidebar'] = get_option($dirname.'_page_sidebar');
 	}
 		
 	// Layout
-	if(get_post_meta($post_id, $dirname.'_layout', true) && get_post_meta($post_id, $dirname.'_layout', true) != 'Default') {
-		$gp_settings['layout'] = get_post_meta($post_id, $dirname.'_layout', true);
+	if(get_post_meta($post->ID, $dirname.'_layout', true) && get_post_meta($post->ID, $dirname.'_layout', true) != 'Default') {
+		$gp_settings['layout'] = get_post_meta($post->ID, $dirname.'_layout', true);
 	} else {
 		$gp_settings['layout'] = get_option($dirname.'_page_layout');
 	}
 	
 	// Title
-	if(get_post_meta($post_id, $dirname.'_title', true) && get_post_meta($post_id, $dirname.'_title', true) != 'Default') {
-		$gp_settings['title'] = get_post_meta($post_id, $dirname.'_title', true);
+	if(get_post_meta($post->ID, $dirname.'_title', true) && get_post_meta($post->ID, $dirname.'_title', true) != 'Default') {
+		$gp_settings['title'] = get_post_meta($post->ID, $dirname.'_title', true);
 	} else {
 		$gp_settings['title'] = get_option($dirname.'_page_title');
 	} 	
  
 	// Breadcrumbs
-	if(get_post_meta($post_id, $dirname.'_breadcrumbs', true) && get_post_meta($post_id, $dirname.'_breadcrumbs', true) != 'Default') {
-		$gp_settings['breadcrumbs'] = get_post_meta($post_id, $dirname.'_breadcrumbs', true);
+	if(get_post_meta($post->ID, $dirname.'_breadcrumbs', true) && get_post_meta($post->ID, $dirname.'_breadcrumbs', true) != 'Default') {
+		$gp_settings['breadcrumbs'] = get_post_meta($post->ID, $dirname.'_breadcrumbs', true);
 	} else {
 		$gp_settings['breadcrumbs'] = get_option($dirname.'_page_breadcrumbs');
 	}
 	
 	// Search Bar
-	if(get_post_meta($post_id, $dirname.'_search', true) && get_post_meta($post_id, $dirname.'_search', true) != 'Default') {
-		$gp_settings['search'] = get_post_meta($post_id, $dirname.'_search', true);
+	if(get_post_meta($post->ID, $dirname.'_search', true) && get_post_meta($post->ID, $dirname.'_search', true) != 'Default') {
+		$gp_settings['search'] = get_post_meta($post->ID, $dirname.'_search', true);
 	} else {
 		$gp_settings['search'] = get_option($dirname.'_page_search');
 	} 
 	
 	// Bottom Widgets
-	if(get_post_meta($post_id, $dirname.'_bottom_widgets', true) && get_post_meta($post_id, $dirname.'_bottom_widgets', true) != 'Default') {
-		$gp_settings['bottom_widgets'] = get_post_meta($post_id, $dirname.'_bottom_widgets', true);
+	if(get_post_meta($post->ID, $dirname.'_bottom_widgets', true) && get_post_meta($post->ID, $dirname.'_bottom_widgets', true) != 'Default') {
+		$gp_settings['bottom_widgets'] = get_post_meta($post->ID, $dirname.'_bottom_widgets', true);
 	} else {
 		$gp_settings['bottom_widgets'] = get_option($dirname.'_page_bottom_content_widgets');
 	}
