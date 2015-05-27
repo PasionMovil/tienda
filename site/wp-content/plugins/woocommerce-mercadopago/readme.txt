@@ -2,9 +2,9 @@
 Contributors: claudiosanches
 Donate link: http://claudiosmweb.com/doacoes/
 Tags: woocommerce, mercadopago, payment
-Requires at least: 3.5
-Tested up to: 3.8
-Stable tag: 1.8.1
+Requires at least: 3.9
+Tested up to: 4.1.1
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,10 @@ Please notice that WooCommerce must be installed and active.
 
 You can contribute to the source code in our [GitHub](https://github.com/claudiosmweb/woocommerce-mercadopago) page.
 
+= Translate =
+
+Translate this plugin in [Transifex](https://www.transifex.com/projects/p/woocommerce-mercadopago/).
+
 ### Descrição em Português: ###
 
 Adicione o MercadoPago como método de pagamento em sua loja WooCommerce.
@@ -34,7 +38,7 @@ Este plugin foi feito baseado na [documentação oficial do MercadoPago](http://
 
 = Compatibilidade =
 
-Compatível com as versões 2.0.x e 2.1.x do WooCommerce.
+Compatível com as versões 2.1.x, 2.2.x e 2.3.x do WooCommerce.
 
 = Instalação: =
 
@@ -52,10 +56,9 @@ Você pode esclarecer suas dúvidas usando:
 
 Você pode contribuir com código-fonte em nossa página no [GitHub](https://github.com/claudiosmweb/woocommerce-mercadopago).
 
-### Translators ###
+= Traduzir =
 
-* es_ES by [Marcelo Pedra](http://profiles.wordpress.org/kent-brockman)
-* es_AR by [Gustavo Coronel](http://profiles.wordpress.org/gcoronel/)
+Traduza este plugin no [Transifex](https://www.transifex.com/projects/p/woocommerce-mercadopago/)
 
 == Installation ==
 
@@ -82,6 +85,7 @@ Você pode acessar as suas informações de Client_id e Client_secret em:
 
 * [MercadoPago da Argentina](https://www.mercadopago.com/mla/herramientas/aplicaciones)
 * [MercadoPago do Brasil](https://www.mercadopago.com/mlb/ferramentas/aplicacoes)
+* [MercadoPago da Colômbia](https://www.mercadopago.com/mco/herramientas/aplicaciones)
 * [MercadoPago do México](https://www.mercadopago.com/mlm/herramientas/aplicaciones)
 * [MercadoPago da Venezuela](https://www.mercadopago.com/mlv/herramientas/aplicaciones)
 
@@ -89,6 +93,7 @@ Você pode acessar as suas informações de Client_id e Client_secret em:
 
 * [MercadoPago da Argentina](https://www.mercadopago.com/mla/herramientas/notificaciones)
 * [MercadoPago do Brasil](https://www.mercadopago.com/mlb/ferramentas/notificacoes)
+* [MercadoPago da Colômbia](https://www.mercadopago.com/mco/herramientas/notificaciones)
 * [MercadoPago do México](https://www.mercadopago.com/mlm/herramientas/notificaciones)
 * [MercadoPago da Venezuela](https://www.mercadopago.com/mlv/herramientas/notificaciones)
 
@@ -131,6 +136,10 @@ The plugin works with ARS and BRL.
 
 Add ARS with [WooCommerce ARS Currency](http://wordpress.org/extend/plugins/woocommerce-ars-currency/) plugin.
 
+= Is your site is not receiving the payment notifications? =
+
+This can happen when you are using the **iThemes Security**, here's how to solve [here](http://tureseller.com.ar/solucion-al-problema-de-recibir-notificaciones-de-compra-desde-mercadopago-en-woocommerce-para-wordpress/).
+
 ### FAQ em Português: ###
 
 = Qual é a licença do plugin? =
@@ -165,6 +174,14 @@ Consulte os meios de pagamento em "[Meios de pagamento e parcelamento](https://w
 
 No momento é aceito **ARL** (Argentine peso ley) e **BRL** (Real Brasileiro).
 
+= O pedido foi pago e ficou com o status de "processando" e não como "concluído", isto esta certo ? =
+
+Sim, esta certo e significa que o plugin esta trabalhando como deveria.
+
+Todo gateway de pagamentos no WooCommerce deve mudar o status do pedido para "processando" no momento que é confirmado o pagamento e nunca deve ser alterado sozinho para "concluído", pois o pedido deve ir apenas para o status "concluído" após ele ter sido entregue.
+
+Para produtos baixáveis a configuração padrão do WooCommerce é permitir o acesso apenas quando o pedido tem o status "concluído", entretanto nas configurações do WooCommerce na aba *Produtos* é possível ativar a opção **"Conceder acesso para download do produto após o pagamento"** e assim liberar o download quando o status do pedido esta como "processando".
+
 = Quais são as taxas de transações que o MercadoPago cobra? =
 
 Consulte a página "[Taxas do Mercado Pago](http://guia.mercadolivre.com.br/taxas-mercado-pago-12593-VGP)".
@@ -177,7 +194,11 @@ Fazemos a integração baseada na documentação oficial do MercadoPago que pode
 
 Para resolver este problema vá até "WooCommerce" > "Configurações" > "Inventário" e limpe (deixe em branco) o valor da opção **Manter Estoque (minutos)**.
 
-= Mais dúvidas relacionadas ao funcionamento do plugin? =
+= Is your site is not receiving the payment notifications? =
+
+Isso pode acontecer quando você esta utilizando o iThemes Security, veja como resolver [aqui](http://tureseller.com.ar/solucion-al-problema-de-recibir-notificaciones-de-compra-desde-mercadopago-en-woocommerce-para-wordpress/).
+
+= O seu site não esta recebendo as notificações de pagamento? =
 
 Entre em contato [clicando aqui](http://claudiosmweb.com/plugins/mercadopago-para-woocommerce/).
 
@@ -188,35 +209,51 @@ Entre em contato [clicando aqui](http://claudiosmweb.com/plugins/mercadopago-par
 
 == Changelog ==
 
-= 1.8.1 - 17/12/2013 =
+= 2.0.1 - 2015/03/12 =
+
+* Removed the SSL verification for the new MercadoPago standards.
+
+= 2.0.0 - 2014/08/16 =
+
+* Adicionado suporte para a moeda `COP`, lembrando que depende da configuração do seu MercadoPago para isso funcionar.
+* Adicionado suporte para traduções no Transifex.
+* Corrigido o nome do arquivo principal.
+* Corrigida as strings de tradução.
+* Corrigido o link de cancelamento.
+
+= 1.9.0 - 2014/05/17 =
+
+* Improved the plugin classes.
+
+= 1.8.1 - 2013/12/17 =
 
 * Corrigido os parametros da conexão (cURL) que podiam gerar erro (`SSL connection timeout`) em alguns servidores.
 
-= 1.8.0 - 04/12/2013 =
+= 1.8.0 - 2013/12/04 =
 
 * Corrigido padrões de código.
 * Removida compatibilidade com versões 1.6.x ou inferiores do WooCommerce.
 * Adicionada compatibilidade com WooCommerce 2.1 ou superior.
 
-= 1.7.0 - 03/11/2013 =
+= 1.7.0 - 2013/11/03 =
 
 * Corrigido o textdomain para suportar o padrão do WordPress 3.7.
 * Corrigida verificação que testa se o plugin esta pronto para funcionar ou não (créditos para daigo75).
 * Adicionada compatibilidade com o plugin Currency Switcher for WooCommerce (créditos para daigo75).
 
-= 1.6.0 - 26/07/2013 =
+= 1.6.0 - 2013/07/26 =
 
 * Melhoria nas mensagens de status do pedido.
 * Melhoria no código do plugin.
 
-= 1.5.0 - 26/07/2013 =
+= 1.5.0 - 2013/07/26 =
 
 * Adicionada tradução para es_ES por [Marcelo Pedra](http://profiles.wordpress.org/kent-brockman)
 * Adicionado o filtro `woocommerce_mercadopago_icon` para a modificação do ícone durante o checkout.
 * Adicionado parâmetro $order no filtro `woocommerce_mercadopago_args`.
 * Melhorias no código.
 
-= 1.4.0 - 17/07/2013 =
+= 1.4.0 - 2013/07/17 =
 
 * Melhoria no código.
 * Adicionada opção para pagamento direto ou por janela modal.
@@ -224,32 +261,32 @@ Entre em contato [clicando aqui](http://claudiosmweb.com/plugins/mercadopago-par
 * Adicionada compatibilidade com o WooCommerce 2.1 ou superior.
 * Atualização das traduções em pt_BR e es_AR.
 
-= 1.3.0 - 07/04/2013 =
+= 1.3.0 - 2013/04/07 =
 
 * Correção do retorno automático de dados na versão 2.0.0 ou superior do WooCommerce.
 * Atualização das traduções em pt_BR e es_AR.
 
-= 1.2.3 - 11/03/2013 =
+= 1.2.3 - 2013/03/11 =
 
 * Adicionada compatibilidade com as moedas: `MXN`, `USD` e `VEF`.
 
-= 1.2.2 - 06/03/2013 =
+= 1.2.2 - 2013/03/06 =
 
 * Corrigida a compatibilidade com WooCommerce 2.0.0 ou mais recente.
 
-= 1.2.1 - 08/02/2013 =
+= 1.2.1 - 2013/02/08 =
 
 * Corrigido o hook responsavel por salvar as opções para a versão 2.0 RC do WooCommerce.
 
-= 1.2.0 - 01/12/2012 =
+= 1.2.0 - 2012/12/01 =
 
 * Adicionada tradução para es_AR por [Gustavo Coronel](http://profiles.wordpress.org/gcoronel/)
 
-= 1.1.1 - 30/11/2012 =
+= 1.1.1 - 2012/11/30 =
 
 * Correção dos logs de erro.
 
-= 1.1.0 - 30/11/2012 =
+= 1.1.0 - 2012/11/30 =
 
 * Adicionada opção para logs de erro.
 
@@ -259,9 +296,9 @@ Entre em contato [clicando aqui](http://claudiosmweb.com/plugins/mercadopago-par
 
 == Upgrade Notice ==
 
-= 1.8.1 =
+= 2.0.1 =
 
-* Corrigido os parametros da conexão (cURL) que podiam gerar erro (`SSL connection timeout`) em alguns servidores.
+* Removed the SSL verification for the new MercadoPago standards.
 
 == License ==
 

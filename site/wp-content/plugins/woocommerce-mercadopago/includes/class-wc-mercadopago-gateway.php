@@ -13,7 +13,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 */
 	public function __construct() {
 
-		// Standards
+		// Standards.
 		$this->id              = 'mercadopago';
 		$this->icon            = apply_filters( 'woocommerce_mercadopago_icon', plugins_url( 'images/mercadopago.png', plugin_dir_path( __FILE__ ) ) );
 		$this->has_fields      = false;
@@ -44,7 +44,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 		// Actions.
 		add_action( 'woocommerce_api_wc_mercadopago_gateway', array( $this, 'check_ipn_response' ) );
 		add_action( 'valid_mercadopago_ipn_request', array( $this, 'successful_request' ) );
-		add_action( 'woocommerce_receipt_mercadopago', array( $this, 'receipt_page' ) );
+		add_action( 'woocommerce_receipt_' . $this->id, array( $this, 'receipt_page' ) );
 		add_action( 'wp_head', array( $this, 'css' ) );
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
 
@@ -68,33 +68,8 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 			if ( class_exists( 'WC_Logger' ) ) {
 				$this->log = new WC_Logger();
 			} else {
-				$this->log = $this->woocommerce_instance()->logger();
+				$this->log = WC_MercadoPago::woocommerce_instance()->logger();
 			}
-		}
-	}
-
-	/**
-	 * Fix cURL to works with MercadoPago.
-	 *
-	 * @param  $handle cURL handle.
-	 *
-	 * @return void
-	 */
-	public function fix_curl_to_mercadopago( $handle ) {
-		curl_setopt( $handle, CURLOPT_SSLVERSION, 3 );
-	}
-
-	/**
-	 * Backwards compatibility with version prior to 2.1.
-	 *
-	 * @return object Returns the main instance of WooCommerce class.
-	 */
-	protected function woocommerce_instance() {
-		if ( function_exists( 'WC' ) ) {
-			return WC();
-		} else {
-			global $woocommerce;
-			return $woocommerce;
 		}
 	}
 
@@ -104,7 +79,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 * @return bool
 	 */
 	protected function using_supported_currency() {
-		return in_array( get_woocommerce_currency(), array( 'ARS', 'BRL', 'MXN', 'USD', 'VEF' ) );
+		return in_array( get_woocommerce_currency(), array( 'ARS', 'BRL', 'COP', 'MXN', 'USD', 'VEF' ) );
 	}
 
 	/**
@@ -131,7 +106,15 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 */
 	public function init_form_fields() {
 
-		$api_secret_locale = sprintf( '<a href="https://www.mercadopago.com/mla/herramientas/aplicaciones" target="_blank">%1$s</a>, <a href="https://www.mercadopago.com/mlb/ferramentas/aplicacoes" target="_blank">%2$s</a>, <a href="https://www.mercadopago.com/mlm/herramientas/aplicaciones" target="_blank">%3$s</a> %5$s <a href="https://www.mercadopago.com/mlv/herramientas/aplicaciones" target="_blank">%4$s</a>', __( 'Argentine', 'woocommerce-mercadopago' ), __( 'Brazil', 'woocommerce-mercadopago' ), __( 'Mexico', 'woocommerce-mercadopago' ), __( 'Venezuela', 'woocommerce-mercadopago' ), __( 'or', 'woocommerce-mercadopago' ) );
+		$api_secret_locale = sprintf(
+			'<a href="https://www.mercadopago.com/mla/herramientas/aplicaciones" target="_blank">%s</a>, <a href="https://www.mercadopago.com/mlb/ferramentas/aplicacoes" target="_blank">%s</a>, <a href="https://www.mercadopago.com/mco/ferramentas/aplicacoes" target="_blank">%s</a>, <a href="https://www.mercadopago.com/mlm/herramientas/aplicaciones" target="_blank">%s</a> %s <a href="https://www.mercadopago.com/mlv/herramientas/aplicaciones" target="_blank">%s</a>',
+			__( 'Argentine', 'woocommerce-mercadopago' ),
+			__( 'Brazil', 'woocommerce-mercadopago' ),
+			__( 'Colombia', 'woocommerce-mercadopago' ),
+			__( 'Mexico', 'woocommerce-mercadopago' ),
+			__( 'or', 'woocommerce-mercadopago' ),
+			__( 'Venezuela', 'woocommerce-mercadopago' )
+		);
 
 		$this->form_fields = array(
 			'enabled' => array(
@@ -200,7 +183,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 				'type' => 'checkbox',
 				'label' => __( 'Enable logging', 'woocommerce-mercadopago' ),
 				'default' => 'no',
-				'description' => sprintf( __( 'Log MercadoPago events, such as API requests, inside %s', 'woocommerce-mercadopago' ), '<code>woocommerce/logs/mercadopago-' . sanitize_file_name( wp_hash( 'mercadopago' ) ) . '.txt</code>' ),
+				'description' => sprintf( __( 'Log MercadoPago events, such as API requests, inside %s', 'woocommerce-mercadopago' ), '<code>woocommerce/logs/' . $this->id . '-' . sanitize_file_name( wp_hash( $this->id ) ) . '.txt</code>' ),
 			)
 		);
 	}
@@ -217,7 +200,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 		$args = array(
 			'back_urls' => array(
 				'success' => esc_url( $this->get_return_url( $order ) ),
-				'failure' => esc_url( $order->get_cancel_order_url() ),
+				'failure' => str_replace( '&amp;', '&', $order->get_cancel_order_url() ),
 				'pending' => esc_url( $this->get_return_url( $order ) )
 			),
 			'payer' => array(
@@ -250,7 +233,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 		$args['items'][0]['title'] = sprintf( __( 'Order %s', 'woocommerce-mercadopago' ), $order->get_order_number() ) . ' - ' . implode( ', ', $item_names );
 
 		// Shipping Cost item.
-		if ( version_compare( WOOCOMMERCE_VERSION, '2.1', '>=' ) ) {
+		if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.1', '>=' ) ) {
 			$shipping_total = $order->get_total_shipping();
 		} else {
 			$shipping_total = $order->get_shipping();
@@ -277,7 +260,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 		$args = json_encode( $this->get_payment_args( $order ) );
 
 		if ( 'yes' == $this->debug ) {
-			$this->log->add( 'mercadopago', 'Payment arguments for order ' . $order->get_order_number() . ': ' . print_r( $this->get_payment_args( $order ), true ) );
+			$this->log->add( $this->id, 'Payment arguments for order ' . $order->get_order_number() . ': ' . print_r( $this->get_payment_args( $order ), true ) );
 		}
 
 		$url = $this->payment_url . $this->get_client_credentials();
@@ -292,15 +275,13 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 			)
 		);
 
-		add_action( 'http_api_curl', array( $this, 'fix_curl_to_mercadopago' ) );
 		$response = wp_remote_post( $url, $params );
-		remove_action( 'http_api_curl', array( $this, 'fix_curl_to_mercadopago' ) );
 
 		if ( ! is_wp_error( $response ) && $response['response']['code'] == 201 && ( strcmp( $response['response']['message'], 'Created' ) == 0 ) ) {
 			$checkout_info = json_decode( $response['body'] );
 
 			if ( 'yes' == $this->debug ) {
-				$this->log->add( 'mercadopago', 'Payment link generated with success from MercadoPago' );
+				$this->log->add( $this->id, 'Payment link generated with success from MercadoPago' );
 			}
 
 			if ( 'yes' == $this->sandbox ) {
@@ -311,7 +292,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 
 		} else {
 			if ( 'yes' == $this->debug ) {
-				$this->log->add( 'mercadopago', 'Generate payment error response: ' . print_r( $response, true ) );
+				$this->log->add( $this->id, 'Generate payment error response: ' . print_r( $response, true ) );
 			}
 		}
 
@@ -357,7 +338,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 * @return string Styles.
 	 */
 	public function css() {
-		if ( version_compare( WOOCOMMERCE_VERSION, '2.1', '>=' ) ) {
+		if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.1', '>=' ) ) {
 			$page_id = wc_get_page_id( 'checkout' );
 		} else {
 			$page_id = woocommerce_get_page_id( 'checkout' );
@@ -386,7 +367,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 				'redirect'  => $this->get_mercadopago_url( $order )
 			);
 		} else {
-			if ( version_compare( WOOCOMMERCE_VERSION, '2.1', '>=' ) ) {
+			if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.1', '>=' ) ) {
 				return array(
 					'result'   => 'success',
 					'redirect' => $order->get_checkout_payment_url( true )
@@ -416,7 +397,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 */
 	protected function get_client_credentials() {
 		if ( 'yes' == $this->debug ) {
-			$this->log->add( 'mercadopago', 'Getting client credentials...' );
+			$this->log->add( $this->id, 'Getting client credentials...' );
 		}
 
 		// Set postdata.
@@ -435,9 +416,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 			)
 		);
 
-		add_action( 'http_api_curl', array( $this, 'fix_curl_to_mercadopago' ) );
 		$response = wp_remote_post( $this->oauth_token, $params );
-		remove_action( 'http_api_curl', array( $this, 'fix_curl_to_mercadopago' ) );
 
 		// Check to see if the request was valid and return the token.
 		if ( ! is_wp_error( $response ) && $response['response']['code'] >= 200 && $response['response']['code'] < 300 && ( strcmp( $response['response']['message'], 'OK' ) == 0 ) ) {
@@ -445,13 +424,13 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 			$token = json_decode( $response['body'] );
 
 			if ( 'yes' == $this->debug ) {
-				$this->log->add( 'mercadopago', 'Received valid response from MercadoPago' );
+				$this->log->add( $this->id, 'Received valid response from MercadoPago' );
 			}
 
 			return $token->access_token;
 		} else {
 			if ( 'yes' == $this->debug ) {
-				$this->log->add( 'mercadopago', 'Received invalid response from MercadoPago. Error response: ' . print_r( $response, true ) );
+				$this->log->add( $this->id, 'Received invalid response from MercadoPago. Error response: ' . print_r( $response, true ) );
 			}
 		}
 
@@ -472,7 +451,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 		}
 
 		if ( 'yes' == $this->debug ) {
-			$this->log->add( 'mercadopago', 'Checking IPN request...' );
+			$this->log->add( $this->id, 'Checking IPN request...' );
 		}
 
 		if ( 'yes' == $this->sandbox ) {
@@ -494,12 +473,10 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 		);
 
 		// GET a response.
-		add_action( 'http_api_curl', array( $this, 'fix_curl_to_mercadopago' ) );
 		$response = wp_remote_get( $url, $params );
-		remove_action( 'http_api_curl', array( $this, 'fix_curl_to_mercadopago' ) );
 
 		if ( 'yes' == $this->debug ) {
-			$this->log->add( 'mercadopago', 'IPN Response: ' . print_r( $response, true ) );
+			$this->log->add( $this->id, 'IPN Response: ' . print_r( $response, true ) );
 		}
 
 		// Check to see if the request was valid.
@@ -507,12 +484,12 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 
 			$body = json_decode( $response['body'] );
 
-			$this->log->add( 'mercadopago', 'Received valid IPN response from MercadoPago' );
+			$this->log->add( $this->id, 'Received valid IPN response from MercadoPago' );
 
 			return $body;
 		} else {
 			if ( 'yes' == $this->debug ) {
-				$this->log->add( 'mercadopago', 'Received invalid IPN response from MercadoPago.' );
+				$this->log->add( $this->id, 'Received invalid IPN response from MercadoPago.' );
 			}
 		}
 
@@ -558,8 +535,9 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 			// If true processes the payment.
 			if ( $order->id === $order_id ) {
 
-				if ( 'yes' == $this->debug )
-					$this->log->add( 'mercadopago', 'Payment status from order ' . $order->get_order_number() . ': ' . $data->status );
+				if ( 'yes' == $this->debug ) {
+					$this->log->add( $this->id, 'Payment status from order ' . $order->get_order_number() . ': ' . $data->status );
+				}
 
 				switch ( $data->status ) {
 					case 'approved':
@@ -631,7 +609,7 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 * @return string
 	 */
 	protected function admin_url() {
-		if ( version_compare( WOOCOMMERCE_VERSION, '2.1', '>=' ) ) {
+		if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.1', '>=' ) ) {
 			return admin_url( 'admin.php?page=wc-settings&tab=checkout&section=wc_mercadopago_gateway' );
 		}
 
@@ -662,6 +640,6 @@ class WC_MercadoPago_Gateway extends WC_Payment_Gateway {
 	 * @return string
 	 */
 	public function currency_not_supported_message() {
-		echo '<div class="error"><p><strong>' . __( 'MercadoPago Disabled', 'woocommerce-mercadopago' ) . '</strong>: ' . sprintf( __( 'Currency <code>%s</code> is not supported. Please make sure that you use one of the following supported currencies: ARS, BRL, MXN, USD or VEF.', 'woocommerce-mercadopago' ), get_woocommerce_currency() ) . '</p></div>';
+		echo '<div class="error"><p><strong>' . __( 'MercadoPago Disabled', 'woocommerce-mercadopago' ) . '</strong>: ' . sprintf( __( 'Currency <code>%s</code> is not supported. Please make sure that you use one of the following supported currencies: ARS, BRL, COP, MXN, USD or VEF.', 'woocommerce-mercadopago' ), get_woocommerce_currency() ) . '</p></div>';
 	}
 }
